@@ -1,0 +1,11 @@
+定义积性函数 $f$，$f(p^c)=p\oplus c$，其中 $\oplus$ 为异或。求 $S_f(n)$。$n\le10^{10}$。
+
+当 $p$ 为 $2$ 时，$f(p)=3$。当 $p$ 为奇素数时，$f(p)=p-1$。
+
+于是构造 $g(x)=\begin{cases}3\varphi(x) & 2\mid x\\ \varphi(x) & 2\nmid x\end{cases}$，则 $g$ 为积性函数且与 $f$ 素数拟合。
+
+只需块筛 $S_g(n)=\sum\limits_{i=1}^n\varphi(i)+2\sum\limits_{i=1}^{\lfloor n/2\rfloor}\varphi(2i)$。第一部分 $S_{\varphi}$ 可以用杜教筛。
+
+第二部分 $F(n)=\sum\limits_{i=1}^n\varphi(2i)=\sum\limits_{i\le m,2\mid i}2\varphi(i)+\sum\limits_{i\le m,2\nmid i}\varphi(i)=S_{\varphi}(n)+\sum\limits_{i=1}^{\lfloor n/2\rfloor}\varphi(2i)$。于是得到递推式 $F(n)=S_{\varphi}(n)+F(\lfloor n/2\rfloor)$。递归计算的复杂度为 $O(\log n)$，不为瓶颈。
+
+总复杂度为块筛 $S_{\varphi}$ 的 $O(n^{2/3})$。
