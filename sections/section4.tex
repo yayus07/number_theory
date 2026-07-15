@@ -1,0 +1,184 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\section{阶与原根}
+
+\subsection{阶}
+
+\subsubsection{阶的定义}
+
+\begin{frame}
+\begin{defi}[阶]
+令 $a^x\equiv 1\pmod m$ 成立的最小正整数 $x$ 称为 $a$ 模 $m$ 的阶，记作 $\delta_m(a)$。
+\end{defi}
+
+容易看出存在阶的充要条件是 $\gcd(a,m)=1$。故下面只考虑 $a$ 与 $m$ 互素的情况。
+
+\begin{theo}
+$a,a^2,\dots,a^{\delta_m(a)}$ 对模 $m$ 两两不同余。
+\end{theo}
+
+\begin{coro}
+$a^x\equiv a^y\pmod m$ 当且仅当 $x\equiv y\pmod{\delta_m(a)}$。
+
+若 $a^r\equiv 1\pmod m$，则 $\delta_m(a)\mid r$。
+\end{coro}
+\end{frame}
+
+\begin{frame}
+阶还有以下有趣的性质：
+
+\begin{itemize}
+\item $\delta_m(a^k)=\dfrac{\delta_m(a)}{\gcd(\delta_m(a),k)}$
+\item 若 $\gcd(\delta_m(a),\delta_m(b))=1$，则 $\delta_m(ab)=\delta_m(a)\delta_m(b)$
+\item $\delta_m(a)=\delta_m(a^{-1})$
+\end{itemize}
+\end{frame}
+
+\subsubsection{阶的计算}
+
+\begin{frame}
+由欧拉定理，$a^{\varphi(m)}\equiv1\pmod m$。又有 $a^r\equiv 1\pmod m$ 当且仅当 $r$ 是 $\delta_m(a)$ 的倍数。
+
+故令 $x=\varphi(m)$，不断尝试用 $\varphi(m)$ 的素因子去除 $x$，得到最小的 $x$ 满足 $a^x\equiv 1\pmod m$。此时 $x$ 即为 $\delta_m(a)$。
+\end{frame}
+
+\subsubsection{离散对数判定}
+
+\begin{frame}
+给定素数 $p$ 和整数 $a,b$，形如 $a^x\equiv b\pmod p$ 的方程称为离散对数方程。利用阶可以快速判定其是否有解。
+
+\begin{theo}
+$a^x\equiv b\pmod p$ 有解当且仅当 $\delta_p(b)\mid \delta_p(a)$。
+\end{theo}
+
+必要性：$b^{\delta(a)}\equiv (a^{\delta(a)})^x\equiv 1\pmod p$。故 $\delta_p(b)\mid\delta_p(a)$。
+
+充分性：记 $d=\delta_p(a)$，$a,a^2,\dots,a^d$ 在模 $p$ 意义下两两不同余。由 $\delta_p(b)\mid\delta_p(a)$ 知 $b^d\equiv 1\pmod p$。拉格朗日定理保证了 $b\equiv a^i\pmod p,i\in\{1,2,\dots,d\}$。
+\end{frame}
+
+\subsubsection{ABC335G Discrete Logarithm Problems}
+
+\begin{frame}
+一道算法竞赛中罕见的和阶有关的题（
+
+给定 $n$ 个整数 $a_1,\dots,a_n$ 和素数 $p$，求有多少对 $i,j(1\le i,j\le n)$ 满足存在某个正整数 $k$，使得 $a_i^k\equiv a_j\pmod p$。
+
+$2\le n\le 2\times10^5,p\le 10^{13}$。
+
+利用前面的结论，分别求出每个 $a_i$ 的阶 $\delta_i$，数有多少对 $i,j$ 满足 $\delta_i\mid\delta_j$ 即可。
+\end{frame}
+
+\subsection{原根}
+
+\subsubsection{原根的定义}
+
+\begin{frame}
+若 $a$ 模 $m$ 的阶恰好等于 $\varphi(m)$，则称 $a$ 为模 $m$ 的一个原根。
+
+检验一个数 $a$ 是否为原根，只需枚举 $\varphi(m)$ 的所有素因子 $p_i$，判断是否有 $a^{\varphi(m)/p_i}\not\equiv1\pmod m$ 同时成立即可。
+
+一个模数存在原根当且仅当其为 $2,4,p^\alpha,2p^{\alpha}$，其中 $p$ 为奇素数，$\alpha\ge 1$。
+\end{frame}
+
+\begin{frame}
+\begin{theo}[原根个数]
+一个模数 $m$ 如果存在原根，则恰有 $\varphi(\varphi(m))$ 个原根。
+\end{theo}
+
+\begin{proof}
+取一个原根 $g$。已知，$1,g,g^2,\dots,g^{\varphi(m)-1}$ 两两不同余，且均和 $m$ 互素，故构成模 $m$ 的简化剩余系。
+
+所有原根均在简化剩余系中，设 $g^k$ 为一个原根，有 $\delta_m(g^k)=\dfrac{\delta_m(g)}{\gcd(\delta_m(g),k)}$，则 $\gcd(\delta_m(g),k)=1$。于是可知恰有 $\varphi(\delta_m(g))=\varphi(\varphi(m))$ 个原根。
+\end{proof}
+
+从中也可以得到从一个原根求出所有原根的算法。
+\end{frame}
+
+\begin{frame}
+更加广泛的结论是，若 $m$ 存在原根，则使得 $\delta_m(a)=l$ 的 $a$ 的个数为 $\left\{\begin{aligned}&0 &l\nmid\varphi(m)\\&\varphi(l) &l\mid\varphi(m) \end{aligned} \right.$。
+\end{frame}
+
+\subsubsection{原根的计算}
+
+\begin{frame}
+最小原根不会很大。因此可以暴力地从小到大枚举每个 $a$，若 $\gcd(a,m)=1$ 且 $\delta_m(a)=\varphi(m)$，则其为一个原根。进而可以求出所有原根。
+
+对于素数 $p$，其最小原根在 $O(p^{1/4})$ 级别。
+
+如果假设广义黎曼猜想成立，最小原根在 $O((\ln p)^2\cdot d((p-1)^2))$ 级别。$d(n)$ 在 $O(n^{\epsilon})$ 级别，对于所有 $\epsilon>0$。
+\end{frame}
+
+\subsubsection{指标}
+
+\begin{frame}
+对于模数 $m$，原根 $g$ 的幂次覆盖模 $m$ 的简化剩余系。因此对于所有 $\gcd(x,m)=1$ 的 $x$，存在一个整数 $k$ 使得 $x\equiv g^k\pmod m$。这个 $k$ 称为 $x$ 以 $g$ 为底的指标，记为 $\mathrm{ind}_g(x)$。
+
+下面给出关于指标的一些性质：
+
+\begin{itemize}
+\item 所有 $x$ 以 $g$ 为底的指标都在同一个模 $\varphi(m)$ 的剩余类中。
+\item $\mathrm{ind}_g(ab)\equiv \mathrm{ind}_g(a)+\mathrm{ind}_g(b)\pmod {\varphi(m)}$。
+\item $\mathrm{ind}_g(a^n)\equiv n\cdot \mathrm{ind}_g(a)\pmod{\varphi(m)}$。
+\end{itemize}
+
+这意味着在有原根的模数下，乘法等同于指标的加法。
+\end{frame}
+
+\subsubsection{BSGS 算法}
+
+\begin{frame}
+如何求指标？$g^k\equiv x\pmod m$ 是一个离散对数问题，可以使用下面的 BSGS 算法。
+
+令 $S=\lceil\sqrt{\varphi(m)}\rceil$，则 $\forall k$，可以将 $k$ 唯一写成 $iS+j\ (0\le i,j<S)$ 的形式。故只需找到一组 $i,j$ 使得 $g^{iS}\equiv xg^{-j}\pmod m$。
+
+将所有的 $xg^{-j}$ 加入哈希表，再遍历所有 $g^{iS}$，查看是否有 $xg^{-j}$ 与之相同即可。复杂度 $O(\sqrt{p})$。
+\end{frame}
+
+\subsubsection{高次剩余}
+
+\begin{frame}
+对于素数 $p$ 和整数 $a,b$，求 $0\le x<p,x^a\equiv b\pmod p$ 的所有整数 $x$。
+
+先找到一个原根 $g$，$\mathrm{ind}_g(x)$ 记为 $x'$，$\mathrm{ind}_g(b)$ 记为 $b'$。则原方程等价于求所有满足 $ax'\equiv b'\pmod {\varphi(p)}$ 的 $x'$。容易解决。
+\end{frame}
+
+\subsubsection{UOJ525 平行四边形}
+
+\begin{frame}
+一个 $n\times n$ 的棋盘，放入 $n$ 个棋子使得没有两个棋子在同行或同列，没有四个棋子构成平行四边形（包括退化）。保证 $n+1$ 为素数。
+
+$n\le 1000$。
+\end{frame}
+
+\begin{frame}
+题目要求等价于：构造一个 $1\sim n$ 的排列 $p_1,\dots,p_n$，使得对于任意固定的间距 $k=i-j$，$p_i-p_j$ 两两不同。
+
+取 $n+1$ 的一个原根 $g$，直接令 $p_i=g^i\bmod (n+1)$。对于某个固定的间距 $k$，$p_{i}-p_j\equiv g^{j+k}-g^j\equiv g^j(g^k-1)\pmod {n+1}$。$g^k-1\not\equiv 0\pmod {n+1}$，且遍历所有 $j$ 时 $g^j$ 两两不同。故 $p_i-p_j$ 两两不同。
+\end{frame}
+
+\subsubsection{CF360D Levko and Sets}
+
+\begin{frame}
+给定素数 $p$ 以及两个整数数组 $a_1,\dots,a_n$ 和 $b_1,\dots,b_m$。现在要生成 $n$ 个集合，第 $i$ 个集合生成方式如下：
+
+\begin{itemize}
+\item 开始元素只有 $1$。
+\item 从集合中选出一个元素 $c$，对于所有 $j$，若 $c\times a_i^{b_j}\bmod p$ 不在当前集合中，将其加入集合。
+\item 不断重复上述操作直到集合中元素不变。
+\end{itemize}
+
+求 $n$ 个集合并的大小。
+
+$n\le 10^4,m\le 10^5,p\le 10^9,a_i<p,b_i\le 10^9$。
+\end{frame}
+
+\begin{frame}
+取 $p$ 的一个原根 $g$，对所有 $a_i$ 求指标 $d_i$，即 $g^{d_i}\equiv a_i\pmod p$。则构造集合的方式变成：初始元素 $0$，每次加上 $d_i\cdot b_j$，对 $p-1$ 取模。
+
+由裴蜀定理，集合里最终的元素为所有 $s_i=\gcd(\gcd(b_1,\dots,b_m)\cdot d_i,p-1)$ 的倍数。
+
+所有 $s_i$ 均为 $p-1$ 的因数，最终要求有多少 $1\le x\le p-1$ 满足 $\exists s_i\mid x$。可以 $O(\sqrt{p}\log p)$ 解决。
+\end{frame}
+
+\end{document}

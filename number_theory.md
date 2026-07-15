@@ -10,7 +10,9 @@
 
 （整数集 $\Z$ 不能构成一个域，只能是整数环。不要实数域有理数域说顺口了就说整数域）
 
-为了应对整数除法的不封闭性，数学家往两种方向探索：一是引入有理数，二是引入整除。此课件主要探讨后者。
+为了应对整数除法的不封闭性，我们引入整除的概念。
+
+---
 
 * 整除的定义
 
@@ -21,6 +23,8 @@
 * 重要性质
 
   $d\mid a,d\mid b\implies d\mid ua+vb\ (u,v\in\Z)$
+
+---
 
 * 带余除法的定义
 
@@ -44,11 +48,15 @@
 
   $a,b\in\Z,b>0$，则 $a=b\left\lfloor\dfrac{a}{b}\right\rfloor+b\left\{\dfrac{a}{b}\right\}$
 
+---
+
 * 复合性质
 
   $m\in\Z^{+},x\in\R$，则 $\left\lfloor\dfrac{x}{m}\right\rfloor=\left\lfloor\dfrac{\lfloor x\rfloor}{m}\right\rfloor$
 
   $a\in\Z,b,c\in\Z^{+}$，则 $\left\lfloor\dfrac{a}{bc}\right\rfloor=\left\lfloor\dfrac{\left\lfloor\frac{a}{b}\right\rfloor}{c}\right\rfloor$
+
+这两条性质在后面的数论分块中很重要。
 
 ### 最大公因数
 
@@ -66,25 +74,23 @@
 
 #### 基本性质
 
-* 基本性质
+* $\gcd(a,b)=\gcd(|a|,|b|)$
 
-  $\gcd(a,b)=\gcd(|a|,|b|)$
+* $\gcd(\gcd(a,b),c)=\gcd(a,\gcd(b,c))$
 
-  $\gcd(\gcd(a,b),c)=\gcd(a,\gcd(b,c))$
-
-  $\mathrm{lcm}(\mathrm{lcm}(a,b),c)=\mathrm{lcm}(a,\mathrm{lcm}(b,c))$
+* $\mathrm{lcm}(\mathrm{lcm}(a,b),c)=\mathrm{lcm}(a,\mathrm{lcm}(b,c))$
 
   （如果把 $\gcd$ 或 $\mathrm{lcm}$ 看做一个二元运算 $\oplus$，这意味着 $a_1\oplus\dots\oplus a_n$ 可以任意加括号）
 
   （在表达式树上这种操作意味着左旋和右旋，一棵树一定可以通过右旋变成一棵标准的右斜链，然后再通过左旋变成任意形状的树）
 
-  $\gcd(a,b)\mathrm{lcm}(a,b)=ab$
+* $\gcd(a,b)\mathrm{lcm}(a,b)=ab$
 
-  $d\mid a,d\mid b\iff d\mid\gcd(a,b)$
+* $d\mid a,d\mid b\iff d\mid\gcd(a,b)$
 
-  $\gcd(ma,mb)=m\gcd(a,b)$
+* $\gcd(ma,mb)=m\gcd(a,b)$
 
-  $\gcd(a^n,b^n)=\gcd(a,b)^n$
+* $\gcd(a^n,b^n)=\gcd(a,b)^n$
 
 #### 欧几里得算法
 
@@ -102,6 +108,8 @@ int gcd(int a, int b) {
     return gcd(b, a % b);
 }
 ```
+
+---
 
 每次操作后 $ab$ 至少会变为原来的 $1/2$，故时间复杂度 $O(\log a+\log b)$。
 
@@ -131,6 +139,8 @@ $$
   若 $a,b$ 为整数且 $\gcd(a,b)=d$，则 $\forall x,y\in\Z,d\mid ax+by$。且存在一组 $x,y$ 使得 $ax+by=d$。
 
 裴蜀定理告诉我们存在这样的 $x,y$。下面的扩展欧几里得算法可以找出一组特定的 $x,y$。
+
+---
 
 * 扩展欧几里得算法
 
@@ -163,6 +173,8 @@ $$
 有一个密码箱，$0$ 到 $n-1$ 中的某些整数是它的密码。且满足：若 $a$ 和 $b$ 是它的密码，则 $(a+b)\bmod n$ 也是它的密码（$a,b$ 可以相等）。某人试了 $k$ 次密码 $m_1,\dots,m_k$，前 $k-1$ 次都失败了，最后一次成功了。问，该密码箱最多有多少种不同的密码。
 
 $1\le k\le 2.5\times 10^5,k\le n\le 10^{14}$。
+
+---
 
 设最小非零的密码为 $d$，则所有 $d$ 的倍数也是密码。若存在密码 $x$ 不是 $d$ 的倍数，则由裴蜀定理 $\gcd(x,d)<d$ 也是密码，与 $d$ 的最小性矛盾。故所有密码恰是 $d$ 的所有倍数。进一步可知 $d\mid n$。
 
@@ -202,6 +214,8 @@ $a,b$ 互素的充要条件是 $\exists u,v\in \Z,ua+vb=1$。
 
 （$\Z[\sqrt{10}]=\{a+b\sqrt{10}\mid a,b\in\Z\}$ 就是例外，$2\mid(2+\sqrt{10})(-2+\sqrt{10})$，$2$ 不可约但非素）
 
+---
+
 * 定理
 
   若 $p$ 为素数，$a$ 是任一整数，则要么 $p\mid a$，要么 $\gcd(p,a)=1$。
@@ -209,6 +223,8 @@ $a,b$ 互素的充要条件是 $\exists u,v\in \Z,ua+vb=1$。
 * 欧几里得引理
 
   若素数 $p\mid ab$，则 $p\mid a$ 或 $p\mid b$。
+
+---
 
 * 算术基本定理
 
@@ -230,6 +246,8 @@ $T$ 组询问，每组询问给定 $x,z$，求最小的正整数 $y$ 使得 $z=x
 
 $1\le T\le 5\times10^5,1\le x\le 10^9,1\le z<2^{63}$。
 
+---
+
 对于每个 $p$，记 $v_p(x)$ 为 $x$ 的分解式中 $p$ 上的指数。则可知有解的必要条件是 $\forall p\in \mathbb{P},v_p(x)\le v_p(z)$，并且若 $3v_p(x)\le v_p(z)$，则 $v_p(y)=v_p(z)-2v_p(x)$，否则 $2v_p(y)=v_p(z)-v_p(x)$。
 
 将两种情况统一起来，可得 $v_p(y)=\dfrac{2v_p(z)-v_p(x)-\min\{v_p(z),3v_p(x)\}}{2}$。对所有 $p$ 并行处理，$y=\sqrt{\dfrac{z^2}{x\gcd(z,x^3)}}$。若不为整数则无解。
@@ -243,6 +261,8 @@ $1\le T\le 5\times10^5,1\le x\le 10^9,1\le z<2^{63}$。
 好的符号体系可以大大降低描述问题的难度，使得我们能把更多精力放在问题本身上。例如下面是一套不好的符号体系：
 
 <img src=".\pic1.png" style="zoom:70%;" align='left'/>
+
+---
 
 * 同余定义
 
@@ -268,6 +288,8 @@ $1\le T\le 5\times10^5,1\le x\le 10^9,1\le z<2^{63}$。
 
 特别地，$\{0,1,\dots,m-1\}$ 称为模 $m$ 的最小非负完系。
 
+---
+
 * 欧拉函数
 
   欧拉函数 $\varphi(a)$ 为定义在正整数上的函数，$\varphi(a)$ 等于 $0,1,\dots,a-1$ 中与 $a$ 互素的数的个数。
@@ -275,6 +297,8 @@ $1\le T\le 5\times10^5,1\le x\le 10^9,1\le z<2^{63}$。
 * 简化剩余系
 
   设 $a_0,a_1,\dots,a_{\varphi(m)-1}$ 是 $\varphi(m)$ 个整数，若其中任意两数都不在同一剩余类中，且每个数都与 $m$ 互素，则称 $\{a_0,a_1,\dots,a_{\varphi(m)-1}\}$ 为模 $m$ 的一个简化剩余系或既约剩余系，简称缩系。
+
+---
 
 尝试证明一下性质：
 
@@ -308,6 +332,8 @@ $1\le T\le 5\times10^5,1\le x\le 10^9,1\le z<2^{63}$。
 
   看函数图像可知该方程有三个实根。但是完全限制在 $\R$ 上不容易求出，引入 $\C$ 后可以通过求根公式快速求出。中间过程会产生虚数单位 $i$，但最后全部消掉，结果回到 $\R$ 中。
 
+---
+
 * 逆元定义
 
   设 $m$ 是一个大于 $1$ 的正整数，$a$ 是任意一个整数。若存在整数 $x$ 使得 $ax\equiv 1\pmod m$ 成立，则称 $x$ 为 $a$ 模 $m$ 的乘法逆元，记为 $a^{-1}$。
@@ -317,6 +343,8 @@ $ax\equiv 1\pmod m\iff ax+m\xi=1$。由裴蜀定理，$a$ 存在逆元的充要�
 所有逆元属于同一个剩余类。
 
 模为素数 $p$ 时，每个整数 $0<x<p$ 均有逆元。
+
+---
 
 * 例题
 
@@ -336,6 +364,8 @@ $ax\equiv 1\pmod m\iff ax+m\xi=1$。由裴蜀定理，$a$ 存在逆元的充要�
 
   由前面的结论，当 $x$ 取遍模 $m$ 的简化剩余系时，$ax$ 也取遍模 $m$ 的简化剩余系。设 $\{r_1,r_2,\dots,r_{\varphi(m)}\}$ 是一个简化剩余系，则 $r_1r_2\dots r_{\varphi(m)}\equiv a^{\varphi(m)}r_1r_2\dots r_{\varphi(m)}\pmod m$。又 $\gcd(r_1,m)=\gcd(r_2,m)=\dots=\gcd(r_{\varphi(m)},m)=1$，故 $\gcd(r_1r_2\dots r_{\varphi(m)},m)=1$。于是 $a^{\varphi(m)}\equiv 1\pmod m$。
 
+---
+
 * 费马小定理
 
   对于素数 $p$ 和模 $p$ 不为 $0$ 的整数 $a$，$a^{p-1}\equiv 1\pmod p$。
@@ -343,6 +373,8 @@ $ax\equiv 1\pmod m\iff ax+m\xi=1$。由裴蜀定理，$a$ 存在逆元的充要�
 于是 $a$ 的逆元可以直接表示为 $a^{\varphi(m)-1}$ 或 $a^{p-2}$。
 
 exgcd 和快速幂都需要 $\log$ 时间复杂度，下面介绍一种离线的线性预处理、$O(1)$ 查询的逆元求法。
+
+---
 
 * 离线逆元
 
@@ -399,6 +431,8 @@ $$
 
 将其转化为不定方程 $x=a_1+\xi_1m_1=a_2+\xi_2m_2$，即 $\xi_1m_1-\xi_2m_2=a_2-a_1$。有解的充要条件是 $\gcd(m_1,m_2)\mid a_2-a_1$。
 
+---
+
 还是一样使用 exgcd 求出一个特解 $\xi_1',\xi_2'$，并表示出通解
 $$
 \xi_1=\frac{\xi_1'(a_2-a_1)}{\gcd(m_1,m_2)}+k\frac{m_2}{\gcd(m_1,m_2)}
@@ -422,6 +456,8 @@ $$
 
 $k\le 10^4,n,m,a_i\le 10^{12}$。
 
+---
+
 $\gcd(x,y+i-1)=a_i$ 的必要条件是 $a_i\mid x,a_i\mid y+i-1$。由此列出关于 $x$ 和 $y$ 的线性方程组。
 
 求解得到 $x=k_1\cdot\mathrm{lcm}(a_1,\dots,a_k),y=k_2\cdot\mathrm{lcm}(a_1,\dots,a_k)+y_0$。
@@ -438,6 +474,8 @@ $$
 
 $1\le n,m\le 10^6,1\le P,Q\le 10^6,1\le T\le 10^{18}$。
 
+---
+
 对满足条件的 $x$，存在 $i,j,u,v$，$x=a_i+uP=b_j+vQ$，即 $uP-vQ=b_j-a_i$。记 $g=\gcd(P,Q)$，必有 $g\mid b_j-a_i$。故把 $A,B$ 中的所有元素按模 $g$ 分组，$A_r=\{a_i\mid a_i\equiv r\pmod g\}$。接下来将问题限制在 $A_r,B_r$ 上，统计所有模 $g$ 余 $r$ 的 $x$。
 
 对 $uP-vQ=b_j-a_i$ 使用 exgcd 返回一个解 $u_0,v_0$，所有可能的 $u=\dfrac{u_0(b_j-a_i)}{g}+k\cdot\dfrac{Q}{g}$。于是解得
@@ -446,9 +484,15 @@ $$
 x\equiv a_i+\dfrac{Pu_0(b_j-a_i)}{g}\equiv (g-Pu_0)\dfrac{a_i-r}{g}+Pu_0\dfrac{b_j-r}{g}+r\pmod{\mathrm{lcm}(P,Q)}
 $$
 
-其中 $u_0$ 只与 $P,Q$ 有关。将 $A_r$ 中的每个元素 $a$ 变为 $(g-Pu_0)\dfrac{a-r}{g}=Qv_0\dfrac{a-r}{g}$，$B_r$ 中的每个元素 $b$ 变为 $Pu_0\dfrac{b-r}{g}$。问题变成求有多少 $x$ 满足 $\exist a,b,\ \mathrm{s.t.}\ x\equiv a+b+r\pmod{\mathrm{lcm}(P,Q)}$。注意到不会有两对不同的 $a,b$ 撞在一起，于是容易解决。
+---
 
-### 素数模的同余式
+其中 $u_0$ 只与 $P,Q$ 有关。将 $A_r$ 中的每个元素 $a$ 变为 $(g-Pu_0)\dfrac{a-r}{g}=Qv_0\dfrac{a-r}{g}$，$B_r$ 中的每个元素 $b$ 变为 $Pu_0\dfrac{b-r}{g}$。问题变成求有多少 $x$ 满足 $\exist a,b,\ \mathrm{s.t.}\ x\equiv a+b+r\pmod{\mathrm{lcm}(P,Q)}$。
+
+注意到不会有两对不同的 $a,b$ 撞在一起，于是容易解决。
+
+### 二次剩余
+
+#### 素数模的同余式
 
 下面考虑素数模下多项式和同余式的一些一般性质。
 
@@ -464,6 +508,8 @@ $$
 
 任意整数 $x$ 满足 $x^p-x\equiv 0\pmod p$，故 $f(x)\equiv r(x)\pmod p$，这意味着 $f(x)$ 与一个次数不超过 $p-1$ 的多项式等价。下面可以令 $n<p$。
 
+---
+
 * 因式定理
 
   设 $k\le n$，$x\equiv a_i\pmod p \ (i=1,2,\dots,k)$ 是同余方程的 $k$ 个不同解。则存在首项系数为 $a_n$ 的 $n-k$ 次多项式 $f_k(x)$，使得 $f(x)\equiv (x-a_1)(x-a_2)\dots(x-a_k)f_k(x)\pmod p$。
@@ -475,6 +521,8 @@ $$
 * 费马小定理的推论
 
   对任意整数 $x$，$x^{p-1}-1\equiv (x-1)(x-2)\dots(x-(p-1))\pmod p$。
+
+---
 
 * 威尔逊定理
 
@@ -492,7 +540,7 @@ $$
 
 （特别之处在于素数模下 $0,1,\dots,p-1$ 构成一个域 $\mathbb{F}_p$，事实上拉格朗日定理在一切域上都成立：非零元素均有逆元，有多项式带余除法，无零因子）
 
-### 二次剩余
+#### 二次剩余
 
 现在来研究二次同余方程 $Ax^2+Bx+C\equiv 0\pmod m$。通过使用配方法和拆分模数，我们只需要研究核心问题 $x^2\equiv a\pmod p$，其中 $p$ 为奇素数。若该方程有解，称 $a$ 为模 $p$ 的二次剩余，否则称为二次非剩余。
 
@@ -505,6 +553,8 @@ $$
   $1,2,\dots,p-1$ 中恰好有 $\frac{p-1}{2}$ 个二次剩余。
 
   设有不同的 $x,y<p$ 满足 $x^2\equiv y^2\pmod p$，则 $(x-y)(x+y)\equiv 0\pmod p$，故必有 $y=p-x$。于是可知 $1^2,2^2,\dots,(\frac{p-1}{2})^2\bmod p$ 恰为所有的二次剩余。
+
+---
 
 * 欧拉判别法
 
@@ -532,6 +582,8 @@ $$
 \right.
 $$
 
+---
+
 * 简单性质
 
   $\left(\dfrac{a}{p}\right)\equiv a^{\frac{p-1}{2}}\pmod p$
@@ -541,6 +593,8 @@ $$
   （两个二次非剩余相乘的结果变成了二次剩余）
 
   $\left(\dfrac{ab^2}{p} \right)=\left(\dfrac{a}{p} \right)$
+
+---
 
 * 二次互反律
 
@@ -559,6 +613,8 @@ $$
 
 （一定要是 $\mathbb{F}_{p}$ 才能是一个域，不能只是模意义下的整数环 $\Z_m$）
 
+---
+
 * （引理）Freshman's Dream
 
   在特征为素数 $p$ 的代数系统中，$(x+y)^p=x^p+y^p$。
@@ -568,6 +624,8 @@ $\mathbb{F}_{p^2}$ 的特征与 $\mathbb{F}_p$ 相同，均为 $p$。于是 $\fo
 * 引理
 
   $\omega^p\equiv -w\pmod p$。
+
+---
 
 直接令 $x=(r+\omega)^{\frac{p+1}{2}}\bmod p$。下证 $x^2\equiv a\pmod p$ 以及 $x\in\mathbb{F}_p$。
 
@@ -581,12 +639,16 @@ $n$ 次询问，每次给出正整数 $p$ 和 $x$，求方程 $a^2+b^2\equiv x\p
 
 $n\le 10^5,p\le 10^7$。
 
+---
+
 $p$ 是不含平方因子的奇数，意味着可以分解为若干奇素数的乘积。可以拆开分别求解，再用中国剩余定理拼起来。答案为模数取遍 $p$ 的所有素因子时答案之积。
 
 下面设 $p$ 为奇素数。枚举 $u=a^2,v=b^2$，则 $u,v$ 需要同时为二次剩余。当 $u$ 为二次剩余时，对应着两个 $a$。$v$ 同理。可以用勒让德符号把二者统一起来：
 $$
 \text{ans}=\sum_{u+v\equiv x}\left(\left(\frac{u}{p}\right)+1\right)\left(\left(\frac{v}{p}\right)+1 \right)
 $$
+---
+
 模奇素数时二次剩余与二次非剩余数量相等，即 $\sum\limits_{i=0}^{p-1}\left(\dfrac{i}{p} \right)=0$。结合勒让德符号的完全积性，上式变成
 $$
 \text{ans}=p+\sum_{u+v\equiv x}\left(\frac{uv}{p}\right)=p+\sum_{u=0}^{p-1}\left(\frac{u(x-u)}{p}\right)
@@ -595,8 +657,6 @@ $$
 $$
 \text{ans}=p-\left(\frac{p-1}{p}\right)=p-(-1)^{\frac{p-1}{2}}
 $$
-可以 $O(1)$ 计算。
-
 ## 组合数相关
 
 ### 卢卡斯定理
@@ -610,6 +670,9 @@ $$
   \binom{n}{m}\equiv\binom{\lfloor n/p\rfloor}{\lfloor m/p\rfloor}\binom{n\bmod p}{m\bmod p}\pmod p
   $$
 
+
+---
+
 * 证明
 
   考虑 $(1+x)^n$，有
@@ -622,6 +685,8 @@ $$
   &\equiv \binom{\lfloor n/p\rfloor}{\lfloor m/p\rfloor}\binom{n\bmod p}{m\bmod p}\pmod p
   \end{align}
   $$
+
+---
 
 该定理可以自然地从二项式系数 $\dbinom{n}{m}$ 推广到多项式系数 $\dbinom{n}{a_1,a_2,\dots,a_m}=[x_1^{a_1}\dots x_m^{a_m}](x_1+\dots+x_m)^n$。
 
@@ -638,6 +703,8 @@ $$
 
 求 $\sum\limits_{l=1}^n\sum\limits_{r=l}^nf(l,r)$。$n\le 5\times10^5,a_i\le10^{18},p\in\{2,3,5,7\}$。
 
+---
+
 $f(l,r)=\dbinom{a_{l}+\dots+a_r}{a_l,\dots,a_r}\bmod p$。由卢卡斯定理，在 $p$ 进制下若 $a_l+\dots+a_r$ 发生了进位，则 $f(l,r)=0$。而若 $r-l>p\log a$，一定会发生进位。于是可知对于固定的 $l$，所有 $f(l,r)\neq 0$ 的 $r$ 一定距离 $l$ 很近。
 
 $f(l,r)$ 可由 $f(l,r-1)$ 增量求出。
@@ -647,6 +714,9 @@ $f(l,r)$ 可由 $f(l,r-1)$ 增量求出。
 $t$ 次询问，每次求 $\sum\limits_{i=0}^k\dbinom{n}{i}\bmod p$。$p=2333,t\le 10^5,n,k\le 10^{18}$。
 
 记 $f(n,k)=\sum\limits_{i=0}^k\dbinom{n}{i}$。有
+
+---
+
 $$
 \begin{align}
 f(n,k)&=\sum_{i=0}^k\binom{n}{i}\\
@@ -665,12 +735,16 @@ $$
 $$
 \binom{n}{m}\bmod p^k=\frac{n!}{m!(n-m)!}\bmod p^k
 $$
+---
+
 由于 $m!$ 与 $(n-m)!$ 不一定有逆元，所以尝试先把分子分母中的 $p$ 因子全部提出来。
 
 设 $f(x)$ 表示 $x!$ 除掉所有 $p$ 因子后的结果，$g(x)$ 表示 $x!$ 中因子 $p$ 的个数。则有
 $$
 \binom{n}{m}\bmod p^k=\frac{f(n)}{f(m)f(n-m)}p^{g(n)-g(m)-g(n-m)}\bmod p^k
 $$
+---
+
 拆分 $n!$ 来求 $f$ 和 $g$
 $$
 \begin{align}
@@ -679,6 +753,8 @@ n!&=\prod_{i=1}^{\lfloor n/p\rfloor}pi\prod_{i=1,i\perp p}^n i\\
 &\equiv p^{\lfloor n/p\rfloor}(\lfloor\frac{n}{p}\rfloor)!(\prod_{i=1,i\perp p}^{p^k}i)^{\lfloor n/p^k\rfloor}\prod_{i=1,i\perp p}^{n\bmod p^k}i\pmod {p^k}\\
 \end{align}
 $$
+---
+
 最后一个式子右边后两项不含因子 $p$。故有
 $$
 f(n)\equiv f(\lfloor\frac{n}{p}\rfloor)(\prod_{i=1,i\perp p}^{p^k}i)^{\lfloor n/p^k\rfloor}\prod_{i=1,i\perp p}^{n\bmod p^k}i\pmod {p^k}\\
@@ -715,6 +791,8 @@ $$
 
   $v_p\left(\dbinom{n+m}{n}\right)$ 等于 $n$ 与 $m$ 在 $p$ 进制下相加的进位次数。
 
+---
+
 * 证明
 
   令 $n=\sum\limits_{i=0}^{\infty} a_ip_i,m=\sum\limits_{i=1}^{\infty}b_ip^i$。于是
@@ -737,6 +815,8 @@ $$
 
 多测，$T\le2\times10^5$。$1\le n,m\le 10^{18}$。
 
+---
+
 我们可以通过一个状态推向另一个状态，同时可以通过一个状态反推回上一个状态，所以迷宫的状态一定会变成最开始的状态。
 
 设经过 $\text{ans}$ 次后第一次变成初始状态。设 $f(x,y)(0\le x<n,0\le y<m)$ 表示前 $\text{ans}$ 次有几次经过 $(x+1,y+1)$。每个格子一定都被经过偶数次，且向右和向下分别占一半。故
@@ -750,6 +830,8 @@ f(x,y)=
 \end{align}
 \right.
 $$
+---
+
 由此可得 $f(x,y)=\dfrac{\text{ans}\cdot \binom{x+y}{x}}{2^{x+y}}$。约束条件为 $\forall x<n,y<m,2\mid f(x,y)$。故 $\text{ans}$ 为 $2$ 的整数幂，$\log_2\text{ans}=\max\limits_{x,y}(x+y-v_2\left(\binom{x+y}{x} \right)+1)$。$v_2\left(\binom{x+y}{x} \right)=s_2(x)+s_2(y)-s_2(x+y)$。可以使用数位 $\text{dp}$ 在 $O(\log n)$ 解决。
 
 可以发现 $x+y$ 相同的格子上 $f(x,y)$ 都是同奇偶的。故可固定一维再枚举，更加简化。
@@ -759,6 +841,8 @@ $$
 给定一个素数 $p$ 和整数 $\alpha,A$，计算有多少对整数 $(n,k)$，满足 $0\le k\le n\le A$，且 $\dbinom{n}{k}$ 可以被 $p^{\alpha}$ 整除。
 
 $1\le p,\alpha\le 10^9$，$0\le A<10^{1000}$。
+
+---
 
 答案要求 $v_p\left(\dbinom{n}{k} \right)$ 大于等于 $\alpha$ 的 $(n,k)$ 数量。由库默尔定理，$v_p\left(\dbinom{n}{k}\right)$ 等于 $n-k$ 和 $k$ 在 $p$ 进制下相加的进位次数。
 
@@ -787,6 +871,8 @@ $A$ 很大，考虑在 $p$ 进制下数位 DP。设 $f(i,j,0/1,0/1)$ 表示前 $
   $a^x\equiv a^y\pmod m$ 当且仅当 $x\equiv y\pmod{\delta_m(a)}$。
 
   若 $a^r\equiv 1\pmod m$，则 $\delta_m(a)\mid r$。
+
+---
 
 阶还有以下有趣的性质：
 
@@ -834,15 +920,21 @@ $2\le n\le 2\times10^5,p\le 10^{13}$。
 
 （证明 $p$ 是原根。需要用到：对于素数 $p$ 和与 $p$ 互素的整数 $a,b$，存在整数 $c$ 满足 $\delta_p(c)=\mathrm{lcm}(\delta_p(a),\delta_p(b))$）
 
+---
+
 * 原根个数
 
   一个模数 $m$ 如果存在原根，则恰有 $\varphi(\varphi(m))$ 个原根。
 
-  取一个原根 $g$。已知，$1,g,g^2,\dots,g^{\varphi(m)-1}$ 两两不同余，且均和 $m$ 互素，故构成模 $m$ 的简化剩余系。
+* 证明
 
+  取一个原根 $g$。已知，$1,g,g^2,\dots,g^{\varphi(m)-1}$ 两两不同余，且均和 $m$ 互素，故构成模 $m$ 的简化剩余系。
+  
   所有原根均在简化剩余系中，设 $g^k$ 为一个原根，有 $\delta_m(g^k)=\dfrac{\delta_m(g)}{\gcd(\delta_m(g),k)}$，则 $\gcd(\delta_m(g),k)=1$。于是可知恰有 $\varphi(\delta_m(g))=\varphi(\varphi(m))$ 个原根。
 
 从中也可以得到从一个原根求出所有原根的算法。
+
+---
 
 更加广泛的结论是，若 $m$ 存在原根，则使得 $\delta_m(a)=l$ 的 $a$ 的个数为 $\left\{\begin{align}&0 &l\nmid\varphi(m)\\&\varphi(l) &l\mid\varphi(m) \end{align} \right.$。
 
@@ -850,7 +942,7 @@ $2\le n\le 2\times10^5,p\le 10^{13}$。
 
 最小原根不会很大。因此可以暴力地从小到大枚举每个 $a$，若 $\gcd(a,m)=1$ 且 $\delta_m(a)=\varphi(m)$，则其为一个原根。进而可以求出所有原根。
 
-对于素数 $p$，其最小原根在 $O(n^{1/4})$ 级别。
+对于素数 $p$，其最小原根在 $O(p^{1/4})$ 级别。
 
 如果假设广义黎曼猜想成立，最小原根在 $O((\ln p)^2\cdot d((p-1)^2))$ 级别。$d(n)$ 在 $O(n^{\epsilon})$ 级别，对于所有 $\epsilon>0$。
 
@@ -888,6 +980,8 @@ $2\le n\le 2\times10^5,p\le 10^{13}$。
 
 $n\le 1000$。
 
+---
+
  题目要求等价于：构造一个 $1\sim n$ 的排列 $p_1,\dots,p_n$，使得对于任意固定的间距 $k=i-j$，$p_i-p_j$ 两两不同。
 
 取 $n+1$ 的一个原根 $g$，直接令 $p_i=g^i\bmod (n+1)$。对于某个固定的间距 $k$，$p_{i}-p_j\equiv g^{j+k}-g^j\equiv g^j(g^k-1)\pmod {n+1}$。$g^k-1\not\equiv 0\pmod {n+1}$，且遍历所有 $j$ 时 $g^j$ 两两不同。故 $p_i-p_j$ 两两不同。
@@ -903,6 +997,8 @@ $n\le 1000$。
 求 $n$ 个集合并的大小。
 
 $n\le 10^4,m\le 10^5,p\le 10^9,a_i<p,b_i\le 10^9$。
+
+---
 
 取 $p$ 的一个原根 $g$，对所有 $a_i$ 求指标 $d_i$，即 $g^{d_i}\equiv a_i\pmod p$。则构造集合的方式变成：初始元素 $0$，每次加上 $d_i\cdot b_j$，对 $p-1$ 取模。
 
@@ -984,6 +1080,8 @@ $$
 * 封闭性：两个积性函数的狄利克雷卷积仍是积性函数。
 * 对于积性函数 $f,g$ 和完全积性函数 $h$，有 $(f*g)\cdot h=(f\cdot h)*(g\cdot h)$。
 
+---
+
 事实上，把所有的数论函数记作集合 $\mathcal{A}$，$(\mathcal{A},+,*)$ 构成一个带单位元的交换环。单位元为 $\epsilon$。
 
 其中非零积性函数构成子集 $\mathcal{M}$，$(\mathcal{M},*)$ 构成一个阿贝尔群。
@@ -1025,9 +1123,13 @@ $1$ 函数的逆为 $\mu$。
 
 $n\le 10^5,k\le n/2,a_i\le 10^{18}$。
 
+---
+
 若 $a_i$ 没被删除，则答案一定是 $a_i$ 的因数。同时，令 $b_j=\gcd(a_j,a_i)$，答案为满足 $\sum\limits_{j=1}^n[x\mid b_j]\ge n-k$ 的最大的 $x$。
 
 设最优解剩下的元素集合为 $S$。注意到随机选一个 $a_i$，其有至少一半的概率落在 $S$ 中。故随机常数次即可以高概率保证某次随机的 $a_i$ 在 $S$ 中。
+
+---
 
 记 $a_i$ 的所有因子构成集合 $D$，在 $D$ 上定义函数 $f(x)=\sum\limits_{j=1}^n[x=b_j]$。对 $f$ 做狄利克雷后缀和得到 $g(x)=\sum\limits_{x\mid y}f(y)$，答案即为最大的 $x$ 满足 $g(x)\ge n-k$。复杂度 $O(d(a)\log\log a)$。
 
@@ -1069,10 +1171,15 @@ $$
 
 #### 应用
 
-* 经典恒等式 $\varphi*1=\text{id}$，$\mu*1=\epsilon$
-* 处理逆元，求一个函数 $f$ 使得 $f*d=\epsilon$
+贝尔级数可以用来证明一些经典恒等式，比如 $\varphi*1=\text{id}$，$\mu*1=\epsilon$。
 
-练习：给定两个积性函数 $f(p^i)=p^i(p^i-1),g(p^i)=p^i\varphi(p^i)$。求 $f/g$ 的表达式。
+还可以用来处理逆元，求一个函数 $f$ 使得 $f*d=\epsilon$。
+
+* 例题
+
+  给定两个积性函数 $f(p^i)=p^i(p^i-1),g(p^i)=p^i\varphi(p^i)$。求 $f/g$ 的表达式。
+
+---
 
 $$
 f_p(x)=1+\sum_{i=1}^{\infty}(p^{2i}-p^i)x^i=1+\frac{p^2x}{1-p^2x}-\frac{px}{1-px}\\
@@ -1105,6 +1212,8 @@ $$
 #### P2260 模积和
 
 求 $\sum\limits_{i=1}^n\sum\limits_{j=1}^m(n\bmod i)(m\bmod j),i\neq j$。$n,m\le 10^9$。
+
+---
 
 先忽略 $i\neq j$ 的条件，原式等价于 $(\sum\limits_{i=1}^n n\bmod i)(\sum\limits_{j=1}^mm\bmod j)$。
 
@@ -1145,6 +1254,8 @@ g(n)=\sum_{d\mid n} f(d)\mu(\frac{n}{d})
 $$
 反演是普通函数与积性函数的卷积，由前面的分析，复杂度为 $O(n\log\log n)$。
 
+---
+
 对于倍数的求和式，有类似的反演形式：
 $$
 f(n)=\sum_{n\mid d}g(d)\\
@@ -1168,6 +1279,8 @@ $$
 
 莫比乌斯反演可以处理这类和 $\gcd$ 求和相关的问题。
 
+---
+
 利用 $\mu*1=\epsilon$，即 $\sum\limits_{d\mid n}\mu(d)=[n=1]$，进行如下变换：
 $$
 \begin{align}
@@ -1177,6 +1290,8 @@ $$
 =&\sum_{d=1}^n\mu(d)\lfloor\frac{n}{d}\rfloor\lfloor\frac{m}{d}\rfloor
 \end{align}
 $$
+---
+
 一般形式：
 $$
 \begin{align}
@@ -1186,6 +1301,8 @@ $$
 =&\sum_{d=1}^n(f*\mu)(d)\lfloor\frac{n}{d}\rfloor\lfloor\frac{m}{d}\rfloor
 \end{align}
 $$
+---
+
 更一般地，若 $f,g$ 为完全积性函数：
 $$
 \begin{align}
@@ -1210,6 +1327,8 @@ $$
 
 $n\le 5\times10^6,k\le 10^{18}$。
 
+---
+
 沿用之前的方法，记 $f=\mu^2\cdot\text{id},g=f*\mu$。原式化为 $\sum\limits_{i=1}^n\sum\limits_{j=1}^n(i+j)^k\sum\limits_{d\mid i,j}g(d)$，即 $\sum_{d=1}^ng(d)d^k\sum_{i=1}^{\lfloor n/d\rfloor}\sum_{j=1}^{\lfloor n/d\rfloor}(i+j)^k$。后面的二重求和式记作 $S(x)=\sum\limits_{i=1}^x\sum\limits_{j=1}^x(i+j)^k$，容易在线性时间内预处理出 $S$ 在 $1\sim n$ 上每个点的取值。
 
 再来处理 $g$。可以看出 $g$ 是积性函数，故只需求出 $g$ 在素数幂处的取值即可线筛。$1\sim n$ 中所有素数幂的幂次和在 $O(\dfrac{n}{\log n})$ 级别，故暴力处理即可。
@@ -1222,6 +1341,8 @@ $n\le 5\times10^6,k\le 10^{18}$。
 
 给定正整数 $n$，求 $\sum\limits_{i=1}^n\sum\limits_{j=1}^nf(i,j)$。$n\le 2\times10^7$。
 
+---
+
 对于 $(a,b)$，$a\ge b$ 时将其变换为 $(a-b,b)$，否则变换为 $(a,b-a)$。答案显然不变。
 
 把每个点向其变换后的点连一条边，形成二叉树结构。对于点 $(a,b)$，其左儿子为 $(a+b,b)$，右儿子为 $(a,a+b)$。答案即为所有点的子树大小之和。
@@ -1229,6 +1350,8 @@ $n\le 5\times10^6,k\le 10^{18}$。
 * 结论
 
   $(a,b)$ 子树大小为 $1+2\sum\limits_{i=1}^n\sum\limits_{j=1}^n[\gcd(i,j)=1][ai+bj\le n]$。
+
+---
 
 * 证明
 
@@ -1238,6 +1361,8 @@ $n\le 5\times10^6,k\le 10^{18}$。
 
   $\pmatrix{1 & 1}M$ 构成的集合与 $\{\pmatrix{i & j}\mid \gcd(i,j)=1\}$ 相等，且存在一个双射。因此答案即为 $1+2\sum\limits_{i=1}^n\sum\limits_{j=1}^n[\gcd(i,j)=1][ai+bj\le n]$。
 
+---
+
 开始化式子：
 $$
 \begin{align}
@@ -1246,6 +1371,8 @@ $$
 =&\sum_{d=1}^n\mu(d)S(\lfloor\frac{n}{d}\rfloor)
 \end{align}
 $$
+---
+
 其中
 $$
 \begin{align}
@@ -1279,6 +1406,8 @@ S_g(n)&=\sum_{i=1}^n\sum_{d\mid i}h(d)f(\frac{i}{d})\\
 S_f(n)&=\frac{1}{h(1)}(S_g(n)-\sum_{d=2}^nh(d)S_f(\lfloor\frac{n}{d} \rfloor))
 \end{align}
 $$
+---
+
 上式可以整除分块，枚举每个 $m=\lfloor\dfrac{n}{d}\rfloor$，满足 $\lfloor\dfrac{n}{d}\rfloor=m$ 的 $d$ 为 $\lfloor\dfrac{n}{m+1}\rfloor+1\sim\lfloor\dfrac{n}{m}\rfloor$。由于 $h$ 可块筛，故 $S_f(n)$ 可以 $O(\sqrt n)$ 计算。
 
 分析复杂度。在每个 $n$ 处复杂度都是 $O(\sqrt n)$，总复杂度为 $O(\sum\limits_{i=1}^{\sqrt n}\sqrt i+\sqrt{n/i})=O(n^{3/4})$。
@@ -1320,6 +1449,8 @@ $n$ 可以被唯一地分解为 $x^2y$，其中 $\mu^2(y)=1$。
 
 $S_f(n)=\lfloor \sqrt n\rfloor$ 可以 $O(1)$ 计算，故可以杜教筛。复杂度 $O(n^{2/3})$。
 
+---
+
 更优秀的做法：
 $$
 \mu^2(n)=[x=1]=\sum_{d\mid x}\mu(d)=\sum_{d^2\mid n}\mu(d)\\
@@ -1339,6 +1470,8 @@ $$
 
 求 $\sum\limits_{i=1}^n\sum\limits_{j=1}^n\sigma(ij)$。$n\le 10^9$。
 
+---
+
 * 引理
   $$
   \sigma(xy)=\sum_{i\mid x}\sum_{j\mid y}\frac{x}{i}\cdot j[\gcd(i,j)=1]
@@ -1349,6 +1482,8 @@ $$
   在集合 $S=\{(i,j)\mid i|x,j| y,\gcd(i,j)=1 \}$ 与 $D=\{d\mid xy\}$ 之间构造映射。$(i,j)$ 对应于 $d=\dfrac{x}{i}\cdot j$，$d$ 对应于 $(\dfrac{x}{\gcd(d,x)},\dfrac{d}{\gcd(d,x)})$。
 
   分别在每个素因子上考虑，可以发现两个映射都是单射，且互为逆映射。故为双射。
+
+---
 
 根据引理，原式化为
 $$
@@ -1367,14 +1502,20 @@ $$
 
 $n,m\le 10^9,k\le 2000$。
 
+---
+
 设 $\dfrac{x}{y}$ 是纯循环小数，循环节长度为 $l$。有 $\dfrac{xk^l}{y}-\dfrac{x}{y}\in\Z$，即 $xk^l\equiv x\pmod y$。而 $\gcd(x,y)=1$，故 $k^l\equiv 1\pmod y$，等价于 $\gcd(k,y)=1$。易知这也是充分条件。
 
 故答案为
+$$
+\sum\limits_{x=1}^n\sum\limits_{y=1}^m[\gcd(x,y)=1][\gcd(y,k)=1]
+$$
+
+---
 
 $$
 \begin{align}
-&\sum\limits_{x=1}^n\sum\limits_{y=1}^m[\gcd(x,y)=1][\gcd(y,k)=1]\\
-=&\sum_{d=1}^n\mu(d)\sum_{d\mid x}\sum_{d\mid y}[\gcd(y,k)=1]\\
+\text{ans}=&\sum_{d=1}^n\mu(d)\sum_{d\mid x}\sum_{d\mid y}[\gcd(y,k)=1]\\
 =&\sum_{d=1}^n\mu(d)\cdot\chi_k(d)\cdot\lfloor\frac{n}{d}\rfloor\cdot S_{\chi_k}(\lfloor\frac{m}{d}\rfloor)
 \end{align}
 $$
@@ -1399,6 +1540,8 @@ $$
   O(\sum_{a=1}^{\sqrt n}\sqrt[3]{\frac{n}{a^2}})=O(n^{1/3}\int_{1}^{n^{1/2}}x^{-2/3}\mathrm{d}x)=O(\sqrt n)
   $$
 
+---
+
 如何找 $n$ 以内所有 PN？取出 $\sqrt n$ 以内所有素数，用 DFS 对这些素数及其素数幂进行组合即可。复杂度 $O(\sqrt n)$。
 
 #### 素数拟合
@@ -1414,12 +1557,16 @@ S_f(n)&=\sum_{i=1}^n\sum_{d\mid i}h(d)g(\frac{i}{d})\\
 &=\sum_{d\in \text{PN}}h(d)S_g(\lfloor\frac{n}{d}\rfloor)
 \end{align}
 $$
+---
+
 接下来求 $h$。因为 $h$ 有积性，故只需要求出其在素数幂处的取值。
 $$
 f(p^k)=\sum_{i=0}^kh(p^i)g(p^{k-i})\\
 h(p^k)=f(p^k)-\sum_{i=1}^{k-1}h(p^i)g(p^{k-i})
 $$
 所有的 $h(p^k)$ 都可以在找 PN 的过程中暴力求出。这部分的复杂度为 $O(\sum\limits_{p\in\mathbb{P},p\le \sqrt n}\log_p^2(n))=O(\dfrac{\sqrt n}{\log n})$，不为瓶颈。
+
+---
 
 一般复杂度瓶颈在于块筛 $g$。常为 $O(n^{2/3})$。
 
@@ -1439,6 +1586,8 @@ $\text{id}\cdot\varphi=\text{id}\cdot(\text{id}/1)=\text{id}_2/\text{id}$，可�
 #### LOJ6053 简单的函数
 
 定义积性函数 $f$，$f(p^c)=p\oplus c$，其中 $\oplus$ 为异或。求 $S_f(n)$。$n\le10^{10}$。
+
+---
 
 当 $p$ 为 $2$ 时，$f(p)=3$。当 $p$ 为奇素数时，$f(p)=p-1$。
 
@@ -1464,13 +1613,21 @@ $$
 
 #### 有理数表示
 
-* 一个有理数有且仅有两种连分数表示
+* 定理
 
-  辗转相除法：令 $r_0=x$，$a_k=\lfloor r_k\rfloor$，$r_{k+1}=\dfrac{1}{r_k-a_k}$，当 $r$ 为整数时停止。这种方式可以构造出一个连分数，且位数是 $\log$ 级别的。若最后一位 $a_n\neq 1$，则 $[a_0,a_1,\cdots,a_n-1,1]$ 是另一种连分数表示。若 $a_n=1$，则 $[a_0,a_1,\cdots,a_{n-1}+1]$ 是另一种连分数表示。
+  一个有理数有且仅有两种连分数表示。
 
-  再证任意有理数不存在大于两种不同的连分数表示，只需证：若规定连分数的最后一位大于 $1$，则连分数表示唯一。
+用辗转相除法构造连分数：令 $r_0=x$，$a_k=\lfloor r_k\rfloor$，$r_{k+1}=\dfrac{1}{r_k-a_k}$，当 $r$ 为整数时停止。
 
-  假设 $x=[a_0,a_1,\cdots,a_n]=[b_0,b_1,\cdots,b_m]$，其中 $a_n>1,b_m>1$。由于 $[a_1,\cdots,a_n]>1$，知 $[a_1,\cdots,a_n]^{-1}<1$，则 $a_0=\lfloor x\rfloor$。同理 $b_0=\lfloor x\rfloor$。归纳即证。
+这种方式可以构造出一个连分数，且位数是 $\log$ 级别的。
+
+若最后一位 $a_n\neq 1$，则 $[a_0,a_1,\cdots,a_n-1,1]$ 是另一种连分数表示。若 $a_n=1$，则 $[a_0,a_1,\cdots,a_{n-1}+1]$ 是另一种连分数表示。
+
+---
+
+证明任意有理数不存在大于两种不同的连分数表示，只需证：若规定连分数的最后一位大于 $1$，则连分数表示唯一。
+
+假设 $x=[a_0,a_1,\cdots,a_n]=[b_0,b_1,\cdots,b_m]$，其中 $a_n>1,b_m>1$。由于 $[a_1,\cdots,a_n]>1$，知 $[a_1,\cdots,a_n]^{-1}<1$，则 $a_0=\lfloor x\rfloor$。同理 $b_0=\lfloor x\rfloor$。归纳即证。
 
 一般将 $a_n>1$ 的连分数表示称为标准表示。
 
@@ -1487,6 +1644,8 @@ $$
 \end{align}
 \right.
 $$
+
+---
 
 * 证明
 
@@ -1512,6 +1671,8 @@ $$
 * 对于所有 $x\in S$ 且 $x>2$，$x-3\in S$
 
 求 $1\le i\le n,1\le j\le m$ 的完美正分数 $\dfrac{i}{j}$ 数量。$2\le n,m\le 3\times10^7$。
+
+---
 
 把分数用标准连分数表示，取倒数相当于在连分数前面增加或删除一个 $0$，$\pm 2$ 相当于对连分数的第一位 $\pm 2$。于是可知：$x\in S\iff x=[2k_0,2k_1,\cdots,2k_n]$，其中 $k_0\ge 0,k_1,\dots,k_n\ge 1$。
 

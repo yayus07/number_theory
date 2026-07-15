@@ -1,13 +1,18 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  14 JUL 2026 19:46
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  15 JUL 2026 22:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/fish/Desktop/number_theory/number_theory
-(c:/Users/fish/Desktop/number_theory/number_theory.tex
+**c:/Users/fish/Desktop/number_theory/sections/section4
+(c:/Users/fish/Desktop/number_theory/sections/section4.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
-(c:/texlive/2025/texmf-dist/tex/latex/beamer/beamer.cls
+(c:/texlive/2025/texmf-dist/tex/latex/subfiles/subfiles.cls
+Document Class: subfiles 2020/11/14 v2.2 Multi-file projects (class)
+Preamble taken from file `../main.tex'
+(c:/texlive/2025/texmf-dist/tex/latex/import/import.sty
+Package: import 2020/04/01  v 6.2
+) (../main.tex (c:/texlive/2025/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2025/02/04 v3.72 A class for typesetting presentations
 (c:/texlive/2025/texmf-dist/tex/latex/beamer/beamerbasemodes.sty (c:/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
@@ -815,6 +820,8 @@ Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
 \mult@nat@firstbox=\box135
 \colbreak@box=\box136
 \mc@col@check@num=\count400
+) (c:/texlive/2025/texmf-dist/tex/latex/subfiles/subfiles.sty
+Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
 )
 
 Package fontspec Info: 
@@ -876,7 +883,7 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (c:/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-)
+)))
 
 Package xeCJK Warning: Undefined CJK default family `\CJKsfdefault' has been
 (xeCJK)                replaced by `\CJKrmdefault'.
@@ -884,30 +891,29 @@ Package xeCJK Warning: Undefined CJK default family `\CJKsfdefault' has been
 (xeCJK)                Try to use `\setCJKsansfont[<...>]{<...>}' to define
 (xeCJK)                it.
 
-(./number_theory.aux)
-\openout1 = `number_theory.aux'.
+No file section4.aux.
+\openout1 = `section4.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -942,54 +948,56 @@ LaTeX Font Info:    ... okay on input line 81.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 81.
-(./number_theory.out) (./number_theory.out)
+Package hyperref Info: Link coloring OFF on input line 2.
 \@outlinefile=\write5
-\openout5 = `number_theory.out'.
+\openout5 = `section4.out'.
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 81.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 2.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 81.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 2.
 \symnumbers=\mathgroup7
 \sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 81.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 81.
+(Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 2.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 81.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 81.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 81.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 2.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 81.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/m/n on input line 81.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 81.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/m/n on input line 2.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 81.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/m/it on input line 81.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 81.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/m/it on input line 2.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 81.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 81.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 2.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 81.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 2.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  TU/lmr/m/it --> TU/lmr/b/it on input line 81.
+(Font)                  TU/lmr/m/it --> TU/lmr/b/it on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> TU/lmr/b/n on input line 81.
+(Font)                  OT1/cmss/b/n --> TU/lmr/b/n on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  TU/lmr/b/n --> TU/lmr/b/n on input line 81.
+(Font)                  TU/lmr/b/n --> TU/lmr/b/n on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 81.
+(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/lmr/m/it --> TU/lmr/b/it on input line 81.
+(Font)                  TU/lmr/m/it --> TU/lmr/b/it on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 81.
- (c:/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
+(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 2.
+(c:/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (c:/texlive/2025/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
 Dictionary: translator-bibliography-dictionary, Language: English 
@@ -1009,101 +1017,92 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 81.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 81.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 81.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 81.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 81.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 81.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 81.
-LaTeX Font Info:    Redeclaring math accent \check on input line 81.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 81.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 81.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 81.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 81.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 81.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 81.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 81.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 81.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 81.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 81.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 81.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 81.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 81.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 81.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 81.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 81.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 2.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 2.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 2.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 2.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 2.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 2.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 2.
+LaTeX Font Info:    Redeclaring math accent \check on input line 2.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 2.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 2.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 2.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 2.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 2.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 2.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 2.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 2.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 2.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 2.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 2.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 2.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 2.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 2.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 2.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 2.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 81.
+(Font)              `operators' in the math version `normal' on input line 2.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 81.
+(Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 2.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 81.
+(Font)              `operators' in the math version `bold' on input line 2.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> TU/lmr/m/n on input line 81.
+(Font)                  OT1/cmss/b/n --> TU/lmr/m/n on input line 2.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 81.
-LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 81.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 2.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  TU/lmr/m/it --> TU/lmr/m/it on input line 81.
+(Font)                  TU/lmr/m/it --> TU/lmr/m/it on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  TU/lmr/b/n --> TU/lmr/b/n on input line 81.
+(Font)                  TU/lmr/b/n --> TU/lmr/b/n on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  TU/lmss/m/n --> TU/lmss/m/n on input line 81.
+(Font)                  TU/lmss/m/n --> TU/lmss/m/n on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/m/n on input line 81.
+(Font)                  TU/lmtt/m/n --> TU/lmtt/m/n on input line 2.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 81.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/lmr/b/it --> TU/lmr/b/it on input line 81.
+(Font)                  TU/lmr/b/it --> TU/lmr/b/it on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/lmss/b/n --> TU/lmss/b/n on input line 81.
+(Font)                  TU/lmss/b/n --> TU/lmss/b/n on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/b/n --> TU/lmtt/b/n on input line 81.
+(Font)                  TU/lmtt/b/n --> TU/lmtt/b/n on input line 2.
 \c@lstlisting=\count405
- (./number_theory.nav)
 
-Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 84.
-
+No file section4.nav.
+No file section4.toc.
 
 
 [1
 
 ]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb (./number_theory.toc))
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+ (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+ (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 26.
+ (c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
 
 [2
 
-] (./number_theory.toc)
+]
 
 [3
 
 ]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb
-LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
- (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
- (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 9.
- (c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-))
 
 [4
 
 ]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
 
 [5
 
@@ -1111,22 +1110,17 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 [6
 
+]
+No file section4.toc.
 
-] (./number_theory.toc)
 
 [7
 
 ]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
 
 [8
 
 ]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
 
 [9
 
@@ -1134,18 +1128,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 [10
 
-
 ]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb
-
-Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
-(xeCJK)                
-(xeCJK)                Try to use `\setCJKmonofont[<...>]{<...>}' to define
-(xeCJK)                it.
-
-)
 
 [11
 
@@ -1153,18 +1136,11 @@ Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
 
 [12
 
-
 ]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
 
 [13
 
 ]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
 
 [14
 
@@ -1172,998 +1148,50 @@ Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
 
 [15
 
-
 ]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
 
 [16
 
 ]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
 
 [17
 
-] (./number_theory.toc)
+]
 
 [18
 
 ]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[19
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[20
-
-]
-
-[21
-
-
-]
-
-[22
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[23
-
-] (./number_theory.toc)
-
-[24
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb
-File: pic1.png Graphic file (type bmp)
-<pic1.png>
-)
-
-[25
-
-]
-
-[26
-
-
-]
-
-[27
-
-
-]
-
-[28
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[29
-
-]
-
-[30
-
-
-]
-
-[31
-
-
-] (./number_theory.toc)
-
-[32
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[33
-
-]
-
-[34
-
-
-]
-
-[35
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[36
-
-]
-
-[37
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[38
-
-] (./number_theory.toc)
-
-[39
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[40
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[41
-
-]
-
-[42
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[43
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[44
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[45
-
-]
-
-[46
-
-
-]
-
-[47
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[48
-
-]
-
-[49
-
-
-]
-
-[50
-
-
-] (./number_theory.toc)
-
-[51
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[52
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[53
-
-]
-
-[54
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[55
-
-]
-
-[56
-
-
-]
-
-[57
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[58
-
-]
-
-[59
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[60
-
-]
-
-[61
-
-
-]
-
-[62
-
-
-] (./number_theory.toc)
-
-[63
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb
-Overfull \hbox (0.86096pt too wide) detected at line 30
-[] \OMS/cmsy/m/n/10.95 ^^Q [][]\OT1/cmr/m/n/10.95 ([][])
- []
-
-)
-
-[64
-
-]
-
-[65
-
-
-]
-
-[66
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[67
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-Overfull \vbox (43.68156pt too high) detected at line 810
- []
-
-
-
-[68
-
-]
-
-[69
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[70
-
-]
-
-[71
-
-
-]
-
-[72
-
-
-] (./number_theory.toc)
-
-[73
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[74
-
-]
-
-[75
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb
-Overfull \hbox (12.53151pt too wide) detected at line 17
-[][]
- []
-
-)
-
-[76
-
-]
-Overfull \vbox (8.25604pt too high) detected at line 888
- []
-
-
-
-[77
-
-
-]
-
-[78
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[79
-
-]
-
-[80
-
-
-]
-
-[81
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[82
-
-] (./number_theory.toc)
-
-[83
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[84
-
-]
-
-[85
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[86
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[87
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[88
-
-] (./number_theory.toc)
-
-[89
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[90
-
-]
-
-[91
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[92
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[93
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[94
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[95
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[96
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[97
-
-]
-
-[98
-
-
-] (./number_theory.toc)
-
-[99
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[100
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[101
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[102
-
-]
-
-[103
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[104
-
-] (./number_theory.toc)
-
-[105
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[106
-
-]
-
-[107
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[108
-
-]
-
-[109
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[110
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[111
-
-]
-
-[112
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[113
-
-] (./number_theory.toc)
-
-[114
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[115
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[116
-
-]
-
-[117
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[118
-
-]
-
-[119
-
-
-] (./number_theory.toc)
-
-[120
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[121
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[122
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[123
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[124
-
-] (./number_theory.toc)
-
-[125
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[126
-
-]
-
-[127
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[128
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[129
-
-]
-Overfull \vbox (16.17511pt too high) detected at line 1398
- []
-
-
-
-[130
-
-
-]
-
-[131
-
-
-]
-Overfull \vbox (11.84763pt too high) detected at line 1398
- []
-
-
-
-[132
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[133
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[134
-
-]
-
-[135
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[136
-
-]
-
-[137
-
-
-]
-Overfull \vbox (10.92445pt too high) detected at line 1460
- []
-
-
-
-[138
-
-
-]
-
-[139
-
-
-]
-
-[140
-
-
-] (./number_theory.toc)
-
-[141
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[142
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-Overfull \vbox (10.91429pt too high) detected at line 1491
- []
-
-
-
-[143
-
-]
-
-[144
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[145
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[146
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[147
-
-]
-
-[148
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[149
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[150
-
-]
-Overfull \vbox (5.90163pt too high) detected at line 1571
- []
-
-
-
-[151
-
-
-]
-
-[152
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[153
-
-]
-
-[154
-
-
-]
-
-[155
-
-
-] (./number_theory.toc)
-
-[156
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[157
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[158
-
-]
-
-[159
-
-
-]
-
-[160
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[161
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[162
-
-] (./number_theory.toc)
-
-[163
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[164
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[165
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[166
-
-]
-Overfull \vbox (2.36021pt too high) detected at line 1719
- []
-
-
-
-[167
-
-
-]
-
-[168
-
-
-]
-\openout4 = `number_theory.vrb'.
-
- (./number_theory.vrb)
-
-[169
-
-]
-
-[170
-
-
-]
 \tf@nav=\write6
-\openout6 = `number_theory.nav'.
+\openout6 = `section4.nav'.
 
 \tf@toc=\write7
-\openout7 = `number_theory.toc'.
+\openout7 = `section4.toc'.
 
 \tf@snm=\write8
-\openout8 = `number_theory.snm'.
+\openout8 = `section4.snm'.
 
- (./number_theory.aux)
+ (./section4.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
 
 
-Package rerunfilecheck Warning: File `number_theory.out' has changed.
+Package rerunfilecheck Warning: File `section4.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
-Package rerunfilecheck Info: Checksums for `number_theory.out':
-(rerunfilecheck)             Before: 6E0DC283F4C14559EA77954EE3BD0F8F;2529
-(rerunfilecheck)             After:  C0EEB1037849E45BA909F3522F5262C0;2527.
+Package rerunfilecheck Info: Checksums for `section4.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  0DB1CF50C51F86F7E1B0AF4AF2913B35;1577.
  ) 
 Here is how much of TeX's memory you used:
- 30945 strings out of 475796
- 666706 string characters out of 5774033
- 1429148 words of memory out of 5000000
- 53059 multiletter control sequences out of 15000+600000
- 565017 words of font info for 97 fonts, out of 8000000 for 9000
+ 30062 strings out of 475796
+ 651704 string characters out of 5774033
+ 1231617 words of memory out of 5000000
+ 52392 multiletter control sequences out of 15000+600000
+ 564969 words of font info for 91 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 128i,19n,123p,476b,1188s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 148i,15n,140p,520b,502s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on number_theory.pdf (170 pages).
+Output written on section4.pdf (18 pages).

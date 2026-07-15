@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{组合数相关}{1}{0}{1}
+\beamer@subsectionintoc {1}{1}{卢卡斯定理}{1}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{1}{卢卡斯定理}{2}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{2}{P5598 混乱度}{5}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{3}{P4345 [SHOI2015] 超能粒子炮·改}{7}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{4}{扩展卢卡斯定理}{9}{0}{1}
+\beamer@subsectionintoc {1}{2}{库默尔定理}{13}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{1}{勒让德定理}{14}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{2}{库默尔定理}{15}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{3}{SOJ2028 梅子}{17}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{4}{CF582D Number of Binominal Coefficients}{20}{0}{1}

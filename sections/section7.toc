@@ -1,0 +1,15 @@
+\beamer@sectionintoc {1}{积性函数前缀和}{1}{0}{1}
+\beamer@subsectionintoc {1}{1}{杜教筛}{1}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{1}{块筛}{2}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{2}{杜教筛}{3}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{3}{积式}{5}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{4}{练习}{6}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{5}{P4318 完全平方数}{7}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{6}{来源不明题}{9}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{7}{51nod1220 约数之和}{10}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{8}{P1587 [NOI2016] 循环之美}{13}{0}{1}
+\beamer@subsectionintoc {1}{2}{PN 筛}{16}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{1}{Powerful Number}{17}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{2}{素数拟合}{19}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{3}{P5325 【模板】Min\_25 筛}{22}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{4}{LOJ6053 简单的函数}{23}{0}{1}

@@ -1,0 +1,112 @@
+\beamer@sectionintoc {1}{整除}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{整除理论}{3}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{1}{基本定义}{4}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{2}{取整函数}{7}{0}{1}
+\beamer@subsectionintoc {1}{2}{最大公因数}{9}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{1}{基本定义}{10}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{2}{基本性质}{11}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{3}{欧几里得算法}{12}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{4}{例题}{14}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{5}{裴蜀定理}{15}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{6}{二元一次不定方程}{17}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{7}{P3518 [POI 2011] SEJ-Strongbox}{18}{0}{1}
+\beamer@subsectionintoc {1}{3}{互素与素数}{20}{0}{1}
+\beamer@subsubsectionintoc {1}{3}{1}{互素}{21}{0}{1}
+\beamer@subsubsectionintoc {1}{3}{2}{素数}{22}{0}{1}
+\beamer@subsubsectionintoc {1}{3}{3}{P8255 [NOI Online 2022 入门组] 数学游戏}{25}{0}{1}
+\beamer@sectionintoc {2}{同余}{27}{0}{2}
+\beamer@subsectionintoc {2}{1}{定义}{27}{0}{2}
+\beamer@subsubsectionintoc {2}{1}{1}{同余定义}{28}{0}{2}
+\beamer@subsubsectionintoc {2}{1}{2}{剩余类和剩余系}{30}{0}{2}
+\beamer@subsectionintoc {2}{2}{乘法逆元}{33}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{1}{逆元}{34}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{2}{逆元求解}{37}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{3}{SOJ123 水题}{40}{0}{2}
+\beamer@subsectionintoc {2}{3}{线性同余方程}{41}{0}{2}
+\beamer@subsubsectionintoc {2}{3}{1}{单个方程}{42}{0}{2}
+\beamer@subsubsectionintoc {2}{3}{2}{方程组}{43}{0}{2}
+\beamer@subsubsectionintoc {2}{3}{3}{中国剩余定理}{45}{0}{2}
+\beamer@subsubsectionintoc {2}{3}{4}{CF338D GCD Table}{46}{0}{2}
+\beamer@subsubsectionintoc {2}{3}{5}{P5330 [SNOI2019] 数论}{48}{0}{2}
+\beamer@subsectionintoc {2}{4}{二次剩余}{51}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{1}{素数模的同余式}{52}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{2}{二次剩余}{55}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{3}{欧拉判别法}{56}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{4}{勒让德符号}{58}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{5}{Cipolla 算法}{61}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{6}{P6610 [Code+\#7] 同余方程}{64}{0}{2}
+\beamer@sectionintoc {3}{组合数相关}{67}{0}{3}
+\beamer@subsectionintoc {3}{1}{卢卡斯定理}{67}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{1}{卢卡斯定理}{68}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{2}{P5598 混乱度}{71}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{3}{P4345 [SHOI2015] 超能粒子炮·改}{73}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{4}{扩展卢卡斯定理}{75}{0}{3}
+\beamer@subsectionintoc {3}{2}{库默尔定理}{79}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{1}{勒让德定理}{80}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{2}{库默尔定理}{81}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{3}{SOJ2028 梅子}{83}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{4}{CF582D Number of Binominal Coefficients}{86}{0}{3}
+\beamer@sectionintoc {4}{阶与原根}{88}{0}{4}
+\beamer@subsectionintoc {4}{1}{阶}{88}{0}{4}
+\beamer@subsubsectionintoc {4}{1}{1}{阶的定义}{89}{0}{4}
+\beamer@subsubsectionintoc {4}{1}{2}{阶的计算}{91}{0}{4}
+\beamer@subsubsectionintoc {4}{1}{3}{离散对数判定}{92}{0}{4}
+\beamer@subsubsectionintoc {4}{1}{4}{ABC335G Discrete Logarithm Problems}{93}{0}{4}
+\beamer@subsectionintoc {4}{2}{原根}{94}{0}{4}
+\beamer@subsubsectionintoc {4}{2}{1}{原根的定义}{95}{0}{4}
+\beamer@subsubsectionintoc {4}{2}{2}{原根的计算}{98}{0}{4}
+\beamer@subsubsectionintoc {4}{2}{3}{指标}{99}{0}{4}
+\beamer@subsubsectionintoc {4}{2}{4}{BSGS 算法}{100}{0}{4}
+\beamer@subsubsectionintoc {4}{2}{5}{高次剩余}{101}{0}{4}
+\beamer@subsubsectionintoc {4}{2}{6}{UOJ525 平行四边形}{102}{0}{4}
+\beamer@subsubsectionintoc {4}{2}{7}{CF360D Levko and Sets}{104}{0}{4}
+\beamer@sectionintoc {5}{数论函数}{106}{0}{5}
+\beamer@subsectionintoc {5}{1}{定义与积性函数}{106}{0}{5}
+\beamer@subsubsectionintoc {5}{1}{1}{定义}{107}{0}{5}
+\beamer@subsubsectionintoc {5}{1}{2}{简单运算}{108}{0}{5}
+\beamer@subsubsectionintoc {5}{1}{3}{常见积性函数}{109}{0}{5}
+\beamer@subsubsectionintoc {5}{1}{4}{积性函数线性筛}{110}{0}{5}
+\beamer@subsectionintoc {5}{2}{狄利克雷卷积}{111}{0}{5}
+\beamer@subsubsectionintoc {5}{2}{1}{定义与性质}{112}{0}{5}
+\beamer@subsubsectionintoc {5}{2}{2}{逆函数}{114}{0}{5}
+\beamer@subsubsectionintoc {5}{2}{3}{狄利克雷前缀和}{115}{0}{5}
+\beamer@subsubsectionintoc {5}{2}{4}{GYM101741F GCD}{116}{0}{5}
+\beamer@subsubsectionintoc {5}{2}{5}{积性函数卷积}{119}{0}{5}
+\beamer@subsectionintoc {5}{3}{贝尔级数}{120}{0}{5}
+\beamer@subsubsectionintoc {5}{3}{1}{定义}{121}{0}{5}
+\beamer@subsubsectionintoc {5}{3}{2}{常见贝尔级数}{122}{0}{5}
+\beamer@subsubsectionintoc {5}{3}{3}{应用}{123}{0}{5}
+\beamer@sectionintoc {6}{莫比乌斯反演}{125}{0}{6}
+\beamer@subsectionintoc {6}{1}{整除分块}{125}{0}{6}
+\beamer@subsubsectionintoc {6}{1}{1}{基本结论}{126}{0}{6}
+\beamer@subsubsectionintoc {6}{1}{2}{P2260 模积和}{128}{0}{6}
+\beamer@subsubsectionintoc {6}{1}{3}{ARC068E Snuke Line}{130}{0}{6}
+\beamer@subsubsectionintoc {6}{1}{4}{线性预处理}{131}{0}{6}
+\beamer@subsectionintoc {6}{2}{莫比乌斯反演}{132}{0}{6}
+\beamer@subsubsectionintoc {6}{2}{1}{基本形式}{133}{0}{6}
+\beamer@subsubsectionintoc {6}{2}{2}{gcd 卷积}{135}{0}{6}
+\beamer@subsubsectionintoc {6}{2}{3}{gcd 求和}{136}{0}{6}
+\beamer@subsubsectionintoc {6}{2}{4}{P2257 YY 的 GCD}{140}{0}{6}
+\beamer@subsubsectionintoc {6}{2}{5}{P6156 简单题}{141}{0}{6}
+\beamer@subsubsectionintoc {6}{2}{6}{SOJ1985 拼图}{143}{0}{6}
+\beamer@sectionintoc {7}{积性函数前缀和}{148}{0}{7}
+\beamer@subsectionintoc {7}{1}{杜教筛}{148}{0}{7}
+\beamer@subsubsectionintoc {7}{1}{1}{块筛}{149}{0}{7}
+\beamer@subsubsectionintoc {7}{1}{2}{杜教筛}{150}{0}{7}
+\beamer@subsubsectionintoc {7}{1}{3}{积式}{152}{0}{7}
+\beamer@subsubsectionintoc {7}{1}{4}{练习}{153}{0}{7}
+\beamer@subsubsectionintoc {7}{1}{5}{P4318 完全平方数}{154}{0}{7}
+\beamer@subsubsectionintoc {7}{1}{6}{来源不明题}{156}{0}{7}
+\beamer@subsubsectionintoc {7}{1}{7}{51nod1220 约数之和}{157}{0}{7}
+\beamer@subsubsectionintoc {7}{1}{8}{P1587 [NOI2016] 循环之美}{160}{0}{7}
+\beamer@subsectionintoc {7}{2}{PN 筛}{163}{0}{7}
+\beamer@subsubsectionintoc {7}{2}{1}{Powerful Number}{164}{0}{7}
+\beamer@subsubsectionintoc {7}{2}{2}{素数拟合}{166}{0}{7}
+\beamer@subsubsectionintoc {7}{2}{3}{P5325 【模板】Min\_25 筛}{169}{0}{7}
+\beamer@subsubsectionintoc {7}{2}{4}{LOJ6053 简单的函数}{170}{0}{7}
+\beamer@sectionintoc {8}{连分数}{172}{0}{8}
+\beamer@subsectionintoc {8}{1}{连分数}{172}{0}{8}
+\beamer@subsubsectionintoc {8}{1}{1}{定义}{173}{0}{8}
+\beamer@subsubsectionintoc {8}{1}{2}{有理数表示}{174}{0}{8}
+\beamer@subsubsectionintoc {8}{1}{3}{渐近分数}{176}{0}{8}
+\beamer@subsubsectionintoc {8}{1}{4}{P10788 [NOI2024] 分数}{178}{0}{8}

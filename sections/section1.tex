@@ -1,0 +1,264 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\section{整除}
+
+\subsection{整除理论}
+
+\subsubsection{基本定义}
+
+\begin{frame}
+我们知道任意两个整数的和、差、积以至任意有限个整数的加、减、乘的混合运算结果仍是整数，但是整数除整数不一定仍为整数。
+
+为了应对整数除法的不封闭性，我们引入整除的概念。
+\end{frame}
+
+\begin{frame}
+\begin{defi}[整除]
+设 $a,b$ 是任意两个整数，其中 $b\neq 0$，若存在整数 $q$ 使得 $a=bq$，则称 $b$ 整除 $a$ 或 $a$ 被 $b$ 整除，记作 $b\mid a$。
+\end{defi}
+
+此时称 $b$ 为 $a$ 的因数，$a$ 为 $b$ 的倍数。
+
+\begin{theo}[重要性质]
+$d\mid a,d\mid b\implies d\mid ua+vb\ (u,v\in\Z)$
+\end{theo}
+\end{frame}
+
+\begin{frame}
+\begin{defi}[带余除法]
+设 $a,b$ 是任意两个整数，其中 $b\neq 0$，存在唯一的整数对 $(q,r)$ 使得 $a=bq+r$ 且 $0\le r<|b|$。记作 $a\div b=q\cdots r$。
+\end{defi}
+
+此时称 $q$ 为 $a$ 除以 $b$ 的商，$r$ 为 $a$ 除以 $b$ 的余数。记 $a\bmod b=r$。
+\end{frame}
+
+\subsubsection{取整函数}
+
+\begin{frame}
+对于任意 $x\in \R$，用 $\left[x\right]$ 或 $\lfloor x \rfloor$ 表示不大于 $x$ 的最大整数。用 $\lceil x\rceil$ 表示不小于 $x$ 的最小整数。用 $\left\{x\right\}=x-\lfloor x\rfloor$ 表示 $x$ 的小数部分。
+
+\begin{itemize}
+\item $\lfloor x\rfloor\le x<\lfloor x\rfloor+1$，$x-1<\lfloor x\rfloor\le x$
+\item $\lfloor n+x\rfloor=n+\lfloor x\rfloor$，$n$ 为整数
+\item $\lfloor x\rfloor+\lfloor y\rfloor\le\lfloor x+y\rfloor$
+\item $a,b\in\Z,b>0$，则 $a=b\left\lfloor\dfrac{a}{b}\right\rfloor+b\left\{\dfrac{a}{b}\right\}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{theo}[复合性质]
+\begin{itemize}
+\item $m\in\Z^{+},x\in\R$，则 $\left\lfloor\dfrac{x}{m}\right\rfloor=\left\lfloor\dfrac{\lfloor x\rfloor}{m}\right\rfloor$
+\item $a\in\Z,b,c\in\Z^{+}$，则 $\left\lfloor\dfrac{a}{bc}\right\rfloor=\left\lfloor\dfrac{\left\lfloor\frac{a}{b}\right\rfloor}{c}\right\rfloor$
+\end{itemize}
+\end{theo}
+
+这两条性质在后面的数论分块中很重要。
+\end{frame}
+
+\subsection{最大公因数}
+
+\subsubsection{基本定义}
+
+\begin{frame}
+\begin{defi}[最大公因数与最小公倍数]
+$a,b\in \Z$，若 $d\mid a,d\mid b$，则称 $d$ 为 $a,b$ 的公因数。
+
+当 $a,b$ 不全为 $0$ 时公因数个数是有限的，故存在最大公因数，记为 $\gcd(a,b)$ 或 $(a,b)$。
+
+特别地，若 $a=b=0$，定义 $\gcd(0,0)=0$。
+
+同理定义最小公倍数，记为 $\mathrm{lcm}(a,b)$ 或 $\left[a,b\right]$。
+\end{defi}
+\end{frame}
+
+\subsubsection{基本性质}
+
+\begin{frame}
+\begin{itemize}
+\item $\gcd(a,b)=\gcd(|a|,|b|)$
+\item $\gcd(\gcd(a,b),c)=\gcd(a,\gcd(b,c))$
+\item $\mathrm{lcm}(\mathrm{lcm}(a,b),c)=\mathrm{lcm}(a,\mathrm{lcm}(b,c))$
+\item $\gcd(a,b)\mathrm{lcm}(a,b)=ab$
+\item $d\mid a,d\mid b\iff d\mid\gcd(a,b)$
+\item $\gcd(ma,mb)=m\gcd(a,b)$
+\item $\gcd(a^n,b^n)=\gcd(a,b)^n$
+\end{itemize}
+\end{frame}
+
+\subsubsection{欧几里得算法}
+
+\begin{frame}[fragile]
+$\gcd$ 有以下性质：
+
+$\gcd(a,b)=\gcd(b,a-b)$
+
+$\gcd(a,b)=\gcd(b,a\bmod b)$
+
+由此得到求 $\gcd$ 的欧几里得算法：
+
+\begin{lstlisting}
+int gcd(int a, int b) {
+    if (b == 0) return a;
+    return gcd(b, a % b);
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+每次操作后 $ab$ 至少会变为原来的 $1/2$，故时间复杂度 $O(\log a+\log b)$。
+
+精细的分析是 $O(\log\min\{a,b\})$。
+
+更加精细的分析是递归次数不超过 $\log_{\phi}\dfrac{\min\{a,b\}}{\gcd(a,b)}+O(1)$。其中 $\phi=\dfrac{1+\sqrt{5}}{2}$。
+\end{frame}
+
+\subsubsection{例题}
+
+\begin{frame}
+求 $\gcd(2^{120}-1,2^{100}-1)$。
+
+$$
+\begin{aligned}
+\gcd(a^n-1,a^m-1)
+=&\gcd(a^n-a^m,a^m-1)\\
+=&\gcd(a^m(a^{n-m}-1),a^m-1)\\
+=&\gcd(a^{n-m}-1,a^m-1)
+\end{aligned}
+$$
+
+对指数使用辗转相除法，可证 $\gcd(a^n-1,a^m-1)=a^{\gcd(n,m)}-1$。
+
+可以再思考证明：$\gcd(a,b)=1$，则 $\gcd(a^m-b^m,a^n-b^n)=a^{\gcd(m,n)}-b^{\gcd(m,n)}$。
+\end{frame}
+
+\subsubsection{裴蜀定理}
+
+\begin{frame}
+\begin{theo}[裴蜀定理]
+若 $a,b$ 为整数且 $\gcd(a,b)=d$，则 $\forall x,y\in\Z,d\mid ax+by$。且存在一组 $x,y$ 使得 $ax+by=d$。
+\end{theo}
+
+裴蜀定理告诉我们存在这样的 $x,y$。下面的扩展欧几里得算法可以找出一组特定的 $x,y$。
+\end{frame}
+
+\begin{frame}[fragile]
+扩展欧几里得算法：
+
+\begin{lstlisting}
+int exgcd(int a, int b, int &x, int &y) {
+    if (b == 0) {
+        x = 1; y = 0;
+        return a;
+    }
+    int d = exgcd(b, a % b, y, x);
+    y -= a / b * x;
+    return d;
+}
+\end{lstlisting}
+
+利用归纳法，可知求出的 $x,y$ 满足 $|x|\le b,|y|\le a$。
+\end{frame}
+
+\subsubsection{二元一次不定方程}
+
+\begin{frame}
+对于方程 $ax+by=c$，其有解的充要条件是 $\gcd(a,b)\mid c$。
+
+调用 exgcd，得到的结果记为 $x_0,y_0$。
+
+一组特解为 $x_1=\dfrac{x_0c}{\gcd(a,b)},y_1=\dfrac{y_0c}{\gcd(a,b)}$。
+
+通解为 $x=x_1+k\dfrac{b}{\gcd(a,b)},y=y_1-k\dfrac{a}{\gcd(a,b)}$。其中 $k$ 为任意整数。
+\end{frame}
+
+\subsubsection{P3518 [POI 2011] SEJ-Strongbox}
+
+\begin{frame}
+有一个密码箱，$0$ 到 $n-1$ 中的某些整数是它的密码。且满足：若 $a$ 和 $b$ 是它的密码，则 $(a+b)\bmod n$ 也是它的密码（$a,b$ 可以相等）。某人试了 $k$ 次密码 $m_1,\dots,m_k$，前 $k-1$ 次都失败了，最后一次成功了。问，该密码箱最多有多少种不同的密码。
+
+$1\le k\le 2.5\times 10^5,k\le n\le 10^{14}$。
+\end{frame}
+
+\begin{frame}
+设最小非零的密码为 $d$，则所有 $d$ 的倍数也是密码。若存在密码 $x$ 不是 $d$ 的倍数，则由裴蜀定理 $\gcd(x,d)<d$ 也是密码，与 $d$ 的最小性矛盾。故所有密码恰是 $d$ 的所有倍数。进一步可知 $d\mid n$。
+
+故枚举 $\gcd(n,m_k)$ 的所有因子，找到最小的 $d$ 满足 $d\nmid m_i\ (i<k)$ 即为答案。精细实现可将复杂度优化至 $O(d(n)\omega(n))$。
+\end{frame}
+
+\subsection{互素与素数}
+
+\subsubsection{互素}
+
+\begin{frame}
+\begin{defi}[互素]
+对于整数 $a,b$，如果 $\gcd(a,b)=1$，则称 $a,b$ 互素。
+\end{defi}
+
+$a,b$ 互素的充要条件是 $\exists u,v\in \Z,ua+vb=1$。
+
+\begin{theo}[重要性质]
+\begin{itemize}
+\item 如果 $a\mid bc$ 且 $(a,b)=1$，则 $a\mid c$
+\item 如果 $a\mid c,b\mid c$ 且 $(a,b)=1$，则 $ab\mid c$
+\item 如果 $(a,c)=1,(b,c)=1$，则 $(ab,c)=1$
+\end{itemize}
+\end{theo}
+
+这些性质可以轻易用算术基本定理证明，但是我建议大家先用最基础最本质的整除与互素的定义来做。因为算术基本定理并不是显然的，证明需要用到本页内容。
+\end{frame}
+
+\subsubsection{素数}
+
+\begin{frame}
+一个大于 $1$ 的整数，如果其正因数只有 $1$ 和自身，则称其为素数。
+
+准确来说，这是不可约数的定义。素数的定义如下：
+
+在正整数集 $\Z^{+}$ 中，一个大于 $1$ 的整数 $p$ 被称为素数，如果满足：对于任意 $a,b\in\Z^{+}$，若 $p\mid ab$，则必有 $p\mid a$ 或 $p\mid b$。
+
+在一般的代数系统中，素不等同于不可约。$\Z$ 中二者恰好等价，是由于 $\Z$ 本身有良好的结构。
+
+``良好''怎么定义？环<交换环<整环<唯一分解环<主理想环<欧几里得整环。
+\end{frame}
+
+\begin{frame}
+\begin{theo}
+若 $p$ 为素数，$a$ 是任一整数，则要么 $p\mid a$，要么 $\gcd(p,a)=1$。
+\end{theo}
+
+\begin{theo}[欧几里得引理]
+若素数 $p\mid ab$，则 $p\mid a$ 或 $p\mid b$。
+\end{theo}
+\end{frame}
+
+\begin{frame}
+\begin{theo}[算术基本定理]
+任一大于 $1$ 的整数 $a$ 都能表示为如下形式：
+$$
+a=p_1^{\alpha_1}p_2^{\alpha_2}\dots p_s^{\alpha_s}
+$$
+其中 $p_1<p_2<\dots<p_s$ 是素数，$\alpha_1,\dots,\alpha_s$ 是正整数。
+\end{theo}
+
+同样的，一般的代数系统中不一定存在这种唯一分解定理。
+
+分解质因数是数论问题的重要思考方向。将素数从小到大排列为 $p_1=2,p_2=3,p_3=5,\dots$，则任一正整数 $n=p_1^{\alpha_1}p_2^{\alpha_2}\dots$ 可映射为一个每维都是非负整数的无穷维向量 $(\alpha_1,\alpha_2,\dots)$。正整数的乘法与向量的加法形成同构，$\gcd$ 对应于取 $\min$，$\mathrm{lcm}$ 对应于取 $\max$。
+\end{frame}
+
+\subsubsection{P8255 [NOI Online 2022 入门组] 数学游戏}
+
+\begin{frame}
+$T$ 组询问，每组询问给定 $x,z$，求最小的正整数 $y$ 使得 $z=x\times y\times \gcd(x,y)$，或判断无解。
+
+$1\le T\le 5\times10^5,1\le x\le 10^9,1\le z<2^{63}$。
+\end{frame}
+
+\begin{frame}
+对于每个 $p$，记 $v_p(x)$ 为 $x$ 的分解式中 $p$ 上的指数。则可知有解的必要条件是 $\forall p\in \mathbb{P},v_p(x)\le v_p(z)$，并且若 $3v_p(x)\le v_p(z)$，则 $v_p(y)=v_p(z)-2v_p(x)$，否则 $2v_p(y)=v_p(z)-v_p(x)$。
+
+将两种情况统一起来，可得 $v_p(y)=\dfrac{2v_p(z)-v_p(x)-\min\{v_p(z),3v_p(x)\}}{2}$。对所有 $p$ 并行处理，$y=\sqrt{\dfrac{z^2}{x\gcd(z,x^3)}}$。若不为整数则无解。
+\end{frame}
+
+\end{document}

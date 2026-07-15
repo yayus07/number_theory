@@ -1,0 +1,113 @@
+\documentclass [hyperref={bookmarksdepth=4}, aspectratio=169] {beamer}
+\usetheme {Berlin}
+\def \mathfamilydefault {\rmdefault}
+\usepackage {xeCJK}
+\usepackage {latexsym, amsmath, amssymb, amsfonts, amstext}
+\usepackage {amsbsy, amsopn, xcolor, ulem, listings, tikz, multirow, multicol}
+\usepackage{subfiles}
+
+\setCJKmainfont [ItalicFont=KaiTi, BoldFont=SimHei] {SimSun}
+\parindent2em
+
+\newfontfamily \codefont {Consolas}
+
+\defbeamertemplate*{headline}{miniframes double theme}{
+\begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}\end{beamercolorbox}
+\begin{beamercolorbox}{section in head/foot}\vskip2pt\insertnavigation\paperwidth\vskip2pt\end{beamercolorbox}
+\begin{beamercolorbox}[colsep=1.5pt]{middle separation line head}\end{beamercolorbox}
+\begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{subsection in head/foot}\leavevmode{\usebeamerfont{subsection in head/foot}\insertsubsectionhead}\hfill{\usebeamerfont{subsubsection in head/foot}\insertsubsubsectionhead}\end{beamercolorbox}
+\begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}\end{beamercolorbox}
+}
+\setbeamertemplate {theorems} [numbered]
+\setbeamertemplate {headline} [miniframes double theme]
+\setbeamertemplate {navigation symbols} {}
+
+\newtheoremstyle {fy} {6pt} {6pt} {\it} {25pt} {\bfseries} {.} {4pt} {}
+\theoremstyle {fy}
+\newtheorem {rawtheo} {Theorem} [subsection]
+\newenvironment {theo} [1] [] {\begin{rawtheo} [#1] \parindent2em} {\end{rawtheo}}
+\def \rawtheoautorefname {Theorem}
+\newtheorem {rawdefi} {Definition} [subsection]
+\newenvironment {defi} [1] [] {\begin{rawdefi} [#1] \parindent2em} {\end{rawdefi}}
+\newtheorem {rawcoro} {Corollary} [subsection]
+\newenvironment {coro} [1] [] {\begin{rawcoro} [#1] \parindent2em} {\end{rawcoro}}
+\def \rawcoroautorefname {Corollary}
+\newtheorem {raweg} {Example}
+\newenvironment {eg} [1] [] {\begin{raweg} [#1] \parindent2em} {\end{raweg}}
+\newtheorem*{rawsolu} {Solution}
+\newenvironment {solu} [1] [] {\begin{rawsolu} [#1] \parindent2em} {\end{rawsolu}}
+
+\usetikzlibrary {positioning}
+\tikzset {every picture/.style={inner sep=-6pt}, vertices/.style={every node/.style={circle, draw, minimum size=16pt}}, block vertex/.style={rectangle, draw, minimum size=12pt, rounded corners=2.5pt}}
+\definecolor {cgreen} {rgb} {0, .75, 0}
+
+\lstset {
+	backgroundcolor=\color{white},
+	basicstyle=\text\tt\scriptsize\codefont,
+	columns=fullflexible,
+	tabsize=4,
+	breaklines=true,
+	captionpos=b,
+	escapeinside={(@}{@)},
+	commentstyle=\color{teal},
+	keywordstyle=\color{blue},
+	numbers=left,
+	numberstyle=\color{magenta},
+	stringstyle=\color{purple},
+	frame=single,
+	language=c++,
+}
+
+% 补充 Markdown 中使用的数学符号定义
+\def\Z{\mathbb{Z}}
+\def\R{\mathbb{R}}
+\def\Q{\mathbb{Q}}
+\def\C{\mathbb{C}}
+\def\N{\mathbb{N}}
+\def\P{\mathbb{P}}
+
+\AtBeginSubsection[]{
+  \begin{frame}{}
+    \begin{multicols}{2}
+      \tableofcontents[
+        sectionstyle=show/shaded,         % 当前大章显色，其他大章淡化
+        subsectionstyle=show/shaded/hide, % 精准控制：当前小节高亮 / 同章其他淡化 / 其他大章的小节隐藏
+        subsubsectionstyle=hide           % 隐藏所有更小的子小节
+      ]
+    \end{multicols}
+  \end{frame}
+}
+
+\begin{document}
+
+\title {数论}
+\author {}
+\date {}
+
+\frame \titlepage
+
+\subsection*{目录}
+
+\begin{frame}[fragile,allowframebreaks]{目录}
+	\begin{multicols}{3}
+		\tableofcontents[subsubsectionstyle=hide]
+	\end{multicols}
+\end{frame}
+
+\subfile{sections/section1}
+
+\subfile{sections/section2}
+
+\subfile{sections/section3}
+
+\subfile{sections/section4}
+
+\subfile{sections/section5}
+
+\subfile{sections/section6}
+
+\subfile{sections/section7}
+
+\subfile{sections/section8}
+
+\end{document}

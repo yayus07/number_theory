@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{整除}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{整除理论}{3}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{1}{基本定义}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{最大公因数}{7}{0}{1}
+\beamer@sectionintoc {2}{同余}{17}{0}{2}
+\beamer@subsectionintoc {2}{1}{定义}{17}{0}{2}
+\beamer@subsectionintoc {2}{2}{乘法逆元}{25}{0}{2}

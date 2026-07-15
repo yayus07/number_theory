@@ -1,11 +1,18 @@
-定义积性函数 $f$，$f(p^c)=p\oplus c$，其中 $\oplus$ 为异或。求 $S_f(n)$。$n\le10^{10}$。
+\frametitle{P10788 [NOI2024] 分数}
+定义正分数为分子分母都为正整数的既约分数。定义完美正分数集合 $S$ 为满足以下五条性质的集合：
 
-当 $p$ 为 $2$ 时，$f(p)=3$。当 $p$ 为奇素数时，$f(p)=p-1$。
+\begin{itemize}
+    \item $\dfrac{1}{2}\in S$
+    \item 对于 $\dfrac{1}{2}<x<2$，$x\not\in S$
+    \item 对于所有 $x\in S$，$\dfrac{1}{x}\in S$
+    \item 对于所有 $x\in S$，$x+2\in S$
+    \item 对于所有 $x\in S$ 且 $x>2$，$x-3\in S$
+\end{itemize}
 
-于是构造 $g(x)=\begin{cases}3\varphi(x) & 2\mid x\\ \varphi(x) & 2\nmid x\end{cases}$，则 $g$ 为积性函数且与 $f$ 素数拟合。
+求 $1\le i\le n,1\le j\le m$ 的完美正分数 $\dfrac{i}{j}$ 数量。$2\le n,m\le 3\times10^7$。
 
-只需块筛 $S_g(n)=\sum\limits_{i=1}^n\varphi(i)+2\sum\limits_{i=1}^{\lfloor n/2\rfloor}\varphi(2i)$。第一部分 $S_{\varphi}$ 可以用杜教筛。
+把分数用标准连分数表示，取倒数相当于在连分数前面增加或删除一个 $0$，$\pm 2$ 相当于对连分数的第一位 $\pm 2$。于是可知：$x\in S\iff x=[2k_0,2k_1,\cdots,2k_n]$，其中 $k_0\ge 0,k_1,\dots,k_n\ge 1$。
 
-第二部分 $F(n)=\sum\limits_{i=1}^n\varphi(2i)=\sum\limits_{i\le m,2\mid i}2\varphi(i)+\sum\limits_{i\le m,2\nmid i}\varphi(i)=S_{\varphi}(n)+\sum\limits_{i=1}^{\lfloor n/2\rfloor}\varphi(2i)$。于是得到递推式 $F(n)=S_{\varphi}(n)+F(\lfloor n/2\rfloor)$。递归计算的复杂度为 $O(\log n)$，不为瓶颈。
+由于有理数的标准连分数表示是唯一的，直接 DFS 搜索所有可能的连分数就能得到答案。具体地，从右到左加入连分数的每一位，实时维护其分数表示 $\dfrac{a}{b}$。这样的复杂度为 $O(ans)$，已经可以获得 $90$ 分。
 
-总复杂度为块筛 $S_{\varphi}$ 的 $O(n^{2/3})$。
+后续的优化方式是考虑枚举连分数表示数列的最大值位置，然后可以一次统计好多个完美正分数。复杂度可能还是 $O(ans)$，但是常数小很多。

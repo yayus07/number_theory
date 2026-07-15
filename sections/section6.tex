@@ -1,0 +1,229 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\section{莫比乌斯反演}
+
+\subsection{整除分块}
+
+\subsubsection{基本结论}
+
+\begin{frame}
+\begin{theo}[结论一]
+$$
+\forall a,b,c\in \N^{*},\left\lfloor\frac{a}{bc}\right\rfloor=\left\lfloor\frac{\lfloor\frac{a}{b}\rfloor}{c}\right\rfloor
+$$
+\end{theo}
+
+\begin{theo}[结论二]
+$$
+\forall n\in\N^{*},|\{\left\lfloor\frac{n}{d}\right\rfloor\mid d\in\N^{*},d\le n \}|\le\lfloor2\sqrt n\rfloor
+$$
+\end{theo}
+
+\end{frame}
+
+\begin{frame}
+\begin{theo}[结论三]
+对于给定的正整数 $n,m$，所有满足 $\left\lfloor\dfrac{n}{x}\right\rfloor=m$ 的正整数 $x$ 恰为 $\left\lfloor\dfrac{n}{m+1}\right\rfloor+1\sim \left\lfloor\dfrac{n}{m}\right\rfloor$ 之间的所有整数。
+\end{theo}
+\end{frame}
+
+\subsubsection{P2260 模积和}
+
+\begin{frame}
+求 $\sum\limits_{i=1}^n\sum\limits_{j=1}^m(n\bmod i)(m\bmod j),i\neq j$。$n,m\le 10^9$。
+\end{frame}
+
+\begin{frame}
+先忽略 $i\neq j$ 的条件，原式等价于 $(\sum\limits_{i=1}^n n\bmod i)(\sum\limits_{j=1}^mm\bmod j)$。
+
+$\sum\limits_{i=1}^nn\bmod i=\sum\limits_{i=1}^n(n-i\lfloor\dfrac{n}{i}\rfloor)$，由于 $\lfloor\dfrac{n}{i}\rfloor$ 只有 $O(\sqrt n)$ 种不同的取值，故枚举每种取值 $m$，所有 $\lfloor\dfrac{n}{i}\rfloor=m$ 的 $i$ 构成一个区间，可以快速计算。
+
+再减掉 $i=j$ 的情况 $\sum\limits_{i=1}^{\min\{n,m\}}(n-i\lfloor\dfrac{n}{i}\rfloor)^2$，同样使用整除分块方法。
+
+复杂度 $O(\sqrt n)$。
+\end{frame}
+
+\subsubsection{ARC068E Snuke Line}
+
+\begin{frame}
+有一趟列车有 $m+1$ 个车站，从 $0$ 到 $m$ 编号。有 $n$ 种商品，第 $i$ 种只在编号 $[l_i,r_i]$ 的车站出售。一辆列车有一个预设好的系数 $d$，从 $0$ 出发，只会在 $d$ 的倍数车站停车。对于 $d$ 从 $1$ 到 $m$ 的列车，求最多能买到多少种商品。
+
+$1\le n\le 3\times10^5,1\le m\le 10^5$。
+
+第 $i$ 个商品会对满足 $\lfloor\dfrac{l_i-1}{d}\rfloor<\lfloor\dfrac{r_i}{d}\rfloor$ 的 $d$ 产生贡献。两个除式把 $1\sim m$ 分成了 $O(\sqrt m)$ 个区间，$d$ 在每个区间里遍历时 $\lfloor\dfrac{l_i-1}{d}\rfloor$ 和 $\lfloor\dfrac{r_i}{d}\rfloor$ 都不变。若二者不相等，则给该区间里每个 $d$ 都加上 $1$ 的贡献。差分即可。
+\end{frame}
+
+\subsubsection{线性预处理}
+
+\begin{frame}
+如何在线性时间内对 $1\sim n$ 中的每个 $x$ 预处理出 $\sum\limits_{i=1}^x\lfloor\dfrac{x}{i}\rfloor$？
+
+观察到一个重要结论：$\sum\limits_{i=1}^x\lfloor\dfrac{x}{i}\rfloor=\sum\limits_{i=1}^xd(i)$。然后递推即可。
+
+对所有 $k$，$\sum\limits_{i=1}^xi^k\lfloor\dfrac{x}{i}\rfloor$ 均可线性预处理。
+
+这种手法在马上要讲的莫比乌斯反演中有应用。
+\end{frame}
+
+\subsection{莫比乌斯反演}
+
+\subsubsection{基本形式}
+
+\begin{frame}
+如果有函数 $f=g*1$，可以反推出 $g=f*\mu$。写成求和式就是：
+$$
+\begin{aligned}
+f(n)=\sum_{d\mid n} g(d)\\
+g(n)=\sum_{d\mid n} f(d)\mu(\frac{n}{d})
+\end{aligned}
+$$
+反演是普通函数与积性函数的卷积，由前面的分析，复杂度为 $O(n\log\log n)$。
+\end{frame}
+
+\begin{frame}
+对于倍数的求和式，有类似的反演形式：
+$$
+\begin{aligned}
+f(n)=\sum_{n\mid d}g(d)\\
+g(n)=\sum_{n\mid d} f(d)\mu(\frac{d}{n})
+\end{aligned}
+$$
+\end{frame}
+
+\subsubsection{gcd 卷积}
+
+\begin{frame}
+给定数列 $a,b$，求数列 $f$，满足 $f(n)=\sum\limits_{\gcd(i,j)=n}a_ib_j$。
+
+先求 $g(n)=\sum\limits_{n\mid \gcd(i,j)}a_ib_j=(\sum\limits_{n\mid i}a_i)(\sum\limits_{n\mid j}b_j)$，可以 $O(n\log\log n)$ 求出。
+
+又由 $g(n)=\sum\limits_{n\mid d}f(d)$，可以 $O(n\log\log n)$ 反演得到 $f$。
+\end{frame}
+
+\subsubsection{gcd 求和}
+
+\begin{frame}
+\begin{eg}[引例]
+$$
+\sum_{i=1}^n\sum_{j=1}^m[\gcd(i,j)=1]
+$$
+\end{eg}
+
+莫比乌斯反演可以处理这类和 $\gcd$ 求和相关的问题。
+\end{frame}
+
+\begin{frame}
+利用 $\mu*1=\epsilon$，即 $\sum\limits_{d\mid n}\mu(d)=[n=1]$，进行如下变换：
+$$
+\begin{aligned}
+&\sum_{i=1}^n\sum_{j=1}^m[\gcd(i,j)=1]\\
+=&\sum_{i=1}^n\sum_{j=1}^m\sum_{d\mid i,j}\mu(d)\\
+=&\sum_{d=1}^n\mu(d)\sum_{i=1}^n\sum_{j=1}^m[d\mid i][d\mid j]\\
+=&\sum_{d=1}^n\mu(d)\lfloor\frac{n}{d}\rfloor\lfloor\frac{m}{d}\rfloor
+\end{aligned}
+$$
+\end{frame}
+
+\begin{frame}
+一般形式：
+$$
+\begin{aligned}
+&\sum_{i=1}^n\sum_{j=1}^m f(\gcd(i,j))\\
+=&\sum_{i=1}^n\sum_{j=1}^m(f*\mu*1)(\gcd(i,j))\\
+=&\sum_{i=1}^n\sum_{j=1}^m\sum_{d\mid i,j}(f*\mu)(d)\\
+=&\sum_{d=1}^n(f*\mu)(d)\lfloor\frac{n}{d}\rfloor\lfloor\frac{m}{d}\rfloor
+\end{aligned}
+$$
+\end{frame}
+
+\begin{frame}
+更一般地，若 $f,g$ 为完全积性函数：
+$$
+\begin{aligned}
+&\sum_{i=1}^n\sum_{j=1}^mf(i)g(j)h(\gcd(i,j))\\
+=&\sum_{i=1}^n\sum_{j=1}^mf(i)g(j)(h*\mu*1)(\gcd(i,j))\\
+=&\sum_{d=1}^n(h*\mu)(d)\sum_{i=1}^{\lfloor n/d\rfloor}\sum_{j=1}^{\lfloor m/d\rfloor}f(id)g(jd)\\
+=&\sum_{d=1}^n(h*\mu)(d)f(d)g(d)(\sum_{i=1}^{\lfloor n/d\rfloor}f(i))(\sum_{j=1}^{\lfloor m/d\rfloor}g(j))
+\end{aligned}
+$$
+\end{frame}
+
+\subsubsection{P2257 YY 的 GCD}
+
+\begin{frame}
+求 $\sum\limits_{i=1}^n\sum\limits_{j=1}^m[\gcd(i,j)\in\mathbb{P}]$。$1\le n,m\le 10^7$。
+
+令 $f(n)=[n\in \mathbb P]$，需要求 $g=f*\mu$。
+
+发现若 $x=\prod\limits p_i^{\alpha_i}$ 中有两个 $\alpha_i$ 大于 $1$，则 $g(x)$ 一定为 $0$。简单分析知 $g$ 可以线筛。
+\end{frame}
+
+\subsubsection{P6156 简单题}
+
+\begin{frame}
+求 $\sum\limits_{i=1}^n\sum\limits_{j=1}^n(i+j)^k\mu^2(\gcd(i,j))\gcd(i,j)$。
+
+$n\le 5\times10^6,k\le 10^{18}$。
+\end{frame}
+
+\begin{frame}
+沿用之前的方法，记 $f=\mu^2\cdot\text{id},g=f*\mu$。原式化为 $\sum\limits_{i=1}^n\sum\limits_{j=1}^n(i+j)^k\sum\limits_{d\mid i,j}g(d)$，即 $\sum_{d=1}^ng(d)d^k\sum_{i=1}^{\lfloor n/d\rfloor}\sum_{j=1}^{\lfloor n/d\rfloor}(i+j)^k$。后面的二重求和式记作 $S(x)=\sum\limits_{i=1}^x\sum\limits_{j=1}^x(i+j)^k$，容易在线性时间内预处理出 $S$ 在 $1\sim n$ 上每个点的取值。
+
+再来处理 $g$。可以看出 $g$ 是积性函数，故只需求出 $g$ 在素数幂处的取值即可线筛。$1\sim n$ 中所有素数幂的幂次和在 $O(\dfrac{n}{\log n})$ 级别，故暴力处理即可。
+
+复杂度 $O(n)$。
+\end{frame}
+
+\subsubsection{SOJ1985 拼图}
+
+\begin{frame}
+对于正整数对 $(a,b)$，定义一次操作将其变换为 $(\min(a,b),\max(a,b)-\min(a,b))$。设 $f(a,b)$ 为最小的操作次数，使得某一个数变成 $0$。
+
+给定正整数 $n$，求 $\sum\limits_{i=1}^n\sum\limits_{j=1}^nf(i,j)$。$n\le 2\times10^7$。
+\end{frame}
+
+\begin{frame}
+对于 $(a,b)$，$a\ge b$ 时将其变换为 $(a-b,b)$，否则变换为 $(a,b-a)$。答案显然不变。
+
+把每个点向其变换后的点连一条边，形成二叉树结构。对于点 $(a,b)$，其左儿子为 $(a+b,b)$，右儿子为 $(a,a+b)$。答案即为所有点的子树大小之和。
+
+\begin{theo}[结论]
+$(a,b)$ 子树大小为 $1+2\sum\limits_{i=1}^n\sum\limits_{j=1}^n[\gcd(i,j)=1][ai+bj\le n]$。
+\end{theo}
+\end{frame}
+
+\begin{frame}
+\begin{proof}
+记 $L=\begin{pmatrix}1 & 1\\0 & 1\end{pmatrix},R=\begin{pmatrix}1 & 0\\1 & 1\end{pmatrix}$。则 $\begin{pmatrix}a\\b\end{pmatrix}$ 子树中的点为 $M\begin{pmatrix}a\\b\end{pmatrix}$，$M$ 为 $L,R$ 连乘得到的任意矩阵。答案即为求有多少个 $M$ 使得 $M\begin{pmatrix}a\\b\end{pmatrix}\le\begin{pmatrix}n\\n\end{pmatrix}$。
+
+$M=I$ 时显然可以，$M\neq I$ 时，记 $M=PM_1$，$P$ 为 $L$ 或 $R$。可知 $M\begin{pmatrix}a\\b\end{pmatrix}\le\begin{pmatrix}n\\n\end{pmatrix}$ 等价于 $\begin{pmatrix}1 & 1\end{pmatrix}M_1\begin{pmatrix}a\\b\end{pmatrix}\le n$。于是答案为 $1+2\sum\limits_{M}[\begin{pmatrix}1 & 1\end{pmatrix}M\begin{pmatrix}a\\b\end{pmatrix}\le n]$。
+
+$\begin{pmatrix}1 & 1\end{pmatrix}M$ 构成的集合与 $\{\begin{pmatrix}i & j\end{pmatrix}\mid \gcd(i,j)=1\}$ 相等，且存在一个双射。因此答案即为 $1+2\sum\limits_{i=1}^n\sum\limits_{j=1}^n[\gcd(i,j)=1][ai+bj\le n]$。
+\end{proof}
+\end{frame}
+
+\begin{frame}
+开始化式子：
+$$
+\begin{aligned}
+&\sum_{a=1}^n\sum_{b=1}^n\sum_{i=1}^n\sum_{j=1}^n[\gcd(i,j)=1][ai+bj\le n]\\
+=&\sum_{a=1}^n\sum_{n=1}^n\sum_{d=1}^n\mu(d)\sum_{i=1}^{\lfloor n/d\rfloor}\sum_{j=1}^{\lfloor n/d\rfloor}[ai+bj\le \lfloor \frac{n}{d}\rfloor]\\
+=&\sum_{d=1}^n\mu(d)S(\lfloor\frac{n}{d}\rfloor)
+\end{aligned}
+$$
+\end{frame}
+
+\begin{frame}
+其中
+$$
+\begin{aligned}
+S(n)=&\sum_{a=1}^n\sum_{b=1}^n\sum_{i=1}^n\sum_{j=1}^n[ai+bj\le n]\\
+=&\sum_{i=1}^n\sum_{j=1}^{n-i}d(i)d(j)\\
+=&\sum_{i=1}^nd(i)S_d(n-i)
+\end{aligned}
+$$
+$S_d$ 为 $d$ 的前缀和，可以线性预处理。总复杂度为所有不同的 $\lfloor\dfrac{n}{d}\rfloor$ 求和，是 $O(n\log n)$ 的，常数很小。
+\end{frame}
+
+\end{document}

@@ -1,0 +1,219 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\section{组合数相关}
+
+\subsection{卢卡斯定理}
+
+\subsubsection{卢卡斯定理}
+
+\begin{frame}
+\begin{theo}[卢卡斯定理]
+对于素数 $p$，有
+$$
+\binom{n}{m}\equiv\binom{\lfloor n/p\rfloor}{\lfloor m/p\rfloor}\binom{n\bmod p}{m\bmod p}\pmod p
+$$
+\end{theo}
+\end{frame}
+
+\begin{frame}
+\begin{proof}
+考虑 $(1+x)^n$，有
+$$
+\begin{aligned}
+\binom{n}{m}&\equiv [x^m](1+x)^n \pmod p\\
+&\equiv [x^m](1+x)^{p\lfloor n/p\rfloor}(1+x)^{n\bmod p}\pmod p\\
+&\equiv [x^m](1+x^p)^{\lfloor n/p\rfloor}(1+x)^{n\bmod p}\pmod p\\
+&\equiv[x^{p\lfloor m/p\rfloor}](1+x^p)^{\lfloor n/p\rfloor}\cdot[x^{m\bmod p}](1+x)^{n\bmod p}\pmod p\\
+&\equiv \binom{\lfloor n/p\rfloor}{\lfloor m/p\rfloor}\binom{n\bmod p}{m\bmod p}\pmod p
+\end{aligned}
+$$
+\end{proof}
+\end{frame}
+
+\begin{frame}
+该定理可以自然地从二项式系数 $\dbinom{n}{m}$ 推广到多项式系数 $\dbinom{n}{a_1,a_2,\dots,a_m}=[x_1^{a_1}\dots x_m^{a_m}](x_1+\dots+x_m)^n$。
+
+\begin{coro}
+$$
+\binom{n}{a_1,a_2,\dots,a_m}\equiv \binom{\lfloor n/p\rfloor}{\lfloor a_1/p\rfloor,\dots,\lfloor a_m/p\rfloor}\binom{n\bmod p}{a_1\bmod p,\dots,a_m\bmod p}\pmod p
+$$
+\end{coro}
+\end{frame}
+
+\subsubsection{P5598 混乱度}
+
+\begin{frame}
+有 $n$ 种颜色的球，其中第 $i$ 种颜色的球有 $a_i$ 个，同色的球不区分。
+
+定义第 $l\sim r$ 种颜色的球的混乱度 $f(l,r)$ 为：将第 $l\sim r$ 种颜色的球排成一排的方案数对 $p$ 取模的结果。
+
+求 $\sum\limits_{l=1}^n\sum\limits_{r=l}^nf(l,r)$。$n\le 5\times10^5,a_i\le10^{18},p\in\{2,3,5,7\}$。
+\end{frame}
+
+\begin{frame}
+$f(l,r)=\dbinom{a_{l}+\dots+a_r}{a_l,\dots,a_r}\bmod p$。由卢卡斯定理，在 $p$ 进制下若 $a_l+\dots+a_r$ 发生了进位，则 $f(l,r)=0$。而若 $r-l>p\log a$，一定会发生进位。于是可知对于固定的 $l$，所有 $f(l,r)\neq 0$ 的 $r$ 一定距离 $l$ 很近。
+
+$f(l,r)$ 可由 $f(l,r-1)$ 增量求出。
+\end{frame}
+
+\subsubsection{P4345 [SHOI2015] 超能粒子炮·改}
+
+\begin{frame}
+$t$ 次询问，每次求 $\sum\limits_{i=0}^k\dbinom{n}{i}\bmod p$。$p=2333,t\le 10^5,n,k\le 10^{18}$。
+
+记 $f(n,k)=\sum\limits_{i=0}^k\dbinom{n}{i}$。有
+\end{frame}
+
+\begin{frame}
+$$
+\begin{aligned}
+f(n,k)&=\sum_{i=0}^k\binom{n}{i}\\
+&\equiv\sum_{i=0}^k\binom{\lfloor n/p\rfloor}{\lfloor i/p\rfloor}\binom{n\bmod p}{i\bmod p}\\
+&\equiv \sum_{i=0}^{\lfloor k/p\rfloor-1}\binom{\lfloor n/p\rfloor}{i}\cdot \sum_{j=0}^{p-1}\binom{n\bmod p}{j}+\binom{\lfloor n/p\rfloor}{\lfloor k/p\rfloor}\sum_{j=0}^{k\bmod p}\binom{n\bmod p}{j}\\
+&\equiv f(\lfloor n/p\rfloor, \lfloor k/p\rfloor-1)\cdot f(n\bmod p,p-1)+\binom{\lfloor n/p\rfloor}{\lfloor k/p\rfloor}f(n\bmod p,k\bmod p)
+\end{aligned}
+$$
+预处理出每个 $i,j<p$ 的 $f(i,j)$，每次查询 $O(\log^2 n)$。
+\end{frame}
+
+\subsubsection{扩展卢卡斯定理}
+
+\begin{frame}
+对于模数 $m$ 是合数的情况，如何化简 $\dbinom{n}{m}$？
+
+先将 $m$ 质因数分解 $M=\prod p_i^{\alpha_i}$。对每个 $p_i^{\alpha_i}$ 求出 $\dbinom{n}{m}\bmod p_i^{\alpha_i}$，再用中国剩余定理拼起来。
+$$
+\binom{n}{m}\bmod p^k=\frac{n!}{m!(n-m)!}\bmod p^k
+$$
+\end{frame}
+
+\begin{frame}
+由于 $m!$ 与 $(n-m)!$ 不一定有逆元，所以尝试先把分子分母中的 $p$ 因子全部提出来。
+
+设 $f(x)$ 表示 $x!$ 除掉所有 $p$ 因子后的结果，$g(x)$ 表示 $x!$ 中因子 $p$ 的个数。则有
+$$
+\binom{n}{m}\bmod p^k=\frac{f(n)}{f(m)f(n-m)}p^{g(n)-g(m)-g(n-m)}\bmod p^k
+$$
+\end{frame}
+
+\begin{frame}
+拆分 $n!$ 来求 $f$ 和 $g$
+$$
+\begin{aligned}
+n!&=\prod_{i=1}^{\lfloor n/p\rfloor}pi\prod_{i=1,i\perp p}^n i\\
+&=p^{\lfloor n/p\rfloor}(\lfloor\frac{n}{p}\rfloor)!\prod_{i=1,i\perp p}^n i\\
+&\equiv p^{\lfloor n/p\rfloor}(\lfloor\frac{n}{p}\rfloor)!(\prod_{i=1,i\perp p}^{p^k}i)^{\lfloor n/p^k\rfloor}\prod_{i=1,i\perp p}^{n\bmod p^k}i\pmod {p^k}\\
+\end{aligned}
+$$
+\end{frame}
+
+\begin{frame}
+最后一个式子右边后两项不含因子 $p$。故有
+$$
+\begin{aligned}
+f(n)\equiv f(\lfloor\frac{n}{p}\rfloor)(\prod_{i=1,i\perp p}^{p^k}i)^{\lfloor n/p^k\rfloor}\prod_{i=1,i\perp p}^{n\bmod p^k}i\pmod {p^k}\\
+g(n)=\lfloor\frac{n}{p}\rfloor+g(\lfloor\frac{n}{p}\rfloor)
+\end{aligned}
+$$
+对每个 $p^k$，预处理复杂度 $O(p^k)$，每次查询 $O(\log^2 n)$。
+
+其中一个 $\log$ 来自于快速幂，可以使用威尔逊定理除掉，变成 $O(\log n)$。
+\end{frame}
+
+\subsection{库默尔定理}
+
+\subsubsection{勒让德定理}
+
+\begin{frame}
+\begin{theo}[勒让德定理]
+记 $v_p(x)$ 为 $x$ 质因数分解后 $p$ 的指数，$s_p(x)$ 表示 $p$ 进制下 $x$ 各数位之和。则
+$$
+v_p(n!)=\sum_{i=1}^{\infty}\left\lfloor \frac{n}{p^i}\right\rfloor=\frac{n-s_p(n)}{p-1}
+$$
+\end{theo}
+
+\begin{proof}
+第一个等号
+
+$$
+v_p(n!)=\sum_{i=1}^nv_p(i)=\sum_{i=1}^n\sum_{j=1}^{\infty}[p^j\mid i]=\sum_{j=1}^{\infty}\left\lfloor\frac{n}{p^j}\right\rfloor
+$$
+
+第二个等号容易用归纳法证明。
+\end{proof}
+\end{frame}
+
+\subsubsection{库默尔定理}
+
+\begin{frame}
+\begin{theo}[库默尔定理]
+$v_p\left(\dbinom{n+m}{n}\right)$ 等于 $n$ 与 $m$ 在 $p$ 进制下相加的进位次数。
+\end{theo}
+\end{frame}
+
+\begin{frame}
+\begin{proof}
+令 $n=\sum\limits_{i=0}^{\infty} a_ip_i,m=\sum\limits_{i=1}^{\infty}b_ip^i$。于是
+$$
+\begin{aligned}
+v_p\left(\binom{n+m}{n} \right)&=v_p((n+m)!)-v_p(n!)-v_p(m!)\\
+&=\sum_{i=1}^{\infty}\lfloor\frac{n+m}{p^i}\rfloor-\lfloor\frac{n}{p^i}\rfloor-\lfloor\frac{m}{p^i}\rfloor\\
+&=\sum_{i=1}^{\infty}\lfloor\frac{\sum_{j=0}^{i-1}(a_j+b_j)p^j}{p^i} \rfloor+\sum_{j=i}^{\infty}(a_j+b_j)p^{j-i}-\sum_{j=i}^{\infty}a_jp^{j-i}-\sum_{j=i}^{\infty}b_jp^{j-i}\\
+&=\sum_{i=1}^{\infty}[\sum_{j=0}^{i-1}(a_j+b_j)p^j\ge p_i]
+\end{aligned}
+$$
+\end{proof}
+\end{frame}
+
+\subsubsection{SOJ2028 梅子}
+
+\begin{frame}
+有一个 $n$ 行 $m$ 列的迷宫，第 $x$ 行 $y$ 列的坐标为 $(x,y)$，每个格子有 $0,1$ 两种状态，初始所有格子都是 $0$。
+
+进行 $10^{1233^{1337}}$ 次找宝藏，每次从 $(1,1)$ 出发。在 $(x,y)$ 时若当前格子是 $0$ 则走到 $(x+1,y)$，否则走到 $(x,y+1)$。移动后将原 $(x,y)$ 格子的状态取反。走出迷宫则本次找宝藏结束，并记录当前迷宫状态。
+
+求 $10^{1233^{1337}}$ 次找宝藏后，本质不同的迷宫状态个数，对 $998244353$ 取模。
+
+多测，$T\le2\times10^5$。$1\le n,m\le 10^{18}$。
+\end{frame}
+
+\begin{frame}
+我们可以通过一个状态推向另一个状态，同时可以通过一个状态反推回上一个状态，所以迷宫的状态一定会变成最开始的状态。
+
+设经过 $\text{ans}$ 次后第一次变成初始状态。设 $f(x,y)(0\le x<n,0\le y<m)$ 表示前 $\text{ans}$ 次有几次经过 $(x+1,y+1)$。每个格子一定都被经过偶数次，且向右和向下分别占一半。故
+$$
+f(x,y)=
+\left\{
+\begin{aligned}
+&0 &x<0\vee y<0\\
+&\text{ans} &x=0\wedge y=0\\
+&\frac{f(x-1,y)+f(x,y-1)}{2} &\text{otherwise}
+\end{aligned}
+\right.
+$$
+\end{frame}
+
+\begin{frame}
+由此可得 $f(x,y)=\dfrac{\text{ans}\cdot \binom{x+y}{x}}{2^{x+y}}$。约束条件为 $\forall x<n,y<m,2\mid f(x,y)$。故 $\text{ans}$ 为 $2$ 的整数幂，$\log_2\text{ans}=\max\limits_{x,y}(x+y-v_2\left(\binom{x+y}{x} \right)+1)$。$v_2\left(\binom{x+y}{x} \right)=s_2(x)+s_2(y)-s_2(x+y)$。可以使用数位 $\text{dp}$ 在 $O(\log n)$ 解决。
+
+可以发现 $x+y$ 相同的格子上 $f(x,y)$ 都是同奇偶的。故可固定一维再枚举，更加简化。
+\end{frame}
+
+\subsubsection{CF582D Number of Binominal Coefficients}
+
+\begin{frame}
+给定一个素数 $p$ 和整数 $\alpha,A$，计算有多少对整数 $(n,k)$，满足 $0\le k\le n\le A$，且 $\dbinom{n}{k}$ 可以被 $p^{\alpha}$ 整除。
+
+$1\le p,\alpha\le 10^9$，$0\le A<10^{1000}$。
+\end{frame}
+
+\begin{frame}
+答案要求 $v_p\left(\dbinom{n}{k} \right)$ 大于等于 $\alpha$ 的 $(n,k)$ 数量。由库默尔定理，$v_p\left(\dbinom{n}{k}\right)$ 等于 $n-k$ 和 $k$ 在 $p$ 进制下相加的进位次数。
+
+$A$ 很大，考虑在 $p$ 进制下数位 DP。设 $f(i,j,0/1,0/1)$ 表示前 $i$ 位，进位 $j$ 次，$n-k$ 和 $k$ 的和是否小于 $A$ 的前 $i$ 位，是否向前进位的方案数。转移方程略去。
+
+复杂度 $O(\log^2 A)$。
+\end{frame}
+
+\end{document}
