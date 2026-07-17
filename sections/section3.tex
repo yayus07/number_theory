@@ -7,7 +7,7 @@
 
 \subsubsection{卢卡斯定理}
 
-\begin{frame}
+\begin{frame}{卢卡斯定理}
 \begin{theo}[卢卡斯定理]
 对于素数 $p$，有
 $$
@@ -32,7 +32,7 @@ $$
 \end{frame}
 
 \begin{frame}
-该定理可以自然地从二项式系数 $\dbinom{n}{m}$ 推广到多项式系数 $\dbinom{n}{a_1,a_2,\dots,a_m}=[x_1^{a_1}\dots x_m^{a_m}](x_1+\dots+x_m)^n$。
+该定理可以自然地从二项式系数 $\dbinom{n}{m}$ 推广到多项式系数 $\dbinom{n}{a_1,a_2,\dots,a_m}=[x_1^{a_1}\dots x_m^{a_m}](x_1+\dots+x_m)^n$。\pause
 
 \begin{coro}
 $$
@@ -41,9 +41,9 @@ $$
 \end{coro}
 \end{frame}
 
-\subsubsection{P5598 混乱度}
+\subsubsection{}
 
-\begin{frame}
+\begin{frame}{P5598 混乱度}
 有 $n$ 种颜色的球，其中第 $i$ 种颜色的球有 $a_i$ 个，同色的球不区分。
 
 定义第 $l\sim r$ 种颜色的球的混乱度 $f(l,r)$ 为：将第 $l\sim r$ 种颜色的球排成一排的方案数对 $p$ 取模的结果。
@@ -52,37 +52,41 @@ $$
 \end{frame}
 
 \begin{frame}
-$f(l,r)=\dbinom{a_{l}+\dots+a_r}{a_l,\dots,a_r}\bmod p$。由卢卡斯定理，在 $p$ 进制下若 $a_l+\dots+a_r$ 发生了进位，则 $f(l,r)=0$。而若 $r-l>p\log a$，一定会发生进位。于是可知对于固定的 $l$，所有 $f(l,r)\neq 0$ 的 $r$ 一定距离 $l$ 很近。
+$f(l,r)=\dbinom{a_{l}+\dots+a_r}{a_l,\dots,a_r}\bmod p$。由卢卡斯定理，在 $p$ 进制下若 $a_l+\dots+a_r$ 发生了进位，则 $f(l,r)=0$。而若 $r-l>p\log a$，一定会发生进位。于是可知对于固定的 $l$，所有 $f(l,r)\neq 0$ 的 $r$ 一定距离 $l$ 很近。\pause
+\medskip
 
-$f(l,r)$ 可由 $f(l,r-1)$ 增量求出。
+$f(l,r)$ 可由 $f(l,r-1)$ 增量求出。故枚举左端点，移动右端点即可。
 \end{frame}
 
-\subsubsection{P4345 [SHOI2015] 超能粒子炮·改}
+\subsubsection{}
 
-\begin{frame}
-$t$ 次询问，每次求 $\sum\limits_{i=0}^k\dbinom{n}{i}\bmod p$。$p=2333,t\le 10^5,n,k\le 10^{18}$。
+\begin{frame}{P4345 [SHOI2015] 超能粒子炮·改}
+$t$ 次询问，每次求 $\sum\limits_{i=0}^k\dbinom{n}{i}\bmod p$。$p=2333,t\le 10^5,n,k\le 10^{18}$。\pause
+\bigskip
 
-记 $f(n,k)=\sum\limits_{i=0}^k\dbinom{n}{i}$。有
+记 $f(n,k)=\sum\limits_{i=0}^k\dbinom{n}{i}$。有：
 \end{frame}
 
 \begin{frame}
 $$
 \begin{aligned}
-f(n,k)&=\sum_{i=0}^k\binom{n}{i}\\
-&\equiv\sum_{i=0}^k\binom{\lfloor n/p\rfloor}{\lfloor i/p\rfloor}\binom{n\bmod p}{i\bmod p}\\
-&\equiv \sum_{i=0}^{\lfloor k/p\rfloor-1}\binom{\lfloor n/p\rfloor}{i}\cdot \sum_{j=0}^{p-1}\binom{n\bmod p}{j}+\binom{\lfloor n/p\rfloor}{\lfloor k/p\rfloor}\sum_{j=0}^{k\bmod p}\binom{n\bmod p}{j}\\
+f(n,k)&=\sum_{i=0}^k\binom{n}{i}\\ \pause
+&\equiv\sum_{i=0}^k\binom{\lfloor n/p\rfloor}{\lfloor i/p\rfloor}\binom{n\bmod p}{i\bmod p}\\ \pause
+&\equiv \sum_{i=0}^{\lfloor k/p\rfloor-1}\binom{\lfloor n/p\rfloor}{i}\cdot \sum_{j=0}^{p-1}\binom{n\bmod p}{j}+\binom{\lfloor n/p\rfloor}{\lfloor k/p\rfloor}\sum_{j=0}^{k\bmod p}\binom{n\bmod p}{j}\\ \pause
 &\equiv f(\lfloor n/p\rfloor, \lfloor k/p\rfloor-1)\cdot f(n\bmod p,p-1)+\binom{\lfloor n/p\rfloor}{\lfloor k/p\rfloor}f(n\bmod p,k\bmod p)
-\end{aligned}
+\end{aligned} \pause
 $$
 预处理出每个 $i,j<p$ 的 $f(i,j)$，每次查询 $O(\log^2 n)$。
 \end{frame}
 
 \subsubsection{扩展卢卡斯定理}
 
-\begin{frame}
-对于模数 $m$ 是合数的情况，如何化简 $\dbinom{n}{m}$？
+\begin{frame}{扩展卢卡斯定理}
+对于模数 $m$ 是合数的情况，如何化简 $\dbinom{n}{m}$？ \pause
 
-先将 $m$ 质因数分解 $M=\prod p_i^{\alpha_i}$。对每个 $p_i^{\alpha_i}$ 求出 $\dbinom{n}{m}\bmod p_i^{\alpha_i}$，再用中国剩余定理拼起来。
+先将 $m$ 质因数分解 $M=\prod p_i^{\alpha_i}$。对每个 $p_i^{\alpha_i}$ 求出 $\dbinom{n}{m}\bmod p_i^{\alpha_i}$，再用中国剩余定理拼起来。 \pause
+\medskip
+
 $$
 \binom{n}{m}\bmod p^k=\frac{n!}{m!(n-m)!}\bmod p^k
 $$
@@ -112,11 +116,12 @@ $$
 最后一个式子右边后两项不含因子 $p$。故有
 $$
 \begin{aligned}
-f(n)\equiv f(\lfloor\frac{n}{p}\rfloor)(\prod_{i=1,i\perp p}^{p^k}i)^{\lfloor n/p^k\rfloor}\prod_{i=1,i\perp p}^{n\bmod p^k}i\pmod {p^k}\\
-g(n)=\lfloor\frac{n}{p}\rfloor+g(\lfloor\frac{n}{p}\rfloor)
-\end{aligned}
+& f(n)\equiv f(\lfloor\frac{n}{p}\rfloor)(\prod_{i=1,i\perp p}^{p^k}i)^{\lfloor n/p^k\rfloor}\prod_{i=1,i\perp p}^{n\bmod p^k}i\pmod {p^k}\\
+& g(n)=\lfloor\frac{n}{p}\rfloor+g(\lfloor\frac{n}{p}\rfloor)
+\end{aligned} \pause
 $$
-对每个 $p^k$，预处理复杂度 $O(p^k)$，每次查询 $O(\log^2 n)$。
+
+对每个 $p^k$，预处理复杂度 $O(p^k)$，每次查询 $O(\log^2 n)$。\pause
 
 其中一个 $\log$ 来自于快速幂，可以使用威尔逊定理除掉，变成 $O(\log n)$。
 \end{frame}
@@ -131,7 +136,7 @@ $$
 $$
 v_p(n!)=\sum_{i=1}^{\infty}\left\lfloor \frac{n}{p^i}\right\rfloor=\frac{n-s_p(n)}{p-1}
 $$
-\end{theo}
+\end{theo} \pause
 
 \begin{proof}
 第一个等号
@@ -146,7 +151,7 @@ $$
 
 \subsubsection{库默尔定理}
 
-\begin{frame}
+\begin{frame}{库默尔定理}
 \begin{theo}[库默尔定理]
 $v_p\left(\dbinom{n+m}{n}\right)$ 等于 $n$ 与 $m$ 在 $p$ 进制下相加的进位次数。
 \end{theo}
@@ -166,9 +171,9 @@ $$
 \end{proof}
 \end{frame}
 
-\subsubsection{SOJ2028 梅子}
+\subsubsection{}
 
-\begin{frame}
+\begin{frame}{SOJ2028 梅子}
 有一个 $n$ 行 $m$ 列的迷宫，第 $x$ 行 $y$ 列的坐标为 $(x,y)$，每个格子有 $0,1$ 两种状态，初始所有格子都是 $0$。
 
 进行 $10^{1233^{1337}}$ 次找宝藏，每次从 $(1,1)$ 出发。在 $(x,y)$ 时若当前格子是 $0$ 则走到 $(x+1,y)$，否则走到 $(x,y+1)$。移动后将原 $(x,y)$ 格子的状态取反。走出迷宫则本次找宝藏结束，并记录当前迷宫状态。
@@ -179,7 +184,7 @@ $$
 \end{frame}
 
 \begin{frame}
-我们可以通过一个状态推向另一个状态，同时可以通过一个状态反推回上一个状态，所以迷宫的状态一定会变成最开始的状态。
+我们可以通过一个状态推向另一个状态，同时可以通过一个状态反推回上一个状态，所以迷宫的状态一定会变成最开始的状态。\pause
 
 设经过 $\text{ans}$ 次后第一次变成初始状态。设 $f(x,y)(0\le x<n,0\le y<m)$ 表示前 $\text{ans}$ 次有几次经过 $(x+1,y+1)$。每个格子一定都被经过偶数次，且向右和向下分别占一半。故
 $$
@@ -195,21 +200,23 @@ $$
 \end{frame}
 
 \begin{frame}
-由此可得 $f(x,y)=\dfrac{\text{ans}\cdot \binom{x+y}{x}}{2^{x+y}}$。约束条件为 $\forall x<n,y<m,2\mid f(x,y)$。故 $\text{ans}$ 为 $2$ 的整数幂，$\log_2\text{ans}=\max\limits_{x,y}(x+y-v_2\left(\binom{x+y}{x} \right)+1)$。$v_2\left(\binom{x+y}{x} \right)=s_2(x)+s_2(y)-s_2(x+y)$。可以使用数位 $\text{dp}$ 在 $O(\log n)$ 解决。
+由此可得 $f(x,y)=\dfrac{\text{ans}\cdot \binom{x+y}{x}}{2^{x+y}}$。约束条件为 $\forall x<n,y<m,2\mid f(x,y)$。故 $\text{ans}$ 为 $2$ 的整数幂，$\log_2\text{ans}=\max\limits_{x,y}(x+y-v_2\left(\binom{x+y}{x} \right)+1)$。\pause
+
+$v_2\left(\binom{x+y}{x} \right)=s_2(x)+s_2(y)-s_2(x+y)$。可以使用数位 $\text{dp}$ 在 $O(\log n)$ 解决。\pause
 
 可以发现 $x+y$ 相同的格子上 $f(x,y)$ 都是同奇偶的。故可固定一维再枚举，更加简化。
 \end{frame}
 
-\subsubsection{CF582D Number of Binominal Coefficients}
+\subsubsection{}
 
-\begin{frame}
+\begin{frame}{CF582D Number of Binominal Coefficients}
 给定一个素数 $p$ 和整数 $\alpha,A$，计算有多少对整数 $(n,k)$，满足 $0\le k\le n\le A$，且 $\dbinom{n}{k}$ 可以被 $p^{\alpha}$ 整除。
 
 $1\le p,\alpha\le 10^9$，$0\le A<10^{1000}$。
 \end{frame}
 
 \begin{frame}
-答案要求 $v_p\left(\dbinom{n}{k} \right)$ 大于等于 $\alpha$ 的 $(n,k)$ 数量。由库默尔定理，$v_p\left(\dbinom{n}{k}\right)$ 等于 $n-k$ 和 $k$ 在 $p$ 进制下相加的进位次数。
+答案要求 $v_p\left(\dbinom{n}{k} \right)$ 大于等于 $\alpha$ 的 $(n,k)$ 数量。由库默尔定理，$v_p\left(\dbinom{n}{k}\right)$ 等于 $n-k$ 和 $k$ 在 $p$ 进制下相加的进位次数。\pause
 
 $A$ 很大，考虑在 $p$ 进制下数位 DP。设 $f(i,j,0/1,0/1)$ 表示前 $i$ 位，进位 $j$ 次，$n-k$ 和 $k$ 的和是否小于 $A$ 的前 $i$ 位，是否向前进位的方案数。转移方程略去。
 

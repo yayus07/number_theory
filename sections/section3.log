@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  15 JUL 2026 22:43
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  17 JUL 2026 16:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1130,15 +1130,11 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 [12
 
-] (./section3.toc)
+]
 
 [13
 
 ]
-Overfull \vbox (3.34277pt too high) detected at line 145
- []
-
-
 
 [14
 
@@ -1147,10 +1143,6 @@ Overfull \vbox (3.34277pt too high) detected at line 145
 [15
 
 ]
-Overfull \vbox (22.10638pt too high) detected at line 167
- []
-
-
 
 [16
 
@@ -1175,6 +1167,82 @@ Overfull \vbox (22.10638pt too high) detected at line 167
 [21
 
 ]
+
+[22
+
+]
+
+[23
+
+] (./section3.toc)
+
+[24
+
+]
+Overfull \vbox (3.34277pt too high) detected at line 150
+ []
+
+
+
+[25
+
+]
+Overfull \vbox (3.34277pt too high) detected at line 150
+ []
+
+
+
+[26
+
+]
+
+[27
+
+]
+Overfull \vbox (22.10638pt too high) detected at line 172
+ []
+
+
+
+[28
+
+]
+
+[29
+
+]
+
+[30
+
+]
+
+[31
+
+]
+
+[32
+
+]
+
+[33
+
+]
+
+[34
+
+]
+
+[35
+
+]
+
+[36
+
+]
+
+[37
+
+]
 \tf@nav=\write6
 \openout6 = `section3.nav'.
 
@@ -1190,15 +1258,15 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `section3.out' has not changed.
-(rerunfilecheck)             Checksum: 47BACB8A605C75CB8D800C83531AFBC0;1438.
+(rerunfilecheck)             Checksum: 0781EF1D25FAF7E9D24443A255C22051;937.
  ) 
 Here is how much of TeX's memory you used:
- 30191 strings out of 475796
- 653279 string characters out of 5774033
- 1245617 words of memory out of 5000000
- 52507 multiletter control sequences out of 15000+600000
- 564985 words of font info for 93 fonts, out of 8000000 for 9000
+ 30202 strings out of 475796
+ 653660 string characters out of 5774033
+ 1246617 words of memory out of 5000000
+ 52515 multiletter control sequences out of 15000+600000
+ 565001 words of font info for 95 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 148i,19n,140p,520b,791s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 148i,19n,140p,520b,797s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on section3.pdf (21 pages).
+Output written on section3.pdf (37 pages).

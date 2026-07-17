@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  15 JUL 2026 22:44
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  17 JUL 2026 16:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -891,7 +891,7 @@ Package xeCJK Warning: Undefined CJK default family `\CJKsfdefault' has been
 (xeCJK)                Try to use `\setCJKsansfont[<...>]{<...>}' to define
 (xeCJK)                it.
 
-No file section4.aux.
+(./section4.aux)
 \openout1 = `section4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
@@ -914,6 +914,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -949,11 +950,9 @@ LaTeX Font Info:    ... okay on input line 2.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 2.
+(./section4.out) (./section4.out)
 \@outlinefile=\write5
 \openout5 = `section4.out'.
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 2.
@@ -997,7 +996,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  TU/lmr/m/it --> TU/lmr/b/it on input line 2.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 2.
-(c:/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
+ (c:/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (c:/texlive/2025/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
 Dictionary: translator-bibliography-dictionary, Language: English 
@@ -1069,25 +1068,22 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  TU/lmtt/b/n --> TU/lmtt/b/n on input line 2.
 \c@lstlisting=\count405
-
-No file section4.nav.
-No file section4.toc.
-
+ (./section4.nav) (./section4.toc)
 
 [1
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 26.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 26.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 28.
  (c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
@@ -1111,8 +1107,6 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 [6
 
 ]
-No file section4.toc.
-
 
 [7
 
@@ -1160,6 +1154,126 @@ No file section4.toc.
 
 [18
 
+] (./section4.toc)
+
+[19
+
+]
+
+[20
+
+]
+
+[21
+
+]
+
+[22
+
+]
+
+[23
+
+]
+
+[24
+
+]
+
+[25
+
+]
+
+[26
+
+]
+
+[27
+
+]
+
+[28
+
+]
+
+[29
+
+]
+
+[30
+
+]
+
+[31
+
+]
+
+[32
+
+]
+
+[33
+
+]
+
+[34
+
+]
+
+[35
+
+]
+
+[36
+
+]
+
+[37
+
+]
+
+[38
+
+]
+
+[39
+
+]
+
+[40
+
+]
+
+[41
+
+]
+
+[42
+
+]
+
+[43
+
+]
+
+[44
+
+]
+
+[45
+
+]
+
+[46
+
+]
+
+[47
+
+]
+
+[48
+
 ]
 \tf@nav=\write6
 \openout6 = `section4.nav'.
@@ -1182,16 +1296,16 @@ Package rerunfilecheck Warning: File `section4.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `section4.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  0DB1CF50C51F86F7E1B0AF4AF2913B35;1577.
+(rerunfilecheck)             Before: 0079F8774E1A39193F39758B48723F32;1349
+(rerunfilecheck)             After:  C33F217AD746C5DEF65AD2E2268B6089;1141.
  ) 
 Here is how much of TeX's memory you used:
- 30062 strings out of 475796
- 651704 string characters out of 5774033
- 1231617 words of memory out of 5000000
- 52392 multiletter control sequences out of 15000+600000
- 564969 words of font info for 91 fonts, out of 8000000 for 9000
+ 30242 strings out of 475796
+ 655571 string characters out of 5774033
+ 1241617 words of memory out of 5000000
+ 52556 multiletter control sequences out of 15000+600000
+ 564993 words of font info for 94 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 148i,15n,140p,520b,502s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 148i,19n,140p,520b,797s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on section4.pdf (18 pages).
+Output written on section4.pdf (48 pages).

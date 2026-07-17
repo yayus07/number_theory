@@ -1,14 +1,10 @@
 \beamer@sectionintoc {1}{阶与原根}{1}{0}{1}
 \beamer@subsectionintoc {1}{1}{阶}{1}{0}{1}
 \beamer@subsubsectionintoc {1}{1}{1}{阶的定义}{2}{0}{1}
-\beamer@subsubsectionintoc {1}{1}{2}{阶的计算}{4}{0}{1}
-\beamer@subsubsectionintoc {1}{1}{3}{离散对数判定}{5}{0}{1}
-\beamer@subsubsectionintoc {1}{1}{4}{ABC335G Discrete Logarithm Problems}{6}{0}{1}
-\beamer@subsectionintoc {1}{2}{原根}{7}{0}{1}
-\beamer@subsubsectionintoc {1}{2}{1}{原根的定义}{8}{0}{1}
-\beamer@subsubsectionintoc {1}{2}{2}{原根的计算}{11}{0}{1}
-\beamer@subsubsectionintoc {1}{2}{3}{指标}{12}{0}{1}
-\beamer@subsubsectionintoc {1}{2}{4}{BSGS 算法}{13}{0}{1}
-\beamer@subsubsectionintoc {1}{2}{5}{高次剩余}{14}{0}{1}
-\beamer@subsubsectionintoc {1}{2}{6}{UOJ525 平行四边形}{15}{0}{1}
-\beamer@subsubsectionintoc {1}{2}{7}{CF360D Levko and Sets}{17}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{2}{阶的计算}{10}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{3}{离散对数判定}{12}{0}{1}
+\beamer@subsectionintoc {1}{2}{原根}{19}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{1}{原根的定义}{20}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{3}{指标}{31}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{4}{BSGS 算法}{37}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{5}{高次剩余}{40}{0}{1}
