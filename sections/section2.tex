@@ -10,17 +10,20 @@
 \begin{frame}
 好的符号体系可以大大降低描述问题的难度，使得我们能把更多精力放在问题本身上。例如下面是一套不好的符号体系：
 
+\begin{figure}[htbp]
+\centering
 \includegraphics[scale=0.4]{pic1.png}
+\end{figure}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{同余}
 \begin{defi}[同余]
 给定一个正整数 $m$，若整数 $a,b$ 除以 $m$ 的余数相同，则称 $a,b$ 关于模 $m$ 同余，记为 $a\equiv b\pmod m$。
-\end{defi}
+\end{defi} \pause
 
-使用同余的符号体系，可以在处理加、减、乘等运算时像普通的等式一样方便地进行代数变形。
+使用同余的符号体系，可以在处理加、减、乘等运算时像普通的等式一样方便地进行代数变形。 \pause
 
-若 $a\equiv b\pmod m,c\equiv d\pmod m$，则 $a+c\equiv b+d\pmod m$，$a-c\equiv b-d\pmod m$，$ac\equiv bd\pmod m$，$a^n\equiv b^n\pmod m$。
+若 $a\equiv b\pmod m,c\equiv d\pmod m$，则 $a+c\equiv b+d\pmod m$，$a-c\equiv b-d\pmod m$，$ac\equiv bd\pmod m$，$a^n\equiv b^n\pmod m$。 \pause
 
 若 $ac\equiv bc\pmod m$，且 $\gcd(c,m)=d$，则 $a\equiv b\pmod{\dfrac{m}{d}}$。
 \end{frame}
@@ -30,11 +33,11 @@
 \begin{frame}
 \begin{defi}[剩余类]
 设 $m$ 是一个正整数，任意整数除以 $m$ 所得的余数有 $m$ 中可能 $0,1,\dots,m-1$。对于一种余数 $r$，所有模 $m$ 与 $r$ 同余的整数形成集合 $[r]=\{km+r\mid k\in\Z\}$，称为模 $m$ 的一个剩余类。
-\end{defi}
+\end{defi} \pause
 
 \begin{defi}[完全剩余系]
 设 $a_0,a_1,\dots,a_{m-1}$ 是 $m$ 个整数，若其中任意两数都不在同一个剩余类中，则称 $\{a_0,a_1,\dots,a_{m-1}\}$ 为模 $m$ 的一个完全剩余系，简称完系。
-\end{defi}
+\end{defi} \pause
 
 特别地，$\{0,1,\dots,m-1\}$ 称为模 $m$ 的最小非负完系。
 \end{frame}
@@ -42,7 +45,7 @@
 \begin{frame}
 \begin{defi}[欧拉函数]
 欧拉函数 $\varphi(a)$ 为定义在正整数上的函数，$\varphi(a)$ 等于 $0,1,\dots,a-1$ 中与 $a$ 互素的数的个数。
-\end{defi}
+\end{defi} \pause
 
 \begin{defi}[简化剩余系]
 设 $a_0,a_1,\dots,a_{\varphi(m)-1}$ 是 $\varphi(m)$ 个整数，若其中任意两数都不在同一剩余类中，且每个数都与 $m$ 互素，则称 $\{a_0,a_1,\dots,a_{\varphi(m)-1}\}$ 为模 $m$ 的一个简化剩余系或既约剩余系，简称缩系。
@@ -50,16 +53,16 @@
 \end{frame}
 
 \begin{frame}
-尝试证明一下性质：
+尝试证明以下性质： \pause
 
-\begin{theo}[性质]
+\begin{theo}
 \begin{itemize}
-\item 若 $x$ 取遍模 $m$ 的完全剩余系，则 $ax+b$ 也取遍模 $m$ 的完全剩余系。
-\item 若 $\gcd(a,m)=1$，$x$ 取遍模 $m$ 的简化剩余系，则 $ax$ 也取遍模 $m$ 的简化剩余系。
-\item 若 $x_1,x_2$ 分别取遍模 $m_1,m_2$ 的完全剩余系，则 $m_2x_1+m_1x_2$ 取遍模 $m_1m_2$ 的完全剩余系。
+\item 若 $x$ 取遍模 $m$ 的完全剩余系，则 $ax+b$ 也取遍模 $m$ 的完全剩余系。 \pause
+\item 若 $\gcd(a,m)=1$，$x$ 取遍模 $m$ 的简化剩余系，则 $ax$ 也取遍模 $m$ 的简化剩余系。 \pause
+\item 若 $x_1,x_2$ 分别取遍模 $m_1,m_2$ 的完全剩余系，则 $m_2x_1+m_1x_2$ 取遍模 $m_1m_2$ 的完全剩余系。 \pause
 \item 若 $m_1,m_2$ 互素，$x_1,x_2$ 分别取遍模 $m_1,m_2$ 的简化剩余系，则 $m_2x_1+m_1x_2$ 取遍模 $m_1m_2$ 的简化剩余系。
 \end{itemize}
-\end{theo}
+\end{theo} \pause
 
 推论：$\varphi(m_1m_2)=\varphi(m_1)\varphi(m_2)$。
 \end{frame}
@@ -69,78 +72,83 @@
 \subsubsection{逆元}
 
 \begin{frame}
-有些问题在一个数系中难以解决，但通过数系的扩张可以变简单。
+有些问题在一个数系中难以解决，但通过数系的扩张可以变简单。 \pause
 
 \begin{eg}[从 $\Z$ 到 $\Q$]
-计算 $9396\times 14\div 21$。
+计算 $9396\times 14\div 21$。 \pause
 
-这是一个 $\Z$ 上的问题，完全限制在 $\Z$ 上也能做但是运算复杂。引入 $\Q$ 可以简化运算。
+这是一个 $\Z$ 上的问题，完全限制在 $\Z$ 上也能做但是运算复杂。引入 $\Q$ 可以简化运算。 \pause
 \end{eg}
 
 \begin{eg}[从 $\R$ 到 $\C$]
-求三次方程 $x^3-3x+1=0$。
+求三次方程 $x^3-3x+1=0$。 \pause
 
 看函数图像可知该方程有三个实根。但是完全限制在 $\R$ 上不容易求出，引入 $\C$ 后可以通过求根公式快速求出。中间过程会产生虚数单位 $i$，但最后全部消掉，结果回到 $\R$ 中。
-\end{eg}
+\end{eg} \pause
+
+引入逆元也是出于类似的考虑。我们希望在模 $m$ 的意义下进行类似数系的扩张来简化运算。
 \end{frame}
 
-\begin{frame}
+\begin{frame}{乘法逆元}
 \begin{defi}[逆元]
 设 $m$ 是一个大于 $1$ 的正整数，$a$ 是任意一个整数。若存在整数 $x$ 使得 $ax\equiv 1\pmod m$ 成立，则称 $x$ 为 $a$ 模 $m$ 的乘法逆元，记为 $a^{-1}$。
-\end{defi}
+\end{defi} \pause
 
-$ax\equiv 1\pmod m\iff ax+m\xi=1$。由裴蜀定理，$a$ 存在逆元的充要条件是 $\gcd(a,m)=1$。
+$ax\equiv 1\pmod m\iff ax+m\xi=1$。由裴蜀定理，$a$ 存在逆元的充要条件是 $\gcd(a,m)=1$。 \pause
 
-所有逆元属于同一个剩余类。
+所有逆元属于同一个剩余类。 \pause
 
 模为素数 $p$ 时，每个整数 $0<x<p$ 均有逆元。
 \end{frame}
 
 \begin{frame}
-\begin{eg}[例题]
-求解线性同余方程 $3x\equiv 4\pmod{101}$。
+\begin{eg}
+求解线性同余方程 $3x\equiv 4\pmod{101}$。 \pause
 
 原来需要解二元一次方程，现在只需两边同乘 $3$ 的逆元即可。
-\end{eg}
+\end{eg} \pause
 
 乘法逆元可以在同余的体系下引入人造分数，在运算上和 $\Q$ 保持高度一致。以后可以使用 $\dfrac{a}{b}$ 来表示 $a\cdot b^{-1}\bmod m$。
 \end{frame}
 
 \subsubsection{逆元求解}
 
-\begin{frame}
-求逆元的第一种方法是使用 exgcd 求二元一次方程，前面已经介绍过。下面介绍 OI 中更常用的利用欧拉定理的方法。
+\begin{frame}{逆元求解}
+求逆元的第一种方法是使用 exgcd 求二元一次方程，前面已经介绍过。下面介绍 OI 中更常用的利用欧拉定理的方法。 \pause
 
 \begin{theo}[欧拉定理]
 对于大于 $1$ 的正整数 $m$ 和与 $m$ 互素的整数 $a$，有 $a^{\varphi(m)}\equiv 1\pmod m$。
-\end{theo}
+\end{theo} \pause
 
+\begin{proof}
 由前面的结论，当 $x$ 取遍模 $m$ 的简化剩余系时，$ax$ 也取遍模 $m$ 的简化剩余系。设 $\{r_1,r_2,\dots,r_{\varphi(m)}\}$ 是一个简化剩余系，则 $r_1r_2\dots r_{\varphi(m)}\equiv a^{\varphi(m)}r_1r_2\dots r_{\varphi(m)}\pmod m$。又 $\gcd(r_1,m)=\gcd(r_2,m)=\dots=\gcd(r_{\varphi(m)},m)=1$，故 $\gcd(r_1r_2\dots r_{\varphi(m)},m)=1$。于是 $a^{\varphi(m)}\equiv 1\pmod m$。
+\end{proof}
+
 \end{frame}
 
 \begin{frame}
 \begin{theo}[费马小定理]
 对于素数 $p$ 和模 $p$ 不为 $0$ 的整数 $a$，$a^{p-1}\equiv 1\pmod p$。
-\end{theo}
+\end{theo} \pause
 
-于是 $a$ 的逆元可以直接表示为 $a^{\varphi(m)-1}$ 或 $a^{p-2}$。
+于是 $a$ 的逆元可以直接表示为 $a^{\varphi(m)-1}$ 或 $a^{p-2}$。 \pause
 
 exgcd 和快速幂都需要 $\log$ 时间复杂度，下面介绍一种离线的线性预处理、$O(1)$ 查询的逆元求法。
 \end{frame}
 
 \begin{frame}
-离线逆元：有 $n$ 个整数 $a_1,a_2,\dots,a_n$，用线性时间求出它们在模 $m$ 意义下的逆元 $a_1^{-1},a_2^{-1},\dots,a_n^{-1}$。
+离线逆元：有 $n$ 个整数 $a_1,a_2,\dots,a_n$，用线性时间求出它们在模 $m$ 意义下的逆元 $a_1^{-1},a_2^{-1},\dots,a_n^{-1}$。 \pause
 
-记 $A=a_1a_2\dots a_n$。由于每个 $a_i$ 都有逆元，$A$ 也有逆元 $A^{-1}$。
+记 $A=a_1a_2\dots a_n$。由于每个 $a_i$ 都有逆元，$A$ 也有逆元 $A^{-1}$。 \pause
 
-维护序列的前缀积 $p_i=a_1a_2\dots a_{i-1}$ 和后缀积 $s_i=a_{i+1}a_{i+2}\dots a_n$。则 $a_i^{-1}\equiv A^{-1}p_{i-1}s_{i+1}\pmod m$。
+维护序列的前缀积 $p_i=a_1a_2\dots a_{i-1}$ 和后缀积 $s_i=a_{i+1}a_{i+2}\dots a_n$。则 $a_i^{-1}\equiv A^{-1}p_{i}s_{i}\pmod m$。 \pause
 
 特别地，$1\sim n$ 中所有数的逆元、$1\sim n$ 中所有数的阶乘的逆元也可以线性预处理。
 \end{frame}
 
-\subsubsection{SOJ123 水题}
+\subsubsection{}
 
-\begin{frame}
+\begin{frame}{SOJ123 水题}
 给定奇质数 $P$ 和 $n$ 个整数 $a_1,\dots,a_n$，支持两种操作：
 
 \begin{enumerate}
@@ -148,7 +156,7 @@ exgcd 和快速幂都需要 $\log$ 时间复杂度，下面介绍一种离线的
 \item 对于所有 $l\le i\le r$，将 $a_i$ 变成 $a_i^{P-2}$。
 \end{enumerate}
 
-每次操作后输出 $\sum\limits_{i=1}^na_i\bmod P$。$n\le 2000$，操作次数 $m\le 2000$。
+每次操作后输出 $\sum\limits_{i=1}^na_i\bmod P$。$n\le 2000$，操作次数 $m\le 2000$。 \pause
 
 将每个 $a_i$ 以分数的形式维护，每次查询的时候线性求出每个分母的逆元。复杂度 $O(nm+m\log P)$。
 \end{frame}
@@ -157,16 +165,20 @@ exgcd 和快速幂都需要 $\log$ 时间复杂度，下面介绍一种离线的
 
 \subsubsection{单个方程}
 
-\begin{frame}
-形如 $ax\equiv b\pmod m$ 的方程，称为线性同余方程。
+\begin{frame}{线性同余方程}
+形如 $ax\equiv b\pmod m$ 的方程，称为线性同余方程。 \pause
 
-将其改写为 $ax+m\xi=b$ 的形式，易知有解的充要条件是 $\gcd(a,m)\mid b$。
+将其改写为 $ax+m\xi=b$ 的形式，易知有解的充要条件是 $\gcd(a,m)\mid b$。 \pause
 
 用 exgcd 可以求出 $ax+m\xi=\gcd(a,m)$ 的一个特解 $x_0$，并表示出通解
+
 $$
 x=\frac{x_0b}{\gcd(a,m)}+k\frac{m}{\gcd(a,m)}
 $$
+
+\pause
 或者写成
+
 $$
 x\equiv \frac{x_0b}{\gcd(a,m)}\pmod{\frac{m}{\gcd(a,m)}}
 $$
@@ -174,7 +186,7 @@ $$
 
 \subsubsection{方程组}
 
-\begin{frame}
+\begin{frame}{线性同余方程组}
 求解线性同余方程组：
 $$
 \left\{
@@ -185,7 +197,7 @@ x&\equiv a_2\pmod{m_2}\\
 x&\equiv a_n\pmod{m_n}
 \end{aligned}
 \right.
-$$
+$$ \pause
 考虑不断合并两个同余方程 $x\equiv a_1\pmod{m_1},x\equiv a_2\pmod{m_2}$。
 
 将其转化为不定方程 $x=a_1+\xi_1m_1=a_2+\xi_2m_2$，即 $\xi_1m_1-\xi_2m_2=a_2-a_1$。有解的充要条件是 $\gcd(m_1,m_2)\mid a_2-a_1$。
@@ -196,7 +208,7 @@ $$
 
 $$
 \xi_1=\frac{\xi_1'(a_2-a_1)}{\gcd(m_1,m_2)}+k\frac{m_2}{\gcd(m_1,m_2)}
-$$
+$$ \pause
 
 于是
 
@@ -210,32 +222,32 @@ $$
 
 \subsubsection{中国剩余定理}
 
-\begin{frame}
+\begin{frame}{中国剩余定理}
 $m_1,\dots,m_n$ 互素时，可以直接形式化地给出解：
 $$
 x\equiv \sum_{i=1}^n(a_i\prod_{j\ne i}m_j^{-1}\bmod m_i)\prod_{j\neq i}m_j\pmod{\prod_{i=1}^n m_i}
 $$
 \end{frame}
 
-\subsubsection{CF338D GCD Table}
+\subsubsection{}
 
-\begin{frame}
+\begin{frame}{CF338D GCD Table}
 给出序列 $a_1,\dots,a_k$，判断是否存在 $x,y$，满足 $1\le x\le n,1\le y\le m$，且对于 $i=1,2,\dots,k$，均有 $\gcd(x,y+i-1)=a_i$。
 
 $k\le 10^4,n,m,a_i\le 10^{12}$。
 \end{frame}
 
 \begin{frame}
-$\gcd(x,y+i-1)=a_i$ 的必要条件是 $a_i\mid x,a_i\mid y+i-1$。由此列出关于 $x$ 和 $y$ 的线性方程组。
+$\gcd(x,y+i-1)=a_i$ 的必要条件是 $a_i\mid x,a_i\mid y+i-1$。由此列出关于 $x$ 和 $y$ 的线性方程组。 \pause
 
-求解得到 $x=k_1\cdot\mathrm{lcm}(a_1,\dots,a_k),y=k_2\cdot\mathrm{lcm}(a_1,\dots,a_k)+y_0$。
+求解得到 $x=k_1\cdot\mathrm{lcm}(a_1,\dots,a_k),y=k_2\cdot\mathrm{lcm}(a_1,\dots,a_k)+y_0$。 \pause
 
 此时有 $a_i\mid\gcd(x,y+i-1)$，要求 $k_1,k_2$ 的值使 $\gcd$ 恰好等于 $a_i$。$k_1>1$ 一定不优，故 $k_1=1$。$\gcd(x,y+i-1)=\gcd(\mathrm{lcm}(a_1,\dots,a_k),y_0+i-1)$，和 $k_2$ 取值无关，令 $k_2=0$。对每个 $i$ 判定即可。
 \end{frame}
 
-\subsubsection{P5330 [SNOI2019] 数论}
+\subsubsection{}
 
-\begin{frame}
+\begin{frame}{P5330 [SNOI2019] 数论}
 给定正整数 $P,Q,T$，大小为 $n$ 的整数集 $A$ 和大小为 $m$ 的整数集 $B$。求
 $$
 \sum_{i=0}^{T-1}[(i\bmod P)\in A \wedge(i\bmod Q)\in B]
@@ -246,9 +258,9 @@ $1\le n,m\le 10^6,1\le P,Q\le 10^6,1\le T\le 10^{18}$。
 \end{frame}
 
 \begin{frame}
-对满足条件的 $x$，存在 $i,j,u,v$，$x=a_i+uP=b_j+vQ$，即 $uP-vQ=b_j-a_i$。记 $g=\gcd(P,Q)$，必有 $g\mid b_j-a_i$。故把 $A,B$ 中的所有元素按模 $g$ 分组，$A_r=\{a_i\mid a_i\equiv r\pmod g\}$。接下来将问题限制在 $A_r,B_r$ 上，统计所有模 $g$ 余 $r$ 的 $x$。
+对满足条件的 $x$，存在 $i,j,u,v$，$x=a_i+uP=b_j+vQ$，即 $uP-vQ=b_j-a_i$。记 $g=\gcd(P,Q)$，必有 $g\mid b_j-a_i$。故把 $A,B$ 中的所有元素按模 $g$ 分组，$A_r=\{a_i\mid a_i\equiv r\pmod g\}$。接下来将问题限制在 $A_r,B_r$ 上，统计所有模 $g$ 余 $r$ 的 $x$。 \pause
 
-对 $uP-vQ=b_j-a_i$ 使用 exgcd 返回一个解 $u_0,v_0$，所有可能的 $u=\dfrac{u_0(b_j-a_i)}{g}+k\cdot\dfrac{Q}{g}$。于是解得
+对 $uP-vQ=b_j-a_i$，使用 exgcd 返回一个解 $u_0,v_0$，所有可能的 $u$ 为 $u=\dfrac{u_0(b_j-a_i)}{g}+k\cdot\dfrac{Q}{g}$。于是解得
 
 $$
 x\equiv a_i+\dfrac{Pu_0(b_j-a_i)}{g}\equiv (g-Pu_0)\dfrac{a_i-r}{g}+Pu_0\dfrac{b_j-r}{g}+r\pmod{\mathrm{lcm}(P,Q)}
@@ -256,7 +268,7 @@ $$
 \end{frame}
 
 \begin{frame}
-其中 $u_0$ 只与 $P,Q$ 有关。将 $A_r$ 中的每个元素 $a$ 变为 $(g-Pu_0)\dfrac{a-r}{g}=Qv_0\dfrac{a-r}{g}$，$B_r$ 中的每个元素 $b$ 变为 $Pu_0\dfrac{b-r}{g}$。问题变成求有多少 $x$ 满足 $\exists a,b,\ \mathrm{s.t.}\ x\equiv a+b+r\pmod{\mathrm{lcm}(P,Q)}$。
+其中 $u_0$ 只与 $P,Q$ 有关。将 $A_r$ 中的每个元素 $a$ 变为 $(g-Pu_0)\dfrac{a-r}{g}$ 即 $Qv_0\dfrac{a-r}{g}$，$B_r$ 中的每个元素 $b$ 变为 $Pu_0\dfrac{b-r}{g}$。问题变成求有多少 $x$ 满足 $\exists a,b,\ \mathrm{s.t.}\ x\equiv a+b+r\pmod{\mathrm{lcm}(P,Q)}$。 \pause
 
 注意到不会有两对不同的 $a,b$ 撞在一起，于是容易解决。
 \end{frame}
@@ -265,16 +277,17 @@ $$
 
 \subsubsection{素数模的同余式}
 
-\begin{frame}
-下面考虑素数模下多项式和同余式的一些一般性质。
+\begin{frame}{素数模的同余式}
+下面考虑素数模下多项式和同余式的一些一般性质。 \pause
 
-高次同余式
+高次同余式：
 $$
 f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_0\equiv 0\pmod p
 $$
-其中 $p$ 是素数，$a_{n}\not\equiv 0\pmod p$。
 
-对 $f(x)$ 作带余除法 $f(x)=(x^p-x)q(x)+r(x)$，其中 $r(x)$ 次数不超过 $p-1$。
+其中 $p$ 是素数，$a_{n}\not\equiv 0\pmod p$。 \pause
+
+对 $f(x)$ 作带余除法 $f(x)=(x^p-x)q(x)+r(x)$，其中 $r(x)$ 次数不超过 $p-1$。 \pause
 
 任意整数 $x$ 满足 $x^p-x\equiv 0\pmod p$，故 $f(x)\equiv r(x)\pmod p$，这意味着 $f(x)$ 与一个次数不超过 $p-1$ 的多项式等价。下面可以令 $n<p$。
 \end{frame}
@@ -282,7 +295,7 @@ $$
 \begin{frame}
 \begin{theo}[因式定理]
 设 $k\le n$，$x\equiv a_i\pmod p \ (i=1,2,\dots,k)$ 是同余方程的 $k$ 个不同解。则存在首项系数为 $a_n$ 的 $n-k$ 次多项式 $f_k(x)$，使得 $f(x)\equiv (x-a_1)(x-a_2)\dots(x-a_k)f_k(x)\pmod p$。
-\end{theo}
+\end{theo} \pause
 
 由此立刻得出以下推论：
 
@@ -294,7 +307,7 @@ $$
 \begin{frame}
 \begin{theo}[威尔逊定理]
 $(p-1)!\equiv -1\pmod p$。
-\end{theo}
+\end{theo} \pause
 
 \begin{theo}[拉格朗日定理]
 同余方程
@@ -307,18 +320,18 @@ $$
 
 \subsubsection{二次剩余}
 
-\begin{frame}
+\begin{frame}{二次剩余}
 现在来研究二次同余方程 $Ax^2+Bx+C\equiv 0\pmod m$。通过使用配方法和拆分模数，我们只需要研究核心问题 $x^2\equiv a\pmod p$，其中 $p$ 为奇素数。若该方程有解，称 $a$ 为模 $p$ 的二次剩余，否则称为二次非剩余。
 \end{frame}
 
 \subsubsection{欧拉判别法}
 
 \begin{frame}
-先判断方程 $x^2\equiv a\pmod p$ 有没有解，即判断 $a$ 是不是模 $p$ 的二次剩余。
+先判断方程 $x^2\equiv a\pmod p$ 有没有解，即判断 $a$ 是不是模 $p$ 的二次剩余。 \pause
 
-\begin{theo}[引理]
+\begin{theo}
 $1,2,\dots,p-1$ 中恰好有 $\frac{p-1}{2}$ 个二次剩余。
-\end{theo}
+\end{theo} \pause
 
 设有不同的 $x,y<p$ 满足 $x^2\equiv y^2\pmod p$，则 $(x-y)(x+y)\equiv 0\pmod p$，故必有 $y=p-x$。于是可知 $1^2,2^2,\dots,(\frac{p-1}{2})^2\bmod p$ 恰为所有的二次剩余。
 \end{frame}
@@ -326,12 +339,12 @@ $1,2,\dots,p-1$ 中恰好有 $\frac{p-1}{2}$ 个二次剩余。
 \begin{frame}
 \begin{theo}[欧拉判别法]
 若 $\gcd(a,p)=1$，则 $a$ 是模 $p$ 的二次剩余的充要条件是 $a^{\frac{p-1}{2}}\equiv 1\pmod p$。$a$ 是模 $p$ 的二次非剩余的充要条件是 $a^{\frac{p-1}{2}}\equiv -1\pmod p$。
-\end{theo}
+\end{theo} \pause
 
 \begin{proof}
-由费马小定理，$x^{p-1}-1\equiv (x^{\frac{p-1}{2}}-1)(x^{\frac{p-1}{2}}+1)\equiv 0\pmod p$。故 $a^{\frac{p-1}{2}}$ 模 $p$ 的结果一定为 $\pm 1$。
+由费马小定理，$x^{p-1}-1\equiv (x^{\frac{p-1}{2}}-1)(x^{\frac{p-1}{2}}+1)\equiv 0\pmod p$。故 $a^{\frac{p-1}{2}}$ 模 $p$ 的结果一定为 $\pm 1$。 \pause
 
-若 $a$ 是二次剩余，有 $a^{\frac{p-1}{2}}\equiv (x^2)^{\frac{p-1}{2}}\equiv 1\pmod p$。
+若 $a$ 是二次剩余，有 $a^{\frac{p-1}{2}}\equiv (x^2)^{\frac{p-1}{2}}\equiv 1\pmod p$。 \pause
 
 所有 $\frac{p-1}{2}$ 个二次剩余都是方程 $x^{\frac{p-1}{2}}-1\equiv 0\pmod p$ 的根。由拉格朗日定理，不存在任何一个二次非剩余再是 $x^{\frac{p-1}{2}}-1\equiv 0\pmod p$ 的根。故所有二次非剩余 $a$ 满足 $a^{\frac{p-1}{2}}\equiv -1\pmod p$。
 \end{proof}
@@ -339,7 +352,7 @@ $1,2,\dots,p-1$ 中恰好有 $\frac{p-1}{2}$ 个二次剩余。
 
 \subsubsection{勒让德符号}
 
-\begin{frame}
+\begin{frame}{勒让德符号}
 勒让德符号 $\left(\dfrac{a}{p}\right)$（读作 $a$ 对 $p$ 的勒让德符号）是一个对于给定的奇素数 $p$ 定义在一切整数 $a$ 上的函数，值为
 $$
 \left(\frac{a}{p}\right)=
@@ -354,11 +367,11 @@ $$
 \end{frame}
 
 \begin{frame}
-\begin{theo}[简单性质]
+\begin{theo}
 \begin{itemize}
-\item $\left(\dfrac{a}{p}\right)\equiv a^{\frac{p-1}{2}}\pmod p$
-\item $\left(\dfrac{ab}{p}\right)=\left(\dfrac{a}{p}\right)\left(\dfrac{b}{p} \right)$（完全积性）
-\item $\left(\dfrac{ab^2}{p} \right)=\left(\dfrac{a}{p} \right)$
+\item $\left(\dfrac{a}{p}\right)\equiv a^{\frac{p-1}{2}}\pmod p$ \pause
+\item $\left(\dfrac{ab}{p}\right)=\left(\dfrac{a}{p}\right)\left(\dfrac{b}{p} \right)$（完全积性） \pause
+\item $\left(\dfrac{ab^2}{p} \right)=\left(\dfrac{a}{p} \right)$ 
 \end{itemize}
 \end{theo}
 \end{frame}
@@ -374,59 +387,61 @@ $$
 
 \subsubsection{Cipolla 算法}
 
-\begin{frame}
-接下来求解 $x^2\equiv a\pmod p$。已知 $a$ 为二次剩余。
+\begin{frame}{Cipolla 算法}
+接下来求解 $x^2\equiv a\pmod p$。已知 $a$ 为二次剩余。 \pause
 
-先找到一个整数 $r$，使得 $r^2-a$ 是二次非剩余。由于二次非剩余个数占一半，故可直接不断随机 $r$ 直到满足条件。
+先找到一个整数 $r$，使得 $r^2-a$ 是二次非剩余。由于二次非剩余个数占一半，故可直接不断随机 $r$ 直到满足条件。 \pause
 
-构造复数 $\omega=\sqrt{r^2-a}$。下面进行域扩张，定义 $\mathbb{F}_{p^2}=\{A+B\omega\mid A,B\in\mathbb{F}_p \}$，其中取模操作为 $A,B$ 分别取模。有 $\omega^2\equiv r^2-a\pmod p$。
+构造复数 $\omega=\sqrt{r^2-a}$。下面进行域扩张，定义 $\mathbb{F}_{p^2}=\{A+B\omega\mid A,B\in\mathbb{F}_p \}$，在该域中取模操作为 $A,B$ 分别取模。有 $\omega^2\equiv r^2-a\pmod p$。
 \end{frame}
 
 \begin{frame}
 \begin{theo}[Freshman's Dream]
 在特征为素数 $p$ 的代数系统中，$(x+y)^p=x^p+y^p$。
-\end{theo}
+\end{theo} \pause
 
-$\mathbb{F}_{p^2}$ 的特征与 $\mathbb{F}_p$ 相同，均为 $p$。于是 $\forall x,y\in \mathbb{F}_{p^2},(x+y)^p\equiv x^p+y^p\pmod p$。
+$\mathbb{F}_{p^2}$ 的特征与 $\mathbb{F}_p$ 相同，均为 $p$。于是 $\forall x,y\in \mathbb{F}_{p^2},(x+y)^p\equiv x^p+y^p\pmod p$。 \pause
 
-\begin{theo}[引理]
-$\omega^p\equiv -w\pmod p$。
+\begin{theo}
+$\omega^p\equiv -\omega\pmod p$。
 \end{theo}
 \end{frame}
 
 \begin{frame}
-直接令 $x=(r+\omega)^{\frac{p+1}{2}}\bmod p$。下证 $x^2\equiv a\pmod p$ 以及 $x\in\mathbb{F}_p$。
+直接令 $x=(r+\omega)^{\frac{p+1}{2}}\bmod p$。下证 $x^2\equiv a\pmod p$ 以及 $x\in\mathbb{F}_p$。 \pause
+\medskip
 
-$x^2\equiv (r+\omega)^{p+1}\equiv (r+\omega)(r^p+\omega^p)\equiv(r+\omega)(r-\omega)\equiv r^2-\omega^2\equiv a\pmod p$。
+$x^2\equiv (r+\omega)^{p+1}\equiv (r+\omega)(r^p+\omega^p)\equiv(r+\omega)(r-\omega)\equiv r^2-\omega^2\equiv a\pmod p$。 \pause
+\medskip
 
 在 $\mathbb{F}_{p^2}$ 中考察同余式 $y^{p-1}-1\equiv 0\pmod p$，由拉格朗日定理，其有不超过 $p-1$ 个根，且一定都在 $\mathbb{F}_p$ 中。而 $x^{p-1}\equiv (x^2)^{\frac{p-1}{2}}\equiv a^{\frac{p-1}{2}}\equiv 1\pmod p$，故 $x\in\mathbb{F}_p$。
 \end{frame}
 
-\subsubsection{P6610 [Code+\#7] 同余方程}
+\subsubsection{}
 
-\begin{frame}
+\begin{frame}{P6610 [Code+\#7] 同余方程}
 $n$ 次询问，每次给出正整数 $p$ 和 $x$，求方程 $a^2+b^2\equiv x\pmod p$ 关于 $a,b$ 在模 $p$ 意义下解的组数。其中 $p$ 是奇数，且不含平方因子。
 
 $n\le 10^5,p\le 10^7$。
 \end{frame}
 
 \begin{frame}
-$p$ 是不含平方因子的奇数，意味着可以分解为若干奇素数的乘积。可以拆开分别求解，再用中国剩余定理拼起来。答案为模数取遍 $p$ 的所有素因子时答案之积。
+$p$ 是不含平方因子的奇数，意味着可以分解为若干奇素数的乘积。可以拆开分别求解，再用中国剩余定理拼起来。答案为模数取遍 $p$ 的所有素因子时答案之积。 \pause
 
 下面设 $p$ 为奇素数。枚举 $u=a^2,v=b^2$，则 $u,v$ 需要同时为二次剩余。当 $u$ 为二次剩余时，对应着两个 $a$。$v$ 同理。可以用勒让德符号把二者统一起来：
 $$
-\text{ans}=\sum_{u+v\equiv x}\left(\left(\frac{u}{p}\right)+1\right)\left(\left(\frac{v}{p}\right)+1 \right)
+ans=\sum_{u+v\equiv x}\left(\left(\frac{u}{p}\right)+1\right)\left(\left(\frac{v}{p}\right)+1 \right)
 $$
 \end{frame}
 
 \begin{frame}
 模奇素数时二次剩余与二次非剩余数量相等，即 $\sum\limits_{i=0}^{p-1}\left(\dfrac{i}{p} \right)=0$。结合勒让德符号的完全积性，上式变成
 $$
-\text{ans}=p+\sum_{u+v\equiv x}\left(\frac{uv}{p}\right)=p+\sum_{u=0}^{p-1}\left(\frac{u(x-u)}{p}\right)
-$$
+ans=p+\sum_{u+v\equiv x}\left(\frac{uv}{p}\right)=p+\sum_{u=0}^{p-1}\left(\frac{u(x-u)}{p}\right)
+$$ \pause
 再由 $\left(\dfrac{u(x-u)}{p}\right)=\left(\dfrac{\frac{x}{u}-1}{p}\right)$，$u$ 取遍模 $p$ 的简化剩余系时 $\frac{x}{u}$ 也取遍模 $p$ 的简化剩余系，$\frac{x}{u}-1$ 取遍 $0\sim p-2$。故
 $$
-\text{ans}=p-\left(\frac{p-1}{p}\right)=p-(-1)^{\frac{p-1}{2}}
+ans=p-\left(\frac{p-1}{p}\right)=p-(-1)^{\frac{p-1}{2}}
 $$
 \end{frame}
 

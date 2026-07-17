@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  15 JUL 2026 22:31
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  16 JUL 2026 17:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1077,24 +1077,24 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 [2
 
 ]
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 26.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
- (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
- (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 26.
- (c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
 
 [3
 
 ]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
+ (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
+ (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 28.
+ (c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
 
 [4
 
@@ -1106,7 +1106,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 [6
 
-] (./section1.toc)
+]
 
 [7
 
@@ -1119,16 +1119,6 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 [9
 
 ]
-\openout4 = `section1.vrb'.
-
- (./section1.vrb
-
-Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
-(xeCJK)                
-(xeCJK)                Try to use `\setCJKmonofont[<...>]{<...>}' to define
-(xeCJK)                it.
-
-)
 
 [10
 
@@ -1145,9 +1135,6 @@ Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
 [13
 
 ]
-\openout4 = `section1.vrb'.
-
- (./section1.vrb)
 
 [14
 
@@ -1155,7 +1142,7 @@ Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
 
 [15
 
-]
+] (./section1.toc)
 
 [16
 
@@ -1163,7 +1150,7 @@ Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
 
 [17
 
-] (./section1.toc)
+]
 
 [18
 
@@ -1192,6 +1179,187 @@ Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
 [24
 
 ]
+
+[25
+
+]
+
+[26
+
+]
+
+[27
+
+]
+\openout4 = `section1.vrb'.
+
+ (./section1.vrb
+
+Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
+(xeCJK)                
+(xeCJK)                Try to use `\setCJKmonofont[<...>]{<...>}' to define
+(xeCJK)                it.
+
+)
+
+[28
+
+] (./section1.vrb)
+
+[29
+
+]
+
+[30
+
+]
+
+[31
+
+]
+
+[32
+
+]
+
+[33
+
+]
+
+[34
+
+]
+
+[35
+
+]
+
+[36
+
+]
+
+[37
+
+]
+
+[38
+
+]
+\openout4 = `section1.vrb'.
+
+ (./section1.vrb)
+
+[39
+
+] (./section1.vrb)
+
+[40
+
+]
+
+[41
+
+]
+
+[42
+
+]
+
+[43
+
+]
+
+[44
+
+]
+
+[45
+
+]
+
+[46
+
+]
+
+[47
+
+] (./section1.toc)
+
+[48
+
+]
+
+[49
+
+]
+
+[50
+
+]
+
+[51
+
+]
+
+[52
+
+]
+
+[53
+
+]
+
+[54
+
+]
+
+[55
+
+]
+
+[56
+
+]
+
+[57
+
+]
+
+[58
+
+]
+
+[59
+
+]
+
+[60
+
+]
+
+[61
+
+]
+
+[62
+
+]
+
+[63
+
+]
+
+[64
+
+]
+
+[65
+
+]
+
+[66
+
+]
 \tf@nav=\write6
 \openout6 = `section1.nav'.
 
@@ -1207,15 +1375,15 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `section1.out' has not changed.
-(rerunfilecheck)             Checksum: FB1C18B1B21BC74DF9274C05FA69A284;1792.
+(rerunfilecheck)             Checksum: 44F5D134F47758D400759B17F080197E;1431.
  ) 
 Here is how much of TeX's memory you used:
- 30404 strings out of 475796
- 658309 string characters out of 5774033
- 1319617 words of memory out of 5000000
- 52709 multiletter control sequences out of 15000+600000
- 565009 words of font info for 96 fonts, out of 8000000 for 9000
+ 30445 strings out of 475796
+ 660245 string characters out of 5774033
+ 1320617 words of memory out of 5000000
+ 52743 multiletter control sequences out of 15000+600000
+ 565025 words of font info for 98 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 148i,19n,140p,520b,1176s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 148i,19n,140p,520b,1192s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on section1.pdf (24 pages).
+Output written on section1.pdf (66 pages).

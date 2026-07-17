@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  15 JUL 2026 22:39
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  17 JUL 2026 15:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1081,16 +1081,16 @@ File: ../pic1.png Graphic file (type bmp)
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 26.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 29.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 26.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 29.
  (c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
@@ -1109,7 +1109,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 [6
 
-] (./section2.toc)
+]
 
 [7
 
@@ -1141,7 +1141,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 [14
 
-] (./section2.toc)
+]
 
 [15
 
@@ -1153,35 +1153,59 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 [17
 
-]
+] (./section2.toc)
 
 [18
 
 ]
+Overfull \vbox (2.7957pt too high) detected at line 90
+ []
+
+
 
 [19
 
 ]
+Overfull \vbox (2.7957pt too high) detected at line 90
+ []
+
+
 
 [20
 
 ]
+Overfull \vbox (2.7957pt too high) detected at line 90
+ []
+
+
 
 [21
 
 ]
+Overfull \vbox (2.7957pt too high) detected at line 90
+ []
+
+
 
 [22
 
 ]
+Overfull \vbox (2.7957pt too high) detected at line 90
+ []
+
+
 
 [23
 
 ]
+Overfull \vbox (2.7957pt too high) detected at line 90
+ []
+
+
 
 [24
 
-] (./section2.toc)
+]
 
 [25
 
@@ -1246,6 +1270,238 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 [40
 
 ]
+
+[41
+
+]
+
+[42
+
+]
+
+[43
+
+] (./section2.toc)
+
+[44
+
+]
+
+[45
+
+]
+
+[46
+
+]
+
+[47
+
+]
+
+[48
+
+]
+
+[49
+
+]
+
+[50
+
+]
+
+[51
+
+]
+
+[52
+
+]
+
+[53
+
+]
+
+[54
+
+]
+
+[55
+
+]
+
+[56
+
+]
+
+[57
+
+]
+
+[58
+
+]
+
+[59
+
+]
+
+[60
+
+]
+
+[61
+
+]
+
+[62
+
+] (./section2.toc)
+
+[63
+
+]
+
+[64
+
+]
+
+[65
+
+]
+
+[66
+
+]
+
+[67
+
+]
+
+[68
+
+]
+
+[69
+
+]
+
+[70
+
+]
+
+[71
+
+]
+
+[72
+
+]
+
+[73
+
+]
+
+[74
+
+]
+
+[75
+
+]
+
+[76
+
+]
+
+[77
+
+]
+
+[78
+
+]
+
+[79
+
+]
+
+[80
+
+]
+
+[81
+
+]
+
+[82
+
+]
+
+[83
+
+]
+
+[84
+
+]
+
+[85
+
+]
+
+[86
+
+]
+
+[87
+
+]
+
+[88
+
+]
+
+[89
+
+]
+
+[90
+
+]
+
+[91
+
+]
+
+[92
+
+]
+
+[93
+
+]
+
+[94
+
+]
+
+[95
+
+]
+
+[96
+
+]
+
+[97
+
+]
+
+[98
+
+]
 \tf@nav=\write6
 \openout6 = `section2.nav'.
 
@@ -1261,15 +1517,15 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `section2.out' has not changed.
-(rerunfilecheck)             Checksum: 697131B14EEB11826A19AA87D12DE9F9;2296.
+(rerunfilecheck)             Checksum: CA5F3CDB74F4EC55CFA786BD329D9239;1901.
  ) 
 Here is how much of TeX's memory you used:
- 30350 strings out of 475796
- 657888 string characters out of 5774033
- 1254617 words of memory out of 5000000
- 52659 multiletter control sequences out of 15000+600000
- 564993 words of font info for 94 fonts, out of 8000000 for 9000
+ 30365 strings out of 475796
+ 658342 string characters out of 5774033
+ 1255617 words of memory out of 5000000
+ 52671 multiletter control sequences out of 15000+600000
+ 565009 words of font info for 96 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 148i,19n,140p,520b,791s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 148i,19n,140p,520b,797s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on section2.pdf (40 pages).
+Output written on section2.pdf (98 pages).
