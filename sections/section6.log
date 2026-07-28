@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  15 JUL 2026 22:56
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  17 JUL 2026 18:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1074,16 +1074,16 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 23.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 23.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 22.
  (c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
@@ -1110,7 +1110,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 [7
 
-] (./section6.toc)
+]
 
 [8
 
@@ -1142,7 +1142,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 [15
 
-]
+] (./section6.toc)
 
 [16
 
@@ -1175,6 +1175,106 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 [23
 
 ]
+
+[24
+
+]
+
+[25
+
+]
+
+[26
+
+]
+
+[27
+
+]
+
+[28
+
+]
+
+[29
+
+]
+
+[30
+
+]
+
+[31
+
+]
+
+[32
+
+]
+
+[33
+
+]
+
+[34
+
+]
+
+[35
+
+]
+
+[36
+
+]
+
+[37
+
+]
+
+[38
+
+]
+
+[39
+
+]
+
+[40
+
+]
+
+[41
+
+]
+
+[42
+
+]
+
+[43
+
+]
+
+[44
+
+]
+
+[45
+
+]
+
+[46
+
+]
+
+[47
+
+]
+
+[48
+
+]
 \tf@nav=\write6
 \openout6 = `section6.nav'.
 
@@ -1189,23 +1289,16 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
-
-
-Package rerunfilecheck Warning: File `section6.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `section6.out':
-(rerunfilecheck)             Before: C35297257D9D858794C786DB8F301456;1457
-(rerunfilecheck)             After:  17325AFC5074FE4462077AFA45350CB5;1457.
+Package rerunfilecheck Info: File `section6.out' has not changed.
+(rerunfilecheck)             Checksum: 4BEDEC1B731C75DDF0B66E3A1F54911F;1076.
  ) 
 Here is how much of TeX's memory you used:
- 30185 strings out of 475796
- 652644 string characters out of 5774033
- 1248617 words of memory out of 5000000
- 52501 multiletter control sequences out of 15000+600000
- 564985 words of font info for 93 fonts, out of 8000000 for 9000
+ 30197 strings out of 475796
+ 652998 string characters out of 5774033
+ 1249617 words of memory out of 5000000
+ 52510 multiletter control sequences out of 15000+600000
+ 565001 words of font info for 95 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 148i,19n,140p,520b,791s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 148i,19n,140p,520b,797s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on section6.pdf (23 pages).
+Output written on section6.pdf (48 pages).

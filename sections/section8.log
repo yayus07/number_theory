@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  15 JUL 2026 23:02
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  17 JUL 2026 19:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1116,6 +1116,54 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
 [8
 
 ]
+
+[9
+
+]
+
+[10
+
+]
+
+[11
+
+]
+
+[12
+
+]
+
+[13
+
+]
+
+[14
+
+]
+
+[15
+
+]
+
+[16
+
+]
+
+[17
+
+]
+
+[18
+
+]
+
+[19
+
+]
+
+[20
+
+]
 \tf@nav=\write6
 \openout6 = `section8.nav'.
 
@@ -1130,16 +1178,23 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
-Package rerunfilecheck Info: File `section8.out' has not changed.
-(rerunfilecheck)             Checksum: 208E87F5853DF9C7F2247930FFE5C363;595.
+
+
+Package rerunfilecheck Warning: File `section8.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `section8.out':
+(rerunfilecheck)             Before: E284373B5CE27C0A0F5F9BEEE31FFDE4;597
+(rerunfilecheck)             After:  387FE943A8F0B552AC0EBC0FC703068B;482.
  ) 
 Here is how much of TeX's memory you used:
- 30124 strings out of 475796
- 650768 string characters out of 5774033
- 1236617 words of memory out of 5000000
- 52443 multiletter control sequences out of 15000+600000
- 564977 words of font info for 92 fonts, out of 8000000 for 9000
+ 30139 strings out of 475796
+ 651145 string characters out of 5774033
+ 1237617 words of memory out of 5000000
+ 52455 multiletter control sequences out of 15000+600000
+ 564993 words of font info for 94 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 148i,19n,140p,520b,784s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 148i,19n,140p,520b,790s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on section8.pdf (8 pages).
+Output written on section8.pdf (20 pages).

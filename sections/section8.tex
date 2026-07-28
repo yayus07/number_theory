@@ -7,7 +7,7 @@
 
 \subsubsection{定义}
 
-\begin{frame}
+\begin{frame}{连分数}
 形如
 $$
 x = a_0 + \cfrac{1}{a_1 + \cfrac{1}{a_2 +\cfrac{1}{\cdots+\cfrac{1}{a_n}}}}
@@ -17,29 +17,35 @@ $$
 
 \subsubsection{有理数表示}
 
-\begin{frame}
+\begin{frame}{有理数表示}
 \begin{theo}
 一个有理数有且仅有两种连分数表示。
-\end{theo}
+\end{theo}\pause
 
-用辗转相除法构造连分数：令 $r_0=x$，$a_k=\lfloor r_k\rfloor$，$r_{k+1}=\dfrac{1}{r_k-a_k}$，当 $r$ 为整数时停止。
+用辗转相除法构造连分数：令 $r_0=x$，$a_k=\lfloor r_k\rfloor$，$r_{k+1}=\dfrac{1}{r_k-a_k}$，当 $r$ 为整数时停止。\pause
 
-这种方式可以构造出一个连分数，且位数是 $\log$ 级别的。
+这种方式可以构造出一个连分数，且位数是 $\log$ 级别的。\pause
 
 若最后一位 $a_n\neq 1$，则 $[a_0,a_1,\cdots,a_n-1,1]$ 是另一种连分数表示。若 $a_n=1$，则 $[a_0,a_1,\cdots,a_{n-1}+1]$ 是另一种连分数表示。
 \end{frame}
 
 \begin{frame}
-证明任意有理数不存在大于两种不同的连分数表示，只需证：若规定连分数的最后一位大于 $1$，则连分数表示唯一。
+\begin{proof}
+证明任意有理数不存在大于两种不同的连分数表示。\pause
 
-假设 $x=[a_0,a_1,\cdots,a_n]=[b_0,b_1,\cdots,b_m]$，其中 $a_n>1,b_m>1$。由于 $[a_1,\cdots,a_n]>1$，知 $[a_1,\cdots,a_n]^{-1}<1$，则 $a_0=\lfloor x\rfloor$。同理 $b_0=\lfloor x\rfloor$。归纳即证。
+只需证：若规定连分数的最后一位大于 $1$，则连分数表示唯一。\pause
+
+假设 $x=[a_0,a_1,\cdots,a_n]=[b_0,b_1,\cdots,b_m]$，其中 $a_n>1,b_m>1$。由于 $[a_1,\cdots,a_n]>1$，知 $[a_1,\cdots,a_n]^{-1}<1$，则 $a_0=\lfloor x\rfloor$。同理 $b_0=\lfloor x\rfloor$。\pause
+
+归纳即证。
+\end{proof}\pause
 
 一般将 $a_n>1$ 的连分数表示称为标准表示。
 \end{frame}
 
 \subsubsection{渐近分数}
 
-\begin{frame}
+\begin{frame}{渐近分数}
 对于有理数 $x$，其 $k$ 阶渐近分数为 $x_k=\dfrac{p_k}{q_k}=[a_0,\cdots,a_k]$。直接使用定义计算渐近分数并不方便。一般有如下递推公式：
 $$
 \left\{
@@ -55,22 +61,23 @@ $$
 
 \begin{frame}
 \begin{proof}
-当 $a_{0\sim k-1}$ 确定，$p_k,q_k$ 可以被表示为 $a_k$ 的一次式，设 $p_k=A_ka_k+B_k,q_k=C_ka_k+D_k$。则有：
+当 $a_{0\sim k-1}$ 确定，$p_k,q_k$ 可以被表示为 $a_k$ 的一次式，设 $p_k=A_ka_k+B_k,$，$q_k=C_ka_k+D_k$。则有：
 
 $$
 \begin{aligned}
-\frac{p_{k+1}}{q_{k+1}}&=[a_0,a_1,\cdots,a_k+\frac{1}{a_{k+1}}]\\
-&=\frac{A_k(a_k+\frac{1}{a_{k+1}})+B_k}{C_k(a_k+\frac{1}{a_{k+1}})+D_k}\\
+\frac{p_{k+1}}{q_{k+1}}&=[a_0,a_1,\cdots,a_k+\frac{1}{a_{k+1}}]\\ \pause
+&=\frac{A_k(a_k+\frac{1}{a_{k+1}})+B_k}{C_k(a_k+\frac{1}{a_{k+1}})+D_k}\\ \pause
 &=\frac{(A_ka_k+B_k)a_{k+1}+A_k}{(C_ka_k+D_k)a_{k+1}+C_k}
 \end{aligned}
-$$
+$$\pause
+
 则 $B_{k+1}=A_k,A_{k+1}=p_k$。于是 $p_k=A_ka_k+B_k=p_{k-1}a_k+A_{k-1}=p_{k-1}a_k+p_{k-2}$。$q_k$ 同理。
 \end{proof}
 \end{frame}
 
-\subsubsection{P10788 [NOI2024] 分数}
+\subsubsection{}
 
-\begin{frame}
+\begin{frame}{P10788 [NOI2024] 分数}
 定义正分数为分子分母都为正整数的既约分数。定义完美正分数集合 $S$ 为满足以下五条性质的集合：
 
 \begin{itemize}
@@ -85,9 +92,9 @@ $$
 \end{frame}
 
 \begin{frame}
-把分数用标准连分数表示，取倒数相当于在连分数前面增加或删除一个 $0$，$\pm 2$ 相当于对连分数的第一位 $\pm 2$。于是可知：$x\in S\iff x=[2k_0,2k_1,\cdots,2k_n]$，其中 $k_0\ge 0,k_1,\dots,k_n\ge 1$。
+把分数用标准连分数表示，取倒数相当于在连分数前面增加或删除一个 $0$，$\pm 2$ 相当于对连分数的第一位 $\pm 2$。于是可知：$x\in S\iff x=[2k_0,2k_1,\cdots,2k_n]$，其中 $k_0\ge 0,k_1,\dots,k_n\ge 1$。\pause
 
-由于有理数的标准连分数表示是唯一的，直接 DFS 搜索所有可能的连分数就能得到答案。具体地，从右到左加入连分数的每一位，实时维护其分数表示 $\dfrac{a}{b}$。这样的复杂度为 $O(ans)$，已经可以获得 $90$ 分。
+由于有理数的标准连分数表示是唯一的，直接 DFS 搜索所有可能的连分数就能得到答案。具体地，从右到左加入连分数的每一位，实时维护其分数表示 $\dfrac{a}{b}$。这样的复杂度为 $O(ans)$，已经可以获得 $90$ 分。\pause
 
 后续的优化方式是考虑枚举连分数表示数列的最大值位置，然后可以一次统计好多个完美正分数。复杂度可能还是 $O(ans)$，但是常数小很多。
 \end{frame}

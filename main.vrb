@@ -1,4 +1,4 @@
-扩展欧几里得算法：
+\frametitle{扩展欧几里得算法}
 
 \begin{lstlisting}
 int exgcd(int a, int b, int &x, int &y) {
@@ -10,6 +10,6 @@ int exgcd(int a, int b, int &x, int &y) {
     y -= a / b * x;
     return d;
 }
-\end{lstlisting}
+\end{lstlisting} \pause
 
 利用归纳法，可知求出的 $x,y$ 满足 $|x|\le b,|y|\le a$。

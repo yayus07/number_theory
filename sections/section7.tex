@@ -7,34 +7,35 @@
 
 \subsubsection{块筛}
 
-\begin{frame}
-记 $S_f(n)=\sum\limits_{i=1}^nf(i)$。块筛定义为：求出
+\begin{frame}{块筛}
+记 $S_f(n)=\sum\limits_{i=1}^nf(i)$。块筛定义为：对于一个 $n$，求出
 $$
 \{(\lfloor\frac{n}{i}\rfloor,S_f(\lfloor\frac{n}{i}\rfloor))\mid i\in\{1,2,\dots,n\} \}
-$$
+$$\pause
+
 集合大小是 $O(\sqrt n)$ 的。
 \end{frame}
 
 \subsubsection{杜教筛}
 
-\begin{frame}
-杜教筛的核心思想是寻找 $f=g/h$，满足 $g,h$ 可块筛，则可以用 $O(n^{2/3})$ 复杂度块筛 $f$。
+\begin{frame}{杜教筛}
+杜教筛的核心思想是寻找 $f=g/h$，满足 $g,h$ 可块筛，则可以用 $O(n^{2/3})$ 复杂度块筛 $f$。\pause
 $$
 \begin{aligned}
-S_g(n)&=\sum_{i=1}^n\sum_{d\mid i}h(d)f(\frac{i}{d})\\
-&=\sum_{d=1}^nh(d)S_f(\lfloor\frac{n}{d}\rfloor)\\
-&=S_f(n)h(1)+\sum_{d=2}^nh(d)S_f(\lfloor\frac{n}{d}\rfloor)\\
+S_g(n)&=\sum_{i=1}^n\sum_{d\mid i}h(d)f(\frac{i}{d})\\ \pause
+&=\sum_{d=1}^nh(d)S_f(\lfloor\frac{n}{d}\rfloor)\\ \pause
+&=S_f(n)h(1)+\sum_{d=2}^nh(d)S_f(\lfloor\frac{n}{d}\rfloor)\\ \pause
 S_f(n)&=\frac{1}{h(1)}(S_g(n)-\sum_{d=2}^nh(d)S_f(\lfloor\frac{n}{d} \rfloor))
 \end{aligned}
 $$
 \end{frame}
 
 \begin{frame}
-上式可以整除分块，枚举每个 $m=\lfloor\dfrac{n}{d}\rfloor$，满足 $\lfloor\dfrac{n}{d}\rfloor=m$ 的 $d$ 为 $\lfloor\dfrac{n}{m+1}\rfloor+1\sim\lfloor\dfrac{n}{m}\rfloor$。由于 $h$ 可块筛，故 $S_f(n)$ 可以 $O(\sqrt n)$ 计算。
+对上式整除分块，枚举 $m=\lfloor\dfrac{n}{d}\rfloor$，满足 $\lfloor\dfrac{n}{d}\rfloor=m$ 的 $d$ 为 $\lfloor\dfrac{n}{m+1}\rfloor+1\sim\lfloor\dfrac{n}{m}\rfloor$。由于 $h$ 可块筛，故 $h$ 在该区间的和可以 $O(1)$ 计算，$S_f(n)$ 可以 $O(\sqrt n)$ 计算。\pause
 
-分析复杂度。在每个 $n$ 处复杂度都是 $O(\sqrt n)$，总复杂度为 $O(\sum\limits_{i=1}^{\sqrt n}\sqrt i+\sqrt{n/i})=O(n^{3/4})$。
+分析复杂度。在每个 $n$ 处复杂度都是 $O(\sqrt n)$，总复杂度为 $O(\sum\limits_{i=1}^{\sqrt n}\sqrt i+\sqrt{n/i})=O(n^{3/4})$。\pause
 
-如果使用线筛预处理出前 $n^{2/3}$ 项，则复杂度降为 $O(\sum\limits_{i=1}^{n^{1/3}}\sqrt{n/i})=O(n^{2/3})$。
+如果使用线筛预处理出前 $n^{2/3}$ 项，则复杂度降为 $O(\sum\limits_{i=1}^{n^{1/3}}\sqrt{n/i})=O(n^{2/3})$。\pause
 
 实际计算中可以在计算 $S_f(n)$ 时递归计算每个 $S_f(\lfloor\dfrac{n}{d}\rfloor)$。求出 $S_f(n)$ 的同时得出所有块筛。
 \end{frame}
@@ -42,19 +43,20 @@ $$
 \subsubsection{积式}
 
 \begin{frame}
-如果不是 $f=g/h$ 而是 $f=g*h$，同样可以求 $S_f(n)$ 的块筛。
+如果不是 $f=g/h$ 而是 $f=g*h$，同样可以求 $S_f(n)$ 的块筛。\pause
 $$
 \begin{aligned}
 S_f(n)&=\sum_{i=1}^n\sum_{d\mid i}g(d)h(\frac{i}{d})\\
 &=\sum_{d=1}^ng(d)S_h(\lfloor\frac{n}{d}\rfloor)
 \end{aligned}
-$$
+$$\pause
+
 如果已知 $g,h$ 的块筛，则对 $S_f$ 求单点需要 $O(\sqrt n)$，求块筛同样可以预处理前 $n^{2/3}$ 项达到 $O(n^{2/3})$。
 \end{frame}
 
 \subsubsection{练习}
 
-\begin{frame}
+\begin{frame}{练习}
 用 $O(n^{2/3})$ 复杂度求以下函数的块筛：
 
 \begin{itemize}
@@ -63,19 +65,20 @@ $$
 \item $\sigma_k$
 \item $\varphi\cdot \text{id}_k$
 \item $d\cdot \text{id}_k$
-\end{itemize}
+\end{itemize} \pause
 
 提示：使用贝尔级数来找合适的 $f=g/h$。
 \end{frame}
 
-\subsubsection{P4318 完全平方数}
+\subsubsection{}
 
-\begin{frame}
-$\mu^2(n)=\mu(n)\cdot\mu(n)$。求 $S_{\mu^2}(n)$。
+\begin{frame}{P4318 完全平方数}
+$\mu^2(n)=\mu(n)\cdot\mu(n)$。求 $S_{\mu^2}(n)$。\pause
+\bigskip
 
-$n$ 可以被唯一地分解为 $x^2y$，其中 $\mu^2(y)=1$。
+$n$ 可以被唯一地分解为 $x^2y$，其中 $\mu^2(y)=1$。\pause
 
-令 $f(n)=[\exists d,d^2=n]$，则 $1=f*\mu^2$。
+令 $f(n)=[\exists d,d^2=n]$，则 $1=f*\mu^2$。\pause
 
 $S_f(n)=\lfloor \sqrt n\rfloor$ 可以 $O(1)$ 计算，故可以杜教筛。复杂度 $O(n^{2/3})$。
 \end{frame}
@@ -87,37 +90,41 @@ $$
 \mu^2(n)=[x=1]=\sum_{d\mid x}\mu(d)=\sum_{d^2\mid n}\mu(d)\\
 S_{\mu^2}(n)=\sum_{i=1}^n\sum_{d^2\mid i}\mu(d)=\sum_{d=1}^{\sqrt{n}}\mu(d)\lfloor\frac{n}{d^2}\rfloor
 \end{aligned}
-$$
+$$\pause
+
 复杂度 $O(\sqrt n)$。
 \end{frame}
 
-\subsubsection{来源不明题}
+\subsubsection{}
 
-\begin{frame}
-将 $n$ 质因数分解为 $\sum\limits_{i=1}^kp_i^{\alpha_i}$，定义 $f(n)=(-1)^{\sum_{i=1}^k\alpha_i}$。杜教筛 $S_f$。
+\begin{frame}{不明来源题}
+将 $n$ 质因数分解为 $\sum\limits_{i=1}^kp_i^{\alpha_i}$，定义 $f(n)=(-1)^{\sum_{i=1}^k\alpha_i}$。杜教筛 $S_f$。\pause
+\bigskip
 
 显然 $f$ 是积性函数。
 
-计算其贝尔级数 $f_p(x)=\sum\limits_{i=0}^{\infty}(-1)^ix^i=\dfrac{1}{1+x}$。于是 $f=\epsilon/\mu^2$。由上题，$\mu^2$ 可块筛。故 $S_f$ 可以 $O(n^{2/3})$ 求。
+计算其贝尔级数 $f_p(x)=\sum\limits_{i=0}^{\infty}(-1)^ix^i=\dfrac{1}{1+x}$。于是 $f=\epsilon/\mu^2$。\pause
+
+由上题，$\mu^2$ 可块筛。故 $S_f$ 可以 $O(n^{2/3})$ 求。
 \end{frame}
 
-\subsubsection{51nod1220 约数之和}
+\subsubsection{}
 
-\begin{frame}
+\begin{frame}{51nod1220 约数之和}
 求 $\sum\limits_{i=1}^n\sum\limits_{j=1}^n\sigma(ij)$。$n\le 10^9$。
 \end{frame}
 
 \begin{frame}
-\begin{theo}[引理]
+\begin{theo}
 $$
 \sigma(xy)=\sum_{i\mid x}\sum_{j\mid y}\frac{x}{i}\cdot j[\gcd(i,j)=1]
 $$
-\end{theo}
+\end{theo}\pause
 
 \begin{proof}
-在集合 $S=\{(i,j)\mid i|x,j| y,\gcd(i,j)=1 \}$ 与 $D=\{d\mid xy\}$ 之间构造映射。$(i,j)$ 对应于 $d=\dfrac{x}{i}\cdot j$，$d$ 对应于 $(\dfrac{x}{\gcd(d,x)},\dfrac{d}{\gcd(d,x)})$。
+在集合 $S=\{(i,j)\mid i|x,j| y,\gcd(i,j)=1 \}$ 与 $D=\{d\mid xy\}$ 之间构造映射。$(i,j)$ 对应于 $d=\dfrac{x}{i}\cdot j$，$d$ 对应于 $(\dfrac{x}{\gcd(d,x)},\dfrac{d}{\gcd(d,x)})$。\pause
 
-分别在每个素因子上考虑，可以发现两个映射都是单射，且互为逆映射。故为双射。
+分别在每个素因子上考虑，可以发现两个映射都是单射，且互为逆映射。故为双射。将每个 $d$ 替换为对应的 $(i,j)$ 即得。
 \end{proof}
 \end{frame}
 
@@ -125,25 +132,28 @@ $$
 根据引理，原式化为
 $$
 \begin{aligned}
-&\sum_{x=1}^n\sum_{y=1}^n\sum_{i\mid x}\sum_{j\mid y}\frac{x}{i}j\sum_{d\mid i,j}\mu(d)\\
-=&\sum_{d=1}^n\mu(d)(\sum_{d\mid i}\sum_{i\mid x}\frac{x}{i})(\sum_{d\mid j}\sum_{j\mid y}j)\\
-=&\sum_{d=1}^n\mu(d)(\sum_{d\mid x}\sum_{d\mid i\mid x}\frac{x}{i})(\sum_{d\mid y}\sum_{d\mid j\mid y}d\cdot\frac{j}{d})\\
+&\sum_{x=1}^n\sum_{y=1}^n\sum_{i\mid x}\sum_{j\mid y}\frac{x}{i}j\sum_{d\mid i,j}\mu(d)\\ \pause
+=&\sum_{d=1}^n\mu(d)(\sum_{d\mid i}\sum_{i\mid x}\frac{x}{i})(\sum_{d\mid j}\sum_{j\mid y}j)\\ \pause
+=&\sum_{d=1}^n\mu(d)(\sum_{d\mid x}\sum_{d\mid i\mid x}\frac{x}{i})(\sum_{d\mid y}\sum_{d\mid j\mid y}d\cdot\frac{j}{d})\\ \pause
 =&\sum_{d=1}^n\mu(d)\cdot d\cdot S_{\sigma}^2(\lfloor\frac{n}{d}\rfloor)
 \end{aligned}
-$$
+$$ \pause
+
 求 $\mu\cdot \text{id}$ 和 $\sigma$ 的块筛即可。复杂度 $O(n^{2/3})$。
 \end{frame}
 
-\subsubsection{P1587 [NOI2016] 循环之美}
+\subsubsection{}
 
-\begin{frame}
-给定 $n,m,k$，求在 $k$ 进制下，有多少个数值上互不相等的纯循环小数，可以用分数 $\dfrac{x}{y}$ 表示，其中 $1\le x\le n,1\le y\le m$，且 $x,y\in\Z$。一个数是纯循环的，当且仅当它在 $k$ 进制下可以写成 $a.\dot{c_1}c_2c_3\dots c_{l-1}\dot{c_l}$。
+\begin{frame}{P1587 [NOI2016] 循环之美}
+给定 $n,m,k$，求在 $k$ 进制下，有多少个数值上互不相等的纯循环小数，可以用分数 $\dfrac{x}{y}$ 表示，其中 $1\le x\le n,1\le y\le m$，且 $x,y\in\Z$。
+
+一个数是纯循环的，当且仅当它在 $k$ 进制下可以写成 $a.\dot{c_1}c_2c_3\dots c_{l-1}\dot{c_l}$。
 
 $n,m\le 10^9,k\le 2000$。
 \end{frame}
 
 \begin{frame}
-设 $\dfrac{x}{y}$ 是纯循环小数，循环节长度为 $l$。有 $\dfrac{xk^l}{y}-\dfrac{x}{y}\in\Z$，即 $xk^l\equiv x\pmod y$。而 $\gcd(x,y)=1$，故 $k^l\equiv 1\pmod y$，等价于 $\gcd(k,y)=1$。易知这也是充分条件。
+设 $\dfrac{x}{y}$ 是纯循环小数，循环节长度为 $l$。有 $\dfrac{xk^l}{y}-\dfrac{x}{y}\in\Z$，即 $xk^l\equiv x\pmod y$。而 $\gcd(x,y)=1$，故 $k^l\equiv 1\pmod y$，等价于 $\gcd(k,y)=1$。易知这也是充分条件。\pause
 
 故答案为
 $$
@@ -157,8 +167,11 @@ $$
 \text{ans}=&\sum_{d=1}^n\mu(d)\sum_{d\mid x}\sum_{d\mid y}[\gcd(y,k)=1]\\
 =&\sum_{d=1}^n\mu(d)\cdot\chi_k(d)\cdot\lfloor\frac{n}{d}\rfloor\cdot S_{\chi_k}(\lfloor\frac{m}{d}\rfloor)
 \end{aligned}
-$$
-其中 $\chi_k(x)=[\gcd(x,k)=1]$，是一个完全积性函数。$S_{\chi_k}(x)=\lfloor\dfrac{x}{k}\rfloor\varphi(k)+S_{\chi_k}(x\bmod k)$，可以 $O(k)$ 预处理后 $O(1)$ 查询。
+$$\pause
+
+其中 $\chi_k(x)=[\gcd(x,k)=1]$，是一个完全积性函数。\pause
+
+$S_{\chi_k}(x)=\lfloor\dfrac{x}{k}\rfloor\varphi(k)+S_{\chi_k}(x\bmod k)$，可以 $O(k)$ 预处理后 $O(1)$ 查询。\pause
 
 于是只需再块筛 $\mu\cdot\chi_k$。$(\mu\cdot\chi_k)*\chi_k=(\mu\cdot\chi_k)*(1\cdot\chi_k)=(\mu*1)\cdot\chi_k=\epsilon$。杜教筛即可。复杂度 $O(n^{2/3})$。
 \end{frame}
@@ -167,12 +180,12 @@ $$
 
 \subsubsection{Powerful Number}
 
-\begin{frame}
-将 $n$ 质因数分解，若每个素数的指数均大于等于 $2$，则称 $n$ 是一个 Powerful Number。
+\begin{frame}{Powerful Number}
+将 $n$ 质因数分解，若每个素数的指数均大于等于 $2$，则称 $n$ 是一个 Powerful Number。\pause
 
-\begin{theo}[结论]
+\begin{theo}
 $n$ 以内的 PN 数量为 $O(\sqrt n)$ 级别。
-\end{theo}
+\end{theo}\pause
 
 \begin{proof}
 一个 PN 可以被分解为 $a^2b^3$ 的形式。
@@ -188,12 +201,12 @@ $$
 
 \subsubsection{素数拟合}
 
-\begin{frame}
-给定一个积性函数 $f$，求 $S_f(n)$。
+\begin{frame}{素数拟合}
+给定一个积性函数 $f$，求 $S_f(n)$。\pause
 
-做法：构造一个易块筛的积性函数 $g$，满足 $g$ 在所有素数处都与 $f$ 相等。称为 $g$ 与 $f$ 素数拟合。
+做法：构造一个易块筛的积性函数 $g$，满足 $g$ 在所有素数处都与 $f$ 相等。称为 $g$ 与 $f$ 素数拟合。\pause
 
-再令 $h=f/g$，此时 $h$ 也是积性函数。由 $f(p)=g(p)h(1)+g(1)h(p),g(p)=f(p)$，知 $h(p)=0$。于是 $h$ 只在 PN 处有值。
+再令 $h=f/g$，此时 $h$ 也是积性函数。由 $f(p)=g(p)h(1)+g(1)h(p),g(p)=f(p)$，知 $h(p)=0$。于是 $h$ 只在 PN 处有值。\pause
 $$
 \begin{aligned}
 S_f(n)&=\sum_{i=1}^n\sum_{d\mid i}h(d)g(\frac{i}{d})\\
@@ -203,18 +216,19 @@ $$
 \end{frame}
 
 \begin{frame}
-接下来求 $h$。因为 $h$ 有积性，故只需要求出其在素数幂处的取值。
+接下来求 $h$。因为 $h$ 有积性，故只需要求出其在素数幂处的取值。\pause
 $$
 \begin{aligned}
-f(p^k)=\sum_{i=0}^kh(p^i)g(p^{k-i})\\
-h(p^k)=f(p^k)-\sum_{i=1}^{k-1}h(p^i)g(p^{k-i})
+& f(p^k)=\sum_{i=0}^kh(p^i)g(p^{k-i})\\
+& h(p^k)=f(p^k)-\sum_{i=1}^{k-1}h(p^i)g(p^{k-i})
 \end{aligned}
-$$
+$$\pause
+
 所有的 $h(p^k)$ 都可以在找 PN 的过程中暴力求出。这部分的复杂度为 $O(\sum\limits_{p\in\mathbb{P},p\le \sqrt n}\log_p^2(n))=O(\dfrac{\sqrt n}{\log n})$，不为瓶颈。
 \end{frame}
 
 \begin{frame}
-一般复杂度瓶颈在于块筛 $g$。常为 $O(n^{2/3})$。
+一般复杂度瓶颈在于块筛 $g$。常为 $O(n^{2/3})$。\pause
 
 特别地，如果 $S_g(x)$ 能在 $O(\sqrt x)$ 内求出，则复杂度优化至
 $$
@@ -222,30 +236,33 @@ O(\sum_{d\in\text{PN}}\sqrt{\frac{n}{d}})=O(\sum_{a,b}\sqrt{\frac{n}{a^2b^3}})=O
 $$
 \end{frame}
 
-\subsubsection{P5325 【模板】Min\_25 筛}
+\subsubsection{}
 
-\begin{frame}
-定义积性函数 $f$，$f(p^k)=p^k(p^k-1)$。求 $S_f(n)$。$n\le 10^{10}$。
+\begin{frame}{P5325 【模板】Min\_25 筛}
+定义积性函数 $f$，$f(p^k)=p^k(p^k-1)$。求 $S_f(n)$。$n\le 10^{10}$。\pause
+\bigskip
 
-令 $g=\text{id}\cdot\varphi$。则 $g$ 与 $f$ 素数拟合。
+令 $g=\text{id}\cdot\varphi$。则 $g$ 与 $f$ 素数拟合。\pause
 
 $\text{id}\cdot\varphi=\text{id}\cdot(\text{id}/1)=\text{id}_2/\text{id}$，可以使用杜教筛求出块筛。复杂度 $O(n^{2/3})$。
 \end{frame}
 
-\subsubsection{LOJ6053 简单的函数}
+\subsubsection{}
 
-\begin{frame}
-定义积性函数 $f$，$f(p^c)=p\oplus c$，其中 $\oplus$ 为异或。求 $S_f(n)$。$n\le10^{10}$。
+\begin{frame}{LOJ6053 简单的函数}
+定义积性函数 $f$，$f(p^c)=p\oplus c$，其中 $\oplus$ 为异或。求 $S_f(n)$。
+
+$n\le10^{10}$。
 \end{frame}
 
 \begin{frame}
-当 $p$ 为 $2$ 时，$f(p)=3$。当 $p$ 为奇素数时，$f(p)=p-1$。
+当 $p$ 为 $2$ 时，$f(p)=3$。当 $p$ 为奇素数时，$f(p)=p-1$。\pause
 
-于是构造 $g(x)=\left\{\begin{aligned}&3\varphi(x) & 2\mid x\\ &\varphi(x) & 2\nmid x\end{aligned}\right.$，则 $g$ 为积性函数且与 $f$ 素数拟合。
+于是构造 $g(x)=\left\{\begin{aligned}&3\varphi(x) & 2\mid x\\ &\varphi(x) & 2\nmid x\end{aligned}\right.$，则 $g$ 为积性函数且与 $f$ 素数拟合。\pause
 
-只需块筛 $S_g(n)=\sum\limits_{i=1}^n\varphi(i)+2\sum\limits_{i=1}^{\lfloor n/2\rfloor}\varphi(2i)$。第一部分 $S_{\varphi}$ 可以用杜教筛。
+只需块筛 $S_g(n)=\sum\limits_{i=1}^n\varphi(i)+2\sum\limits_{i=1}^{\lfloor n/2\rfloor}\varphi(2i)$。第一部分 $S_{\varphi}$ 可以用杜教筛。\pause
 
-第二部分 $F(n)=\sum\limits_{i=1}^n\varphi(2i)=\sum\limits_{i\le m,2\mid i}2\varphi(i)+\sum\limits_{i\le m,2\nmid i}\varphi(i)=S_{\varphi}(n)+\sum\limits_{i=1}^{\lfloor n/2\rfloor}\varphi(2i)$。于是得到递推式 $F(n)=S_{\varphi}(n)+F(\lfloor n/2\rfloor)$。递归计算的复杂度为 $O(\log n)$，不为瓶颈。
+第二部分 $F(n)=\sum\limits_{i=1}^n\varphi(2i)=\sum\limits_{i\le n,2\mid i}2\varphi(i)+\sum\limits_{i\le n,2\nmid i}\varphi(i)=S_{\varphi}(n)+\sum\limits_{i=1}^{\lfloor n/2\rfloor}\varphi(2i)$。于是得到递推式 $F(n)=S_{\varphi}(n)+F(\lfloor n/2\rfloor)$。递归计算的复杂度为 $O(\log n)$，不为瓶颈。\pause
 
 总复杂度为块筛 $S_{\varphi}$ 的 $O(n^{2/3})$。
 \end{frame}

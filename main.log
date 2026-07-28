@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  15 JUL 2026 23:03
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  28 JUL 2026 11:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1090,24 +1090,24 @@ Package hyperref Warning: Option `pdfauthor' has already been used,
 [4
 
 ]
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 26.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
- (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
- (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 26.
- (c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
 
 [5
 
 ]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 28.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
+ (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
+ (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 28.
+ (c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
 
 [6
 
@@ -1119,7 +1119,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 [8
 
-] (./main.toc)
+]
 
 [9
 
@@ -1132,16 +1132,6 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 [11
 
 ]
-\openout4 = `main.vrb'.
-
- (./main.vrb
-
-Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
-(xeCJK)                
-(xeCJK)                Try to use `\setCJKmonofont[<...>]{<...>}' to define
-(xeCJK)                it.
-
-)
 
 [12
 
@@ -1158,9 +1148,6 @@ Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
 [15
 
 ]
-\openout4 = `main.vrb'.
-
- (./main.vrb)
 
 [16
 
@@ -1168,7 +1155,7 @@ Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
 
 [17
 
-]
+] (./main.toc)
 
 [18
 
@@ -1176,7 +1163,7 @@ Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
 
 [19
 
-] (./main.toc)
+]
 
 [20
 
@@ -1204,14 +1191,11 @@ Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
 
 [26
 
-]) (./sections/section2.tex (./main.toc)
+]
 
 [27
 
 ]
-File: pic1.png Graphic file (type bmp)
-<pic1.png>
-
 
 [28
 
@@ -1220,10 +1204,20 @@ File: pic1.png Graphic file (type bmp)
 [29
 
 ]
+\openout4 = `main.vrb'.
+
+ (./main.vrb
+
+Package xeCJK Warning: Unknown CJK family `\CJKttdefault' is being ignored.
+(xeCJK)                
+(xeCJK)                Try to use `\setCJKmonofont[<...>]{<...>}' to define
+(xeCJK)                it.
+
+)
 
 [30
 
-]
+] (./main.vrb)
 
 [31
 
@@ -1231,7 +1225,7 @@ File: pic1.png Graphic file (type bmp)
 
 [32
 
-] (./main.toc)
+]
 
 [33
 
@@ -1263,11 +1257,14 @@ File: pic1.png Graphic file (type bmp)
 
 [40
 
-] (./main.toc)
+]
+\openout4 = `main.vrb'.
+
+ (./main.vrb)
 
 [41
 
-]
+] (./main.vrb)
 
 [42
 
@@ -1299,11 +1296,11 @@ File: pic1.png Graphic file (type bmp)
 
 [49
 
-]
+] (./main.toc)
 
 [50
 
-] (./main.toc)
+]
 
 [51
 
@@ -1328,18 +1325,34 @@ File: pic1.png Graphic file (type bmp)
 [56
 
 ]
+Overfull \vbox (0.63797pt too high) detected at line 238
+ []
+
+
 
 [57
 
 ]
+Overfull \vbox (0.63797pt too high) detected at line 238
+ []
+
+
 
 [58
 
 ]
+Overfull \vbox (0.63797pt too high) detected at line 238
+ []
+
+
 
 [59
 
 ]
+Overfull \vbox (0.63797pt too high) detected at line 238
+ []
+
+
 
 [60
 
@@ -1367,7 +1380,7 @@ File: pic1.png Graphic file (type bmp)
 
 [66
 
-]) (./sections/section3.tex (./main.toc)
+]
 
 [67
 
@@ -1375,11 +1388,14 @@ File: pic1.png Graphic file (type bmp)
 
 [68
 
-]
+]) (./sections/section2.tex (./main.toc)
 
 [69
 
 ]
+File: pic1.png Graphic file (type bmp)
+<pic1.png>
+
 
 [70
 
@@ -1415,15 +1431,11 @@ File: pic1.png Graphic file (type bmp)
 
 [78
 
-] (./main.toc)
+]
 
 [79
 
 ]
-Overfull \vbox (10.74078pt too high) detected at line 145
- []
-
-
 
 [80
 
@@ -1432,10 +1444,6 @@ Overfull \vbox (10.74078pt too high) detected at line 145
 [81
 
 ]
-Overfull \vbox (29.5044pt too high) detected at line 167
- []
-
-
 
 [82
 
@@ -1451,31 +1459,55 @@ Overfull \vbox (29.5044pt too high) detected at line 167
 
 [85
 
-]
+] (./main.toc)
 
 [86
 
 ]
+Overfull \vbox (2.7957pt too high) detected at line 90
+ []
+
+
 
 [87
 
-]) (./sections/section4.tex (./main.toc)
+]
+Overfull \vbox (2.7957pt too high) detected at line 90
+ []
+
+
 
 [88
 
 ]
+Overfull \vbox (2.7957pt too high) detected at line 90
+ []
+
+
 
 [89
 
 ]
+Overfull \vbox (2.7957pt too high) detected at line 90
+ []
+
+
 
 [90
 
 ]
+Overfull \vbox (2.7957pt too high) detected at line 90
+ []
+
+
 
 [91
 
 ]
+Overfull \vbox (2.7957pt too high) detected at line 90
+ []
+
+
 
 [92
 
@@ -1483,7 +1515,7 @@ Overfull \vbox (29.5044pt too high) detected at line 167
 
 [93
 
-] (./main.toc)
+]
 
 [94
 
@@ -1531,7 +1563,7 @@ Overfull \vbox (29.5044pt too high) detected at line 167
 
 [105
 
-]) (./sections/section5.tex (./main.toc)
+]
 
 [106
 
@@ -1551,11 +1583,11 @@ Overfull \vbox (29.5044pt too high) detected at line 167
 
 [110
 
-] (./main.toc)
+]
 
 [111
 
-]
+] (./main.toc)
 
 [112
 
@@ -1587,7 +1619,7 @@ Overfull \vbox (29.5044pt too high) detected at line 167
 
 [119
 
-] (./main.toc)
+]
 
 [120
 
@@ -1607,7 +1639,7 @@ Overfull \vbox (29.5044pt too high) detected at line 167
 
 [124
 
-]) (./sections/section6.tex (./main.toc)
+]
 
 [125
 
@@ -1631,11 +1663,11 @@ Overfull \vbox (29.5044pt too high) detected at line 167
 
 [130
 
-]
+] (./main.toc)
 
 [131
 
-] (./main.toc)
+]
 
 [132
 
@@ -1699,7 +1731,7 @@ Overfull \vbox (29.5044pt too high) detected at line 167
 
 [147
 
-]) (./sections/section7.tex (./main.toc)
+]
 
 [148
 
@@ -1759,7 +1791,7 @@ Overfull \vbox (29.5044pt too high) detected at line 167
 
 [162
 
-] (./main.toc)
+]
 
 [163
 
@@ -1775,7 +1807,7 @@ Overfull \vbox (29.5044pt too high) detected at line 167
 
 [166
 
-]
+]) (./sections/section3.tex (./main.toc)
 
 [167
 
@@ -1795,7 +1827,7 @@ Overfull \vbox (29.5044pt too high) detected at line 167
 
 [171
 
-]) (./sections/section8.tex (./main.toc)
+]
 
 [172
 
@@ -1827,6 +1859,1126 @@ Overfull \vbox (29.5044pt too high) detected at line 167
 
 [179
 
+]
+
+[180
+
+]
+
+[181
+
+]
+
+[182
+
+]
+
+[183
+
+]
+
+[184
+
+]
+
+[185
+
+]
+
+[186
+
+]
+
+[187
+
+]
+
+[188
+
+]
+
+[189
+
+] (./main.toc)
+
+[190
+
+]
+Overfull \vbox (10.74078pt too high) detected at line 150
+ []
+
+
+
+[191
+
+]
+Overfull \vbox (10.74078pt too high) detected at line 150
+ []
+
+
+
+[192
+
+]
+
+[193
+
+]
+Overfull \vbox (29.5044pt too high) detected at line 172
+ []
+
+
+
+[194
+
+]
+
+[195
+
+]
+
+[196
+
+]
+
+[197
+
+]
+
+[198
+
+]
+
+[199
+
+]
+
+[200
+
+]
+
+[201
+
+]
+
+[202
+
+]
+
+[203
+
+]) (./sections/section4.tex (./main.toc)
+
+[204
+
+]
+
+[205
+
+]
+
+[206
+
+]
+
+[207
+
+]
+
+[208
+
+]
+
+[209
+
+]
+
+[210
+
+]
+
+[211
+
+]
+
+[212
+
+]
+
+[213
+
+]
+
+[214
+
+]
+
+[215
+
+]
+
+[216
+
+]
+
+[217
+
+]
+
+[218
+
+]
+
+[219
+
+]
+
+[220
+
+]
+
+[221
+
+] (./main.toc)
+
+[222
+
+]
+
+[223
+
+]
+
+[224
+
+]
+
+[225
+
+]
+
+[226
+
+]
+
+[227
+
+]
+
+[228
+
+]
+
+[229
+
+]
+
+[230
+
+]
+
+[231
+
+]
+
+[232
+
+]
+
+[233
+
+]
+
+[234
+
+]
+
+[235
+
+]
+
+[236
+
+]
+
+[237
+
+]
+
+[238
+
+]
+
+[239
+
+]
+
+[240
+
+]
+
+[241
+
+]
+
+[242
+
+]
+
+[243
+
+]
+
+[244
+
+]
+
+[245
+
+]
+
+[246
+
+]
+
+[247
+
+]
+
+[248
+
+]
+
+[249
+
+]
+
+[250
+
+]
+
+[251
+
+]) (./sections/section5.tex (./main.toc)
+
+[252
+
+]
+
+[253
+
+]
+
+[254
+
+]
+
+[255
+
+]
+
+[256
+
+]
+
+[257
+
+]
+
+[258
+
+]
+
+[259
+
+]
+
+[260
+
+]
+
+[261
+
+]
+
+[262
+
+]
+
+[263
+
+]
+
+[264
+
+]
+
+[265
+
+]
+
+[266
+
+]
+
+[267
+
+]
+
+[268
+
+] (./main.toc)
+
+[269
+
+]
+
+[270
+
+]
+
+[271
+
+]
+
+[272
+
+]
+
+[273
+
+]
+
+[274
+
+]
+
+[275
+
+]
+
+[276
+
+]
+
+[277
+
+]
+
+[278
+
+]
+
+[279
+
+]
+
+[280
+
+]
+
+[281
+
+]
+
+[282
+
+]
+
+[283
+
+]
+
+[284
+
+]
+
+[285
+
+]
+
+[286
+
+]
+
+[287
+
+]
+
+[288
+
+]
+
+[289
+
+]
+
+[290
+
+]
+
+[291
+
+]
+
+[292
+
+]
+
+[293
+
+]
+
+[294
+
+] (./main.toc)
+
+[295
+
+]
+
+[296
+
+]
+
+[297
+
+]
+
+[298
+
+]
+
+[299
+
+]
+
+[300
+
+]
+
+[301
+
+]
+
+[302
+
+]
+
+[303
+
+]
+
+[304
+
+]
+
+[305
+
+]
+
+[306
+
+]
+
+[307
+
+]
+
+[308
+
+]
+
+[309
+
+]
+
+[310
+
+]
+
+[311
+
+]) (./sections/section6.tex (./main.toc)
+
+[312
+
+]
+
+[313
+
+]
+
+[314
+
+]
+
+[315
+
+]
+
+[316
+
+]
+
+[317
+
+]
+
+[318
+
+]
+
+[319
+
+]
+
+[320
+
+]
+
+[321
+
+]
+
+[322
+
+]
+
+[323
+
+]
+
+[324
+
+]
+
+[325
+
+]
+
+[326
+
+] (./main.toc)
+
+[327
+
+]
+
+[328
+
+]
+
+[329
+
+]
+
+[330
+
+]
+
+[331
+
+]
+
+[332
+
+]
+
+[333
+
+]
+
+[334
+
+]
+
+[335
+
+]
+
+[336
+
+]
+
+[337
+
+]
+
+[338
+
+]
+
+[339
+
+]
+
+[340
+
+]
+
+[341
+
+]
+
+[342
+
+]
+
+[343
+
+]
+
+[344
+
+]
+
+[345
+
+]
+
+[346
+
+]
+
+[347
+
+]
+
+[348
+
+]
+
+[349
+
+]
+
+[350
+
+]
+
+[351
+
+]
+
+[352
+
+]
+
+[353
+
+]
+
+[354
+
+]
+
+[355
+
+]
+
+[356
+
+]
+
+[357
+
+]
+
+[358
+
+]
+
+[359
+
+]) (./sections/section7.tex (./main.toc)
+
+[360
+
+]
+
+[361
+
+]
+
+[362
+
+]
+Overfull \vbox (14.41429pt too high) detected at line 31
+ []
+
+
+
+[363
+
+]
+Overfull \vbox (14.41429pt too high) detected at line 31
+ []
+
+
+
+[364
+
+]
+Overfull \vbox (14.41429pt too high) detected at line 31
+ []
+
+
+
+[365
+
+]
+Overfull \vbox (14.41429pt too high) detected at line 31
+ []
+
+
+
+[366
+
+]
+Overfull \vbox (14.41429pt too high) detected at line 31
+ []
+
+
+
+[367
+
+]
+
+[368
+
+]
+
+[369
+
+]
+
+[370
+
+]
+
+[371
+
+]
+
+[372
+
+]
+
+[373
+
+]
+
+[374
+
+]
+
+[375
+
+]
+
+[376
+
+]
+
+[377
+
+]
+
+[378
+
+]
+
+[379
+
+]
+
+[380
+
+]
+
+[381
+
+]
+
+[382
+
+]
+
+[383
+
+]
+
+[384
+
+]
+
+[385
+
+]
+
+[386
+
+]
+
+[387
+
+]
+
+[388
+
+]
+
+[389
+
+]
+
+[390
+
+]
+
+[391
+
+]
+
+[392
+
+]
+
+[393
+
+]
+
+[394
+
+]
+
+[395
+
+]
+
+[396
+
+]
+
+[397
+
+]
+
+[398
+
+]
+
+[399
+
+]
+
+[400
+
+]
+
+[401
+
+] (./main.toc)
+
+[402
+
+]
+Overfull \vbox (11.08376pt too high) detected at line 196
+ []
+
+
+
+[403
+
+]
+Overfull \vbox (11.08376pt too high) detected at line 196
+ []
+
+
+
+[404
+
+]
+Overfull \vbox (11.08376pt too high) detected at line 196
+ []
+
+
+
+[405
+
+]
+
+[406
+
+]
+
+[407
+
+]
+
+[408
+
+]
+
+[409
+
+]
+
+[410
+
+]
+
+[411
+
+]
+
+[412
+
+]
+
+[413
+
+]
+
+[414
+
+]
+
+[415
+
+]
+
+[416
+
+]
+
+[417
+
+]
+
+[418
+
+]
+
+[419
+
+]
+
+[420
+
+]
+
+[421
+
+]
+
+[422
+
+]
+
+[423
+
+]
+
+[424
+
+]) (./sections/section8.tex (./main.toc)
+
+[425
+
+]
+
+[426
+
+]
+
+[427
+
+]
+
+[428
+
+]
+
+[429
+
+]
+
+[430
+
+]
+
+[431
+
+]
+
+[432
+
+]
+
+[433
+
+]
+
+[434
+
+]
+
+[435
+
+]
+
+[436
+
+]
+Overfull \vbox (0.5319pt too high) detected at line 76
+ []
+
+
+
+[437
+
+]
+Overfull \vbox (0.5319pt too high) detected at line 76
+ []
+
+
+
+[438
+
+]
+Overfull \vbox (0.5319pt too high) detected at line 76
+ []
+
+
+
+[439
+
+]
+Overfull \vbox (0.5319pt too high) detected at line 76
+ []
+
+
+
+[440
+
+]
+
+[441
+
+]
+
+[442
+
+]
+
+[443
+
+]
+
+[444
+
 ])
 \tf@nav=\write6
 \openout6 = `main.nav'.
@@ -1843,15 +2995,15 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CEB18D9118270780B250CC0A57463EC3;12837.
+(rerunfilecheck)             Checksum: BEDE783ED17C6278416F259B4C72D7D2;10033.
  ) 
 Here is how much of TeX's memory you used:
- 31151 strings out of 475796
- 671247 string characters out of 5774033
- 1596068 words of memory out of 5000000
- 53393 multiletter control sequences out of 15000+600000
+ 31141 strings out of 475796
+ 672344 string characters out of 5774033
+ 1601484 words of memory out of 5000000
+ 53379 multiletter control sequences out of 15000+600000
  565033 words of font info for 99 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 128i,19n,123p,467b,1355s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,19n,123p,467b,1409s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (179 pages).
+Output written on main.pdf (444 pages).

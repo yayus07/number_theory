@@ -1,13 +1,8 @@
 \beamer@sectionintoc {1}{莫比乌斯反演}{1}{0}{1}
 \beamer@subsectionintoc {1}{1}{整除分块}{1}{0}{1}
 \beamer@subsubsectionintoc {1}{1}{1}{基本结论}{2}{0}{1}
-\beamer@subsubsectionintoc {1}{1}{2}{P2260 模积和}{4}{0}{1}
-\beamer@subsubsectionintoc {1}{1}{3}{ARC068E Snuke Line}{6}{0}{1}
-\beamer@subsubsectionintoc {1}{1}{4}{线性预处理}{7}{0}{1}
-\beamer@subsectionintoc {1}{2}{莫比乌斯反演}{8}{0}{1}
-\beamer@subsubsectionintoc {1}{2}{1}{基本形式}{9}{0}{1}
-\beamer@subsubsectionintoc {1}{2}{2}{gcd 卷积}{11}{0}{1}
-\beamer@subsubsectionintoc {1}{2}{3}{gcd 求和}{12}{0}{1}
-\beamer@subsubsectionintoc {1}{2}{4}{P2257 YY 的 GCD}{16}{0}{1}
-\beamer@subsubsectionintoc {1}{2}{5}{P6156 简单题}{17}{0}{1}
-\beamer@subsubsectionintoc {1}{2}{6}{SOJ1985 拼图}{19}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{4}{线性预处理}{12}{0}{1}
+\beamer@subsectionintoc {1}{2}{莫比乌斯反演}{16}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{1}{基本形式}{17}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{2}{gcd 卷积}{20}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{3}{gcd 求和}{23}{0}{1}

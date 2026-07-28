@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  15 JUL 2026 22:59
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  28 JUL 2026 11:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1073,15 +1073,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 [1
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 16.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 17.
  (c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
@@ -1093,22 +1093,42 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 [3
 
 ]
+Overfull \vbox (7.01628pt too high) detected at line 31
+ []
+
+
 
 [4
 
 ]
+Overfull \vbox (7.01628pt too high) detected at line 31
+ []
+
+
 
 [5
 
 ]
+Overfull \vbox (7.01628pt too high) detected at line 31
+ []
+
+
 
 [6
 
 ]
+Overfull \vbox (7.01628pt too high) detected at line 31
+ []
+
+
 
 [7
 
 ]
+Overfull \vbox (7.01628pt too high) detected at line 31
+ []
+
+
 
 [8
 
@@ -1121,9 +1141,6 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 [10
 
 ]
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 122.
-
 
 [11
 
@@ -1143,7 +1160,7 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
 
 [15
 
-] (./section7.toc)
+]
 
 [16
 
@@ -1180,6 +1197,185 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
 [24
 
 ]
+
+[25
+
+]
+
+[26
+
+]
+
+[27
+
+]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 129.
+
+
+[28
+
+]
+
+[29
+
+]
+
+[30
+
+]
+
+[31
+
+]
+
+[32
+
+]
+
+[33
+
+]
+
+[34
+
+]
+
+[35
+
+]
+
+[36
+
+]
+
+[37
+
+]
+
+[38
+
+]
+
+[39
+
+]
+
+[40
+
+]
+
+[41
+
+]
+
+[42
+
+] (./section7.toc)
+
+[43
+
+]
+Overfull \vbox (3.68575pt too high) detected at line 196
+ []
+
+
+
+[44
+
+]
+Overfull \vbox (3.68575pt too high) detected at line 196
+ []
+
+
+
+[45
+
+]
+Overfull \vbox (3.68575pt too high) detected at line 196
+ []
+
+
+
+[46
+
+]
+
+[47
+
+]
+
+[48
+
+]
+
+[49
+
+]
+
+[50
+
+]
+
+[51
+
+]
+
+[52
+
+]
+
+[53
+
+]
+
+[54
+
+]
+
+[55
+
+]
+
+[56
+
+]
+
+[57
+
+]
+
+[58
+
+]
+
+[59
+
+]
+
+[60
+
+]
+
+[61
+
+]
+
+[62
+
+]
+
+[63
+
+]
+
+[64
+
+]
+
+[65
+
+]
 \tf@nav=\write6
 \openout6 = `section7.nav'.
 
@@ -1195,15 +1391,15 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `section7.out' has not changed.
-(rerunfilecheck)             Checksum: ACF9525C50A136942A51BADAC69C377B;1731.
+(rerunfilecheck)             Checksum: 2990B897E02A9C0FA612753583DDFBAC;1174.
  ) 
 Here is how much of TeX's memory you used:
- 30224 strings out of 475796
- 653990 string characters out of 5774033
- 1243617 words of memory out of 5000000
- 52540 multiletter control sequences out of 15000+600000
- 564985 words of font info for 93 fonts, out of 8000000 for 9000
+ 30233 strings out of 475796
+ 654391 string characters out of 5774033
+ 1244617 words of memory out of 5000000
+ 52546 multiletter control sequences out of 15000+600000
+ 565001 words of font info for 95 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 148i,19n,140p,520b,791s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 148i,19n,140p,520b,797s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on section7.pdf (24 pages).
+Output written on section7.pdf (65 pages).

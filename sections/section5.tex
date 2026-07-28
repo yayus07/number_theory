@@ -10,10 +10,10 @@
 \begin{frame}
 \begin{defi}[数论函数]
 数论函数是一种定义域为正整数的函数。
-\end{defi}
+\end{defi}\pause
 
 \begin{defi}[积性函数]
-若函数 $f$ 满足对任意 $\gcd(x,y)=1$，有 $f(xy)=f(x)f(y)$，则称 $f$ 是积性函数。
+若函数 $f$ 满足对任意 $\gcd(x,y)=1$，有 $f(xy)=f(x)f(y)$，则称 $f$ 是积性函数。\pause
 
 若函数 $f$ 满足对任意 $x,y$，有 $f(xy)=f(x)f(y)$，则称 $f$ 是完全积性函数。
 \end{defi}
@@ -21,10 +21,12 @@
 
 \subsubsection{简单运算}
 
-\begin{frame}
+\begin{frame}{简单运算}
 \begin{itemize}
-\item 加法：$(f+g)(n)=f(n)+g(n)$
-\item 点乘：$(f\cdot g)(n)=f(n)\cdot g(n)$
+\item 加法：$(f+g)(n)=f(n)+g(n)$\pause
+\medskip
+\item 点乘：$(f\cdot g)(n)=f(n)\cdot g(n)$\pause
+\medskip
 \item 狄利克雷卷积：$(f*g)(n)=\sum\limits_{d\mid n}f(d)g(\dfrac{n}{d})$
 \end{itemize}
 \end{frame}
@@ -32,55 +34,58 @@
 \subsubsection{常见积性函数}
 
 \begin{frame}
+下面是一些常见的积性函数：
 \begin{itemize}
-\item $\epsilon(n)=[n=1]$
-\item $\text{id}_k(n)=n^k$，$\text{id}_1$ 常记作 $\text{id}$
-\item $1(n)=1$
-\item $\sigma_k(n)=\sum\limits_{d\mid n}d^k$，$\sigma_0$ 常记作 $d$，$\sigma_1$ 常记作 $\sigma$
-\item $\varphi(n)=\sum\limits_{i=1}^n[\gcd(i,n)=1]$
-\item $\mu(n)=\left\{\begin{aligned}&1 &n=1\\&0 &\exists d>1,d^2\mid n\\&(-1)^{\omega(n)} &\text{otherwise} \end{aligned} \right.$，其中 $\omega(n)$ 为 $n$ 含有的不同素因子个数
+\item $\epsilon(n)=[n=1]$\pause
+\item $\text{id}_k(n)=n^k$，$\text{id}_1$ 常记作 $\text{id}$\pause
+\item $1(n)=1$\pause
+\item $\sigma_k(n)=\sum\limits_{d\mid n}d^k$，$\sigma_0$ 常记作 $d$，$\sigma_1$ 常记作 $\sigma$\pause
+\item $\varphi(n)=\sum\limits_{i=1}^n[\gcd(i,n)=1]$\pause
+\item $\mu(n)=\left\{\begin{aligned}&1 &n=1\\&0 &\exists d>1,d^2\mid n\\&(-1)^{\omega(n)} &\text{otherwise} \end{aligned} \right.$，其中 $\omega(n)$ 为 $n$ 含有的不同素因子个数\pause
 \item $\chi_k(n)=[\gcd(n,k)=1]$
 \end{itemize}
 \end{frame}
 
 \subsubsection{积性函数线性筛}
 
-\begin{frame}
-一个积性函数 $f$ 完全由其在各个素数幂处的取值 $f(p^i)$ 决定。若知道了所有 $f(p^i)$ 处的取值，可以 $O(n)$ 得到 $f$ 在 $1\sim n$ 上的取值。
+\begin{frame}{积性函数线性筛}
+一个积性函数 $f$ 完全由其在各个素数幂处的取值 $f(p^i)$ 决定。若知道了所有 $f(p^i)$ 处的取值，可以 $O(n)$ 得到 $f$ 在 $1\sim n$ 上的取值。\pause
 
-回顾欧拉筛。对于整数 $x$，记 $p$ 为 $x$ 的最小素因子，$k$ 表示该素因子在 $x$ 分解式中的幂次。若 $x$ 不为素数的幂，则会在 $x/p$ 处被筛掉。此时 $f$ 在 $1\sim x/p$ 上的取值都已确定，故令 $f(x)=f(p^k)f(x/p^k)$ 即可。显然该方法复杂度与欧拉筛相同，是线性的。
+回顾欧拉筛。对于整数 $x$，记 $p$ 为 $x$ 的最小素因子，$k$ 表示该素因子在 $x$ 分解式中的幂次。若 $x$ 不为素数的幂，则会在 $x/p$ 处被筛掉。此时 $f$ 在 $1\sim x/p$ 上的取值都已确定，故令 $f(x)=f(p^k)f(x/p^k)$ 即可。显然该方法复杂度与欧拉筛相同，是线性的。\pause
 
-容易发现该筛法不仅适用于积性函数，只要满足 $f(\prod\limits_{i=1}^k p_i^{\alpha_i})=f(p_1^{\alpha_1})\oplus\dots\oplus f(p_k^{\alpha_k})$，其中 $\oplus$ 是一个可以 $O(1)$ 计算的右结合二元运算，就可以线性筛。例如素因子个数函数 $\omega(n)$，素因子之和函数 $s_{\omega}(n)$。
+容易发现该筛法不仅适用于积性函数，只要有 $f(\prod\limits_{i=1}^k p_i^{\alpha_i})=f(p_1^{\alpha_1})\oplus\dots\oplus f(p_k^{\alpha_k})$，其中 $\oplus$ 是一个可以 $O(1)$ 计算的右结合二元运算，就可以线性筛。例如素因子个数函数 $\omega(n)$，素因子之和函数 $s_{\omega}(n)$。
 \end{frame}
 
 \subsection{狄利克雷卷积}
 
 \subsubsection{定义与性质}
 
-\begin{frame}
+\begin{frame}{狄利克雷卷积}
+\begin{defi}
 定义两个数论函数 $f,g$ 的狄利克雷卷积为
 $$
 (f*g)(n)=\sum_{d\mid n}f(d)g(\frac{n}{d})
 $$
-一些性质：
+\end{defi}\pause
 
+一些性质：
 \begin{itemize}
-\item 狄利克雷卷积满足交换律、结合律，对加法有分配律。
-\item 封闭性：两个积性函数的狄利克雷卷积仍是积性函数。
-\item 对于积性函数 $f,g$ 和完全积性函数 $h$，有 $(f*g)\cdot h=(f\cdot h)*(g\cdot h)$。
+\item 狄利克雷卷积满足交换律、结合律，对加法有分配律。\pause
+\item 封闭性：两个积性函数的狄利克雷卷积仍是积性函数。\pause
+\item 分配律：对于积性函数 $f,g$ 和完全积性函数 $h$，有 $(f*g)\cdot h=(f\cdot h)*(g\cdot h)$。
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-事实上，把所有的数论函数记作集合 $\mathcal{A}$，$(\mathcal{A},+,*)$ 构成一个带单位元的交换环。单位元为 $\epsilon$。
+事实上，把所有的数论函数记作集合 $\mathcal{A}$，$(\mathcal{A},+,*)$ 构成一个带单位元的交换环。乘法单位元为 $\epsilon$。\pause
 
-其中非零积性函数构成子集 $\mathcal{M}$，$(\mathcal{M},*)$ 构成一个阿贝尔群。
+其中，所有非零积性函数构成子集 $\mathcal{M}$，$(\mathcal{M},*)$ 构成一个阿贝尔群。
 \end{frame}
 
 \subsubsection{逆函数}
 
-\begin{frame}
-对于函数 $f$，若存在函数 $g$ 满足 $\epsilon=f*g$，则称 $g$ 为 $f$ 的逆函数，记为 $g=f^{-1}$。
+\begin{frame}{逆函数}
+对于函数 $f$，若存在函数 $g$ 满足 $\epsilon=f*g$，则称 $g$ 为 $f$ 的逆函数，记为 $g=f^{-1}$。\pause
 
 $$
 \begin{aligned}
@@ -88,73 +93,78 @@ $$
 &g(n)=\frac{1}{f(1)}(\epsilon(n)-\sum_{d\mid n,d<n}g(d)f(\frac{n}{d}))
 \end{aligned}
 $$
-上面给出求逆函数的方法。可见逆函数唯一，且有逆函数的充要条件是 $f(1)\neq 0$。
+上面给出求逆函数的方法。可见逆函数唯一，且有逆函数的充要条件是 $f(1)\neq 0$。\pause
 
-积性函数的逆函数仍是积性函数。
+\begin{itemize}
+\item 积性函数都有逆函数，且逆函数仍是积性函数。\pause
 
-定义狄利克雷除法 $f/g=f*g^{-1}$。
+\item 定义狄利克雷除法 $f/g=f*g^{-1}$。\pause
 
-$1$ 函数的逆为 $\mu$。
+\item $1$ 函数的逆为 $\mu$。
+\end{itemize}
 \end{frame}
 
 \subsubsection{狄利克雷前缀和}
 
-\begin{frame}
-给定一个函数 $f$，求 $f*1$。
+\begin{frame}{狄利克雷前缀和}
+给定一个函数 $f$，求 $f*1$。\pause
 
-把 $n$ 以内的每个素数看做一维，对每个 $x=\prod\limits_{i=1}^kp_i^{\alpha_i}$，将其视作高维空间内的一个点 $(\alpha_1,\dots,\alpha_k)$。所有满足每一维都不超过该点的点恰好构成 $x$ 的所有因数。
+把 $n$ 以内的每个素数看做一维，对每个 $x=\prod\limits_{i=1}^kp_i^{\alpha_i}$，将其视作高维空间内的一个点 $(\alpha_1,\dots,\alpha_k)$。所有满足每一维都不超过该点的点恰好构成 $x$ 的所有因数。\pause
 
-类似高维前缀和的处理方法，枚举每个素数 $p_i$，再从小到大枚举每个 $p_i$ 的倍数 $x$，将 $f(x)$ 加上 $f(\dfrac{x}{p_i})$。复杂度 $O(\sum\limits_{i=1}^k\dfrac{n}{p_i})=O(n\log\log n)$。
+类似高维前缀和的处理方法，枚举每个素数 $p_i$，再从小到大枚举每个 $p_i$ 的倍数 $x$，将 $f(x)$ 加上 $f(\dfrac{x}{p_i})$。复杂度 $O(\sum\limits_{i=1}^k\dfrac{n}{p_i})=O(n\log\log n)$。\pause
 
 求 $f*\mu$，可以类比高维差分。一样可以 $O(n\log\log n)$。
 \end{frame}
 
-\subsubsection{GYM101741F GCD}
+\subsubsection{}
 
-\begin{frame}
+\begin{frame}{GYM101741F GCD}
 给定 $a_1,\dots,a_n$ 与 $k$，删除至多 $k$ 个元素，最大化所有元素的 $\gcd$。
 
 $n\le 10^5,k\le n/2,a_i\le 10^{18}$。
 \end{frame}
 
 \begin{frame}
-若 $a_i$ 没被删除，则答案一定是 $a_i$ 的因数。同时，令 $b_j=\gcd(a_j,a_i)$，答案为满足 $\sum\limits_{j=1}^n[x\mid b_j]\ge n-k$ 的最大的 $x$。
+若 $a_i$ 没被删除，则答案一定是 $a_i$ 的因数。同时，令 $b_j=\gcd(a_j,a_i)$，答案为满足 $\sum\limits_{j=1}^n[x\mid b_j]\ge n-k$ 的最大的 $x$。\pause
 
 设最优解剩下的元素集合为 $S$。注意到随机选一个 $a_i$，其有至少一半的概率落在 $S$ 中。故随机常数次即可以高概率保证某次随机的 $a_i$ 在 $S$ 中。
 \end{frame}
 
 \begin{frame}
-记 $a_i$ 的所有因子构成集合 $D$，在 $D$ 上定义函数 $f(x)=\sum\limits_{j=1}^n[x=b_j]$。对 $f$ 做狄利克雷后缀和得到 $g(x)=\sum\limits_{x\mid y}f(y)$，答案即为最大的 $x$ 满足 $g(x)\ge n-k$。复杂度 $O(d(a)\log\log a)$。
+记 $a_i$ 的所有因子构成集合 $D$，在 $D$ 上定义函数 $f(x)=\sum\limits_{j=1}^n[x=b_j]$。对 $f$ 做狄利克雷后缀和得到 $g(x)=\sum\limits_{x\mid y}f(y)$，答案即为最大的 $x$ 满足 $g(x)\ge n-k$。复杂度 $O(d(a)\log\log a)$。\pause
 
 求因子时可以先对 $a_i$ 进行质因数分解，再组合出所有因子。这样复杂度为 $d(a)$ 而不是 $\sqrt a$。
 \end{frame}
 
-\subsubsection{积性函数卷积}
+\subsubsection{卷积复杂度}
 
-\begin{frame}
+\begin{frame}{卷积复杂度}
 \begin{itemize}
 \item 对两个积性函数 $f,g$ 求 $f*g$，复杂度 $O(n)$。
+\end{itemize}\pause
 
-先处理 $f*g$ 在素数幂处的值，这一部分复杂度不到 $O(n)$。然后 $f*g$ 是积性函数，可以线筛。
+先处理 $f*g$ 在素数幂处的值，这一部分复杂度不到 $O(n)$。然后 $f*g$ 是积性函数，可以线筛。\pause
 
-常见的复杂度分析：$1\sim n$ 中素数个数，素数幂个数，所有素数幂的幂次和，都是 $O(\dfrac{n}{\log n})$。
+常见的复杂度分析：$1\sim n$ 中素数个数，素数幂个数，所有素数幂的幂次和，都是 $O(\dfrac{n}{\log n})$。\pause
 
+\begin{itemize}
 \item 对普通函数 $f$ 和积性函数 $g$ 求 $f*g$，复杂度 $O(n\log\log n)$。
+\end{itemize}\pause
 
 用类似高维前缀和的方式处理即可。
-\end{itemize}
 \end{frame}
 
 \subsection{贝尔级数}
 
 \subsubsection{定义}
 
-\begin{frame}
+\begin{frame}{贝尔级数}
 对于积性函数 $f$ 和给定的素数 $p$，定义其贝尔级数为
 $$
 f_p(x)=\sum_{k=0}^{\infty} f(p^k)x^k
-$$
-由定义可知，对于固定的 $p$，$f$ 的狄利克雷卷积与 $f_p$ 的多项式的乘法形成同构。
+$$\pause
+
+由定义可知，对于固定的 $p$，$f$ 做狄利克雷卷积，对应于 $f_p$ 做多项式乘法。
 \end{frame}
 
 \subsubsection{常见贝尔级数}
@@ -163,12 +173,12 @@ $$
 下面给出一些常见积性函数的贝尔级数：
 
 \begin{itemize}
-\item $\epsilon$：$1$
-\item $1$：$\dfrac{1}{1-x}$
-\item $\text{id}$：$\dfrac{1}{1-px}$
-\item $d$：$\dfrac{1}{(1-x)^2}$
-\item $\sigma$：$\dfrac{1}{(1-x)(1-px)}$
-\item $\varphi$：$\dfrac{1-x}{1-px}$
+\item $\epsilon$：$1$\pause
+\item $1$：$\dfrac{1}{1-x}$\pause
+\item $\text{id}$：$\dfrac{1}{1-px}$\pause
+\item $d$：$\dfrac{1}{(1-x)^2}$\pause
+\item $\sigma$：$\dfrac{1}{(1-x)(1-px)}$\pause
+\item $\varphi$：$\dfrac{1-x}{1-px}$\pause
 \item $\mu$：$1-x$
 \end{itemize}
 \end{frame}
@@ -176,9 +186,9 @@ $$
 \subsubsection{应用}
 
 \begin{frame}
-贝尔级数可以用来证明一些经典恒等式，比如 $\varphi*1=\text{id}$，$\mu*1=\epsilon$。
+贝尔级数可以用来证明一些经典恒等式，比如 $\varphi*1=\text{id}$，$\mu*1=\epsilon$。\pause
 
-还可以用来处理逆元，求一个函数 $f$ 使得 $f*d=\epsilon$。
+还可以用来处理逆元，求一个函数 $f$ 使得 $f*d=\epsilon$。\pause
 
 \begin{eg}
 给定两个积性函数 $f(p^i)=p^i(p^i-1),g(p^i)=p^i\varphi(p^i)$。求 $f/g$ 的表达式。
@@ -188,11 +198,12 @@ $$
 \begin{frame}
 $$
 \begin{aligned}
-f_p(x)=1+\sum_{i=1}^{\infty}(p^{2i}-p^i)x^i=1+\frac{p^2x}{1-p^2x}-\frac{px}{1-px}\\
-g_p(x)=1+\sum_{i=1}^{\infty}(p^{2i}-p^{2i-1})x^i=\frac{1-px}{1-p^2x}\\
-h_p(x)=\frac{f_p(x)}{g_p(x)}=\frac{1}{1-px}-\frac{px(1-p^2x)}{(1-px)^2}=1+\sum_{i=2}^{\infty}(i-1)(p-1)p^ix^i
+& f_p(x)=1+\sum_{i=1}^{\infty}(p^{2i}-p^i)x^i=1+\frac{p^2x}{1-p^2x}-\frac{px}{1-px}\\ \pause
+& g_p(x)=1+\sum_{i=1}^{\infty}(p^{2i}-p^{2i-1})x^i=\frac{1-px}{1-p^2x}\\ \pause
+& h_p(x)=\frac{f_p(x)}{g_p(x)}=\frac{1}{1-px}-\frac{px(1-p^2x)}{(1-px)^2}=1+\sum_{i=2}^{\infty}(i-1)(p-1)p^ix^i
 \end{aligned}
-$$
+$$\pause
+
 后面讲杜教筛，对于 $f$ 要找到两个可块筛的函数 $g,h$ 使得 $f*g=h$。可以根据 $f$ 贝尔级数的封闭形式来配凑。
 \end{frame}
 
