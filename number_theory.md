@@ -44,6 +44,8 @@
 
   $a,b\in\Z,b>0$，则 $a=b\left\lfloor\dfrac{a}{b}\right\rfloor+b\left\{\dfrac{a}{b}\right\}$
 
+  （这一条意味着可以使用 $b\left\{\dfrac{a}{b} \right\}$ 来表示 $a\bmod b$）
+
 * 复合性质
 
   $m\in\Z^{+},x\in\R$，则 $\left\lfloor\dfrac{x}{m}\right\rfloor=\left\lfloor\dfrac{\lfloor x\rfloor}{m}\right\rfloor$
@@ -85,6 +87,8 @@
   $\gcd(ma,mb)=m\gcd(a,b)$
 
   $\gcd(a^n,b^n)=\gcd(a,b)^n$
+  
+  （证明上面性质不要用算术基本定理，只用整除基本性质：传递性等和 gcd 定义，加上裴蜀定理）
 
 #### 欧几里得算法
 
@@ -222,6 +226,8 @@ $a,b$ 互素的充要条件是 $\exists u,v\in \Z,ua+vb=1$。
 
 同样的，一般的代数系统中不一定存在这种唯一分解定理。
 
+（上面的例子 $6=(2+\sqrt{10})(-2+\sqrt{10})=2\cdot 3$，都是不可约数）
+
 分解质因数是数论问题的重要思考方向。将素数从小到大排列为 $p_1=2,p_2=3,p_3=5,\dots$，则任一正整数 $n=p_1^{\alpha_1}p_2^{\alpha_2}\dots$ 可映射为一个每维都是非负整数的无穷维向量 $(\alpha_1,\alpha_2,\dots)$。正整数的乘法与向量的加法形成同构，$\gcd$ 对应于取 $\min$，$\mathrm{lcm}$ 对应于取 $\max$。
 
 #### P8255 [NOI Online 2022 入门组] 数学游戏
@@ -280,15 +286,17 @@ $1\le T\le 5\times10^5,1\le x\le 10^9,1\le z<2^{63}$。
 
 * 性质
 
-  若 $x$ 取遍模 $m$ 的完全剩余系，则 $ax+b$ 也取遍模 $m$ 的完全剩余系。
+  若 $\gcd(a,m)=1$，$x$ 取遍模 $m$ 的完全剩余系，则 $ax+b$ 也取遍模 $m$ 的完全剩余系。
 
   若 $\gcd(a,m)=1$，$x$ 取遍模 $m$ 的简化剩余系，则 $ax$ 也取遍模 $m$ 的简化剩余系。
 
-  若 $x_1,x_2$ 分别取遍模 $m_1,m_2$ 的完全剩余系，则 $m_2x_1+m_1x_2$ 取遍模 $m_1m_2$ 的完全剩余系。
+  若 $m_1,m_2$ 互素，$x_1,x_2$ 分别取遍模 $m_1,m_2$ 的完全剩余系，则 $m_2x_1+m_1x_2$ 取遍模 $m_1m_2$ 的完全剩余系。
 
   若 $m_1,m_2$ 互素，$x_1,x_2$ 分别取遍模 $m_1,m_2$ 的简化剩余系，则 $m_2x_1+m_1x_2$ 取遍模 $m_1m_2$ 的简化剩余系。
 
   推论：$\varphi(m_1m_2)=\varphi(m_1)\varphi(m_2)$。
+  
+  （上面说明 $\varphi(m_1m_2)\ge\varphi(m_1)\varphi(m_2)$，需要再证明 $\varphi(m_1m_2)\le\varphi(m_1)\varphi(m_2)$）
 
 ### 乘法逆元
 
@@ -343,6 +351,8 @@ $ax\equiv 1\pmod m\iff ax+m\xi=1$。由裴蜀定理，$a$ 存在逆元的充要�
 于是 $a$ 的逆元可以直接表示为 $a^{\varphi(m)-1}$ 或 $a^{p-2}$。
 
 exgcd 和快速幂都需要 $\log$ 时间复杂度，下面介绍一种离线的线性预处理、$O(1)$ 查询的逆元求法。
+
+（这里先讲 $1\sim n$ 逆元和阶乘逆元）
 
 * 离线逆元
 
@@ -791,7 +801,11 @@ $A$ 很大，考虑在 $p$ 进制下数位 DP。设 $f(i,j,0/1,0/1)$ 表示前 $
 阶还有以下有趣的性质：
 
 * $\delta_m(a^k)=\dfrac{\delta_m(a)}{\gcd(\delta_m(a),k)}$
+
 * 若 $\gcd(\delta_m(a),\delta_m(b))=1$，则 $\delta_m(ab)=\delta_m(a)\delta_m(b)$
+
+  （两边相互整除。右整除左：要证 $xy\mid z$，分别证 $x\mid yz$ 和 $y\mid xz$，然后得到 $x\mid z,y\mid z$）
+
 * $\delta_m(a)=\delta_m(a^{-1})$
 
 #### 阶的计算
@@ -1450,7 +1464,7 @@ $\text{id}\cdot\varphi=\text{id}\cdot(\text{id}/1)=\text{id}_2/\text{id}$，可�
 
 总复杂度为块筛 $S_{\varphi}$ 的 $O(n^{2/3})$。
 
-## 连分数
+## 其他
 
 ### 连分数
 
@@ -1518,3 +1532,102 @@ $$
 由于有理数的标准连分数表示是唯一的，直接 DFS 搜索所有可能的连分数就能得到答案。具体地，从右到左加入连分数的每一位，实时维护其分数表示 $\dfrac{a}{b}$。这样的复杂度为 $O(ans)$，已经可以获得 $90$ 分。
 
 后续的优化方式是考虑枚举连分数表示数列的最大值位置，然后可以一次统计好多个完美正分数。复杂度可能还是 $O(ans)$，但是常数小很多。
+
+### 类欧几里得算法
+
+#### 直线下整点个数
+
+求解如下函数
+$$
+f(a,b,c,n)=\sum_{i=0}^n\left\lfloor\frac{ai+b}{c} \right\rfloor
+$$
+实际上这是类欧几里得算法的一部分。由于形式简单，应用相对较多，故单独讲解。
+
+若 $a\ge c$ 或 $b\ge c$，可以转化为 $a<c,b<c$ 的情况
+
+$$
+\begin{aligned}
+    &f(a,b,c,n)=\sum_{i=0}^n\lfloor\frac{ai+b}{c}\rfloor\\
+    &=\sum_{i=0}^n\lfloor\frac{(\lfloor\frac{a}{c}\rfloor c+(a\bmod c))i+\lfloor\frac{b}{c}\rfloor c+(b\bmod c)}{c}\rfloor\\
+    &=\frac{n(n+1)}{2}\lfloor\frac{a}{c}\rfloor+(n+1)\lfloor\frac{b}{c}\rfloor+\sum_{i=0}^n\lfloor\frac{(a\bmod c)i+(b\bmod c)}{c}\rfloor\\
+    &=\frac{n(n+1)}{2}\lfloor\frac{a}{c}\rfloor+(n+1)\lfloor\frac{b}{c}\rfloor+f(a\bmod c,b\bmod c,c,n)
+    \end{aligned}
+$$
+接下来考虑一般情况 $a<c$ 且 $b<c$：
+
+$$
+    \begin{aligned}
+    f(a,b,c,n)&=\sum_{i=0}^n\lfloor\frac{ai+b}{c}\rfloor\\
+    &=\sum_{i=0}^n\sum_{j=0}^{\lfloor\frac{ai+b}{c}\rfloor-1}1\\
+    &=\sum_{j=0}^{\lfloor\frac{an+b}{c}\rfloor-1}\sum_{i=0}^n[j<\lfloor\frac{ai+b}{c}\rfloor]\\
+    \end{aligned}
+$$
+
+由于
+
+$$
+    j<\lfloor\frac{ai+b}{c}\rfloor\iff\frac{jc+c-b-1}{a}<i
+$$
+
+故消掉 $i$。
+
+令 $m=\lfloor\frac{an+b}{c}\rfloor$，有
+
+$$
+    \begin{aligned}
+    f(a,b,c,n)&=\sum_{j=0}^{m-1}n-\lfloor\frac{jc+c-b-1}{a}\rfloor\\
+    &=nm-f(c,c-b-1,a,m-1)
+    \end{aligned}
+$$
+
+于是可以递归计算。复杂度 $O(\log n)$。
+
+#### CF1912J Joy of Pok´emon Observation
+
+给定 $l_1,l_2,l_3,t$，求满足 $l_1x+l_2y+l_3z=t$ 的非负整数对 $(x,y,z)$ 的数量。
+
+$l_1,l_2,l_3\le 16,t\le 10^9$。
+
+将 $x,y$ 在 $\bmod l_3$ 意义下考虑，设 $x=pl_3+x',y=ql_3+y'$，则 $l_3(l_1p+l_2q+z)=t-l_1x'-l_2y'$。
+
+枚举 $x',y'$，若 $l_3\not\mid  t-l_1x'-l_2y'$ 则无解，否则记 $K=\dfrac{t-l_1x'-l_2y'}{l_3}$，变为求有多少 $(p,q,z)$ 满足 $l_1p+l_2q+z=K$。
+
+一旦确定了 $p,q$，则唯一确定了 $z$。故答案为求有多少 $(p,q)$ 满足 $l_1p+l_2q\le K$。即为
+$$
+\sum_{p=0}^t(\left\lfloor\frac{K-l_1p}{l_2} \right\rfloor+1)
+$$
+复杂度 $O(l_3^2\cdot\log t)$。
+
+#### 万能欧几里得算法
+
+很多类欧几里得问题都可以归结为以下模型：
+
+在平面直角坐标系内，有一条直线 $y=\dfrac{ax+b}{c}$，作出所有网格线 $x=k(k\in\N^*),y=k(k\in\N^*)$。在 $(0,n]$ 中从左往右扫描该直线，与一条横的网格线有交点时进行一次 $U$ 操作，与一条竖的网格线有交点时进行一次 $R$ 操作。特别地，若同时与横线竖线有交点（即经过整点），规定先 $U$ 后 $R$。其中 $U$ 和 $R$ 都是半群元素，即满足结合律。
+
+用 $f(n,a,b,c,U,R)$ 表示当前问题的答案。直线上下平移整数不影响答案，这意味着 $b$ 可对 $c$ 取模。以下默认 $b<c$。
+
+若 $a\ge c$，则每跨过一条竖线，会至少跨过 $\lfloor\dfrac{a}{c}\rfloor$ 条横线。$y=\dfrac{ax+b}{c}=\dfrac{(a\bmod c)x+b}{c}+\lfloor\dfrac{a}{c}\rfloor x$，故 $f(n,a,b,c,U,R)=f(n,a\bmod c,b,c,U,U^{\lfloor\frac{a}{c}\rfloor}R)$。
+
+若 $a<c$，考虑将直线沿 $y=x$ 对称。记 $m=\lfloor\dfrac{an+b}{c}\rfloor$，一共会产生 $m$ 个 $U$。第 $j$ 个 $U$ 发生在跨过 $y=j$ 时，此时对应的 $x$ 坐标为 $\dfrac{jc-b}{a}$，故第 $j$ 个 $U$ 之前 $R$ 的数量为 $k_j=\lfloor\dfrac{jc-n-1}{a} \rfloor$。
+
+现在整个操作序列被 $m$ 个 $U$ 分割，第一个 $U$ 前有 $k_1$ 个 $R$，最后一个 $U$ 后有 $n-k_m$ 个 $R$，中间可以通过翻转坐标系变成 $a\ge c$ 的版本。$f(n,a,b,c,U,R)=R^{k_1}\cdot U\cdot f(m-1,c,c-b-1,a,R,U)\cdot R^{n-k_m}$。
+
+#### P5170【模板】类欧几里得算法
+
+给定 $n,a,b,c$，分别求 $\sum\limits_{i=0}^n\lfloor\dfrac{ai+b}{c}\rfloor,\sum\limits_{i=0}^n\lfloor\dfrac{ai+b}{c}\rfloor^2,\sum\limits_{i=0}^n i\lfloor\dfrac{ai+b}{c}\rfloor$。$t$ 组数据。
+
+$t\le 10^5$，$0\le n,a,b,c\le 10^9$，$c\neq 0$。
+
+以 $\sum\limits_{i=0}^n\lfloor\dfrac{ai+b}{c}\rfloor$ 为例。设计二元组 $(y,ans)$，$U$ 操作会让 $y\leftarrow y+1$，$R$ 操作会让 $ans\leftarrow ans+y$。用矩阵描述 $U$ 和 $R$，显然是满足结合律的。故可直接套用万欧。
+
+#### QOJ8706 解方程
+
+求方程 $(a+bx)\bmod p\in[0,c_2),x\in[0,c_1)$ 的所有解。
+
+$a,b$ 随机生成，$p\in[9\times10^{17},10^{18}]$ 且是质数，$c_1,c_2\le 100\sqrt{p}$。
+
+可以发现解的数量不多。对 $x$ 的区间进行分治判定，假设有 $k$ 个解，则将问题转化为 $O(k\log c_1)$ 次判定一个 $x$ 的区间中是否存在解。
+
+将 $(a+bx)\bmod p<c$ 改写为 $bx-p\left\lfloor\dfrac{a+bx}{p} \right\rfloor<c-a$。只需记录在一个 $x$ 的区间中 $S=bx-p\left\lfloor\dfrac{a+bx}{p}\right\rfloor$ 的最小值。
+
+使用万欧的模型，维护二元组 $(S,M)$，直线 $y=\dfrac{a+bx}{p}$ 遇到竖线则 $S\leftarrow S+b,M=\min\{M,S\}$，遇到横线则 $S\leftarrow S-p$。$R$ 与 $U$ 操作可以用 $\min,+$ 矩阵表示。

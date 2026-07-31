@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  28 JUL 2026 11:07
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  31 JUL 2026 13:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2932,34 +2932,18 @@ Overfull \vbox (11.08376pt too high) detected at line 196
 [436
 
 ]
-Overfull \vbox (0.5319pt too high) detected at line 76
- []
-
-
 
 [437
 
 ]
-Overfull \vbox (0.5319pt too high) detected at line 76
- []
-
-
 
 [438
 
 ]
-Overfull \vbox (0.5319pt too high) detected at line 76
- []
-
-
 
 [439
 
 ]
-Overfull \vbox (0.5319pt too high) detected at line 76
- []
-
-
 
 [440
 
@@ -2979,6 +2963,122 @@ Overfull \vbox (0.5319pt too high) detected at line 76
 
 [444
 
+]
+
+[445
+
+]
+
+[446
+
+]
+
+[447
+
+]
+
+[448
+
+]
+
+[449
+
+] (./main.toc)
+
+[450
+
+]
+
+[451
+
+]
+
+[452
+
+]
+
+[453
+
+]
+
+[454
+
+]
+
+[455
+
+]
+
+[456
+
+]
+
+[457
+
+]
+
+[458
+
+]
+
+[459
+
+]
+
+[460
+
+]
+
+[461
+
+]
+Overfull \vbox (0.5319pt too high) detected at line 217
+ []
+
+
+
+[462
+
+]
+Overfull \vbox (0.5319pt too high) detected at line 217
+ []
+
+
+
+[463
+
+]
+Overfull \vbox (0.5319pt too high) detected at line 217
+ []
+
+
+
+[464
+
+]
+Overfull \vbox (0.5319pt too high) detected at line 217
+ []
+
+
+
+[465
+
+]
+
+[466
+
+]
+
+[467
+
+]
+
+[468
+
+]
+
+[469
+
 ])
 \tf@nav=\write6
 \openout6 = `main.nav'.
@@ -2995,15 +3095,15 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: BEDE783ED17C6278416F259B4C72D7D2;10033.
+(rerunfilecheck)             Checksum: 090EE829A2D880462CB815B92F6362FB;10522.
  ) 
 Here is how much of TeX's memory you used:
- 31141 strings out of 475796
- 672344 string characters out of 5774033
- 1601484 words of memory out of 5000000
- 53379 multiletter control sequences out of 15000+600000
+ 31174 strings out of 475796
+ 672837 string characters out of 5774033
+ 1638985 words of memory out of 5000000
+ 53410 multiletter control sequences out of 15000+600000
  565033 words of font info for 99 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 128i,19n,123p,467b,1409s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,19n,123p,467b,1405s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (444 pages).
+Output written on main.pdf (469 pages).

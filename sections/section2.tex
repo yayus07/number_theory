@@ -57,9 +57,9 @@
 
 \begin{theo}
 \begin{itemize}
-\item 若 $x$ 取遍模 $m$ 的完全剩余系，则 $ax+b$ 也取遍模 $m$ 的完全剩余系。 \pause
+\item 若 $\gcd(a,m)=1$，$x$ 取遍模 $m$ 的完全剩余系，则 $ax+b$ 也取遍模 $m$ 的完全剩余系。 \pause
 \item 若 $\gcd(a,m)=1$，$x$ 取遍模 $m$ 的简化剩余系，则 $ax$ 也取遍模 $m$ 的简化剩余系。 \pause
-\item 若 $x_1,x_2$ 分别取遍模 $m_1,m_2$ 的完全剩余系，则 $m_2x_1+m_1x_2$ 取遍模 $m_1m_2$ 的完全剩余系。 \pause
+\item 若 $m_1,m_2$ 互素，$x_1,x_2$ 分别取遍模 $m_1,m_2$ 的完全剩余系，则 $m_2x_1+m_1x_2$ 取遍模 $m_1m_2$ 的完全剩余系。 \pause
 \item 若 $m_1,m_2$ 互素，$x_1,x_2$ 分别取遍模 $m_1,m_2$ 的简化剩余系，则 $m_2x_1+m_1x_2$ 取遍模 $m_1m_2$ 的简化剩余系。
 \end{itemize}
 \end{theo} \pause
@@ -294,13 +294,15 @@ $$
 
 \begin{frame}
 \begin{theo}[因式定理]
-设 $k\le n$，$x\equiv a_i\pmod p \ (i=1,2,\dots,k)$ 是同余方程的 $k$ 个不同解。则存在首项系数为 $a_n$ 的 $n-k$ 次多项式 $f_k(x)$，使得 $f(x)\equiv (x-a_1)(x-a_2)\dots(x-a_k)f_k(x)\pmod p$。
+设 $k\le n$，$x\equiv r_i\pmod p \ (i=1,2,\dots,k)$ 是同余方程的 $k$ 个不同解。则存在首项系数为 $a_n$ 的 $n-k$ 次多项式 $f_k(x)$，使得 $f(x)\equiv (x-r_1)(x-r_2)\dots(x-r_k)f_k(x)\pmod p$。
 \end{theo} \pause
 
 由此立刻得出以下推论：
 
 \begin{coro}[费马小定理的推论]
-对任意整数 $x$，$x^{p-1}-1\equiv (x-1)(x-2)\dots(x-(p-1))\pmod p$。
+$$
+x^{p-1}-1\equiv (x-1)(x-2)\dots(x-(p-1))\pmod p
+$$
 \end{coro}
 \end{frame}
 

@@ -78,8 +78,11 @@
 \beamer@subsectionintoc {7}{2}{PN 筛}{402}{0}{7}
 \beamer@subsubsectionintoc {7}{2}{1}{Powerful Number}{403}{0}{7}
 \beamer@subsubsectionintoc {7}{2}{2}{素数拟合}{407}{0}{7}
-\beamer@sectionintoc {8}{连分数}{425}{0}{8}
-\beamer@subsectionintoc {8}{1}{连分数}{425}{0}{8}
-\beamer@subsubsectionintoc {8}{1}{1}{定义}{426}{0}{8}
-\beamer@subsubsectionintoc {8}{1}{2}{有理数表示}{427}{0}{8}
-\beamer@subsubsectionintoc {8}{1}{3}{渐近分数}{436}{0}{8}
+\beamer@sectionintoc {8}{其他}{425}{0}{8}
+\beamer@subsectionintoc {8}{1}{类欧几里得算法}{425}{0}{8}
+\beamer@subsubsectionintoc {8}{1}{1}{直线下整点个数}{426}{0}{8}
+\beamer@subsubsectionintoc {8}{1}{3}{万能欧几里得算法}{438}{0}{8}
+\beamer@subsectionintoc {8}{2}{连分数}{450}{0}{8}
+\beamer@subsubsectionintoc {8}{2}{1}{定义}{451}{0}{8}
+\beamer@subsubsectionintoc {8}{2}{2}{有理数表示}{452}{0}{8}
+\beamer@subsubsectionintoc {8}{2}{3}{渐近分数}{461}{0}{8}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  17 JUL 2026 19:39
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.25)  30 JUL 2026 21:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1073,15 +1073,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 [1
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 16.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 18.
  (c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
@@ -1089,9 +1089,6 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 [2
 
 ]
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 30.
-
 
 [3
 
@@ -1164,6 +1161,109 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
 [20
 
 ]
+
+[21
+
+]
+
+[22
+
+]
+
+[23
+
+]
+
+[24
+
+]
+
+[25
+
+] (./section8.toc)
+
+[26
+
+]
+
+[27
+
+]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 171.
+
+
+[28
+
+]
+
+[29
+
+]
+
+[30
+
+]
+
+[31
+
+]
+
+[32
+
+]
+
+[33
+
+]
+
+[34
+
+]
+
+[35
+
+]
+
+[36
+
+]
+
+[37
+
+]
+
+[38
+
+]
+
+[39
+
+]
+
+[40
+
+]
+
+[41
+
+]
+
+[42
+
+]
+
+[43
+
+]
+
+[44
+
+]
+
+[45
+
+]
 \tf@nav=\write6
 \openout6 = `section8.nav'.
 
@@ -1178,23 +1278,16 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
-
-
-Package rerunfilecheck Warning: File `section8.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `section8.out':
-(rerunfilecheck)             Before: E284373B5CE27C0A0F5F9BEEE31FFDE4;597
-(rerunfilecheck)             After:  387FE943A8F0B552AC0EBC0FC703068B;482.
+Package rerunfilecheck Info: File `section8.out' has not changed.
+(rerunfilecheck)             Checksum: 31C07FCC88842EE84FFDB69DEFAB909A;954.
  ) 
 Here is how much of TeX's memory you used:
- 30139 strings out of 475796
- 651145 string characters out of 5774033
- 1237617 words of memory out of 5000000
- 52455 multiletter control sequences out of 15000+600000
+ 30243 strings out of 475796
+ 655496 string characters out of 5774033
+ 1244617 words of memory out of 5000000
+ 52557 multiletter control sequences out of 15000+600000
  564993 words of font info for 94 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 148i,19n,140p,520b,790s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 148i,19n,140p,520b,797s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on section8.pdf (20 pages).
+Output written on section8.pdf (45 pages).

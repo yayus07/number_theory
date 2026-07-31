@@ -1,5 +1,8 @@
-\beamer@sectionintoc {1}{连分数}{1}{0}{1}
-\beamer@subsectionintoc {1}{1}{连分数}{1}{0}{1}
-\beamer@subsubsectionintoc {1}{1}{1}{定义}{2}{0}{1}
-\beamer@subsubsectionintoc {1}{1}{2}{有理数表示}{3}{0}{1}
-\beamer@subsubsectionintoc {1}{1}{3}{渐近分数}{12}{0}{1}
+\beamer@sectionintoc {1}{其他}{1}{0}{1}
+\beamer@subsectionintoc {1}{1}{类欧几里得算法}{1}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{1}{直线下整点个数}{2}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{3}{万能欧几里得算法}{14}{0}{1}
+\beamer@subsectionintoc {1}{2}{连分数}{26}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{1}{定义}{27}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{2}{有理数表示}{28}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{3}{渐近分数}{37}{0}{1}

@@ -1,7 +1,148 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\section{连分数}
+\section{其他}
+
+\subsection{类欧几里得算法}
+
+\subsubsection{直线下整点个数}
+
+\begin{frame}{直线下整点个数}
+求解如下函数
+
+$$
+f(a,b,c,n)=\sum_{i=0}^n\left\lfloor\frac{ai+b}{c} \right\rfloor
+$$\pause
+
+实际上这是类欧几里得算法的一部分。由于形式简单，应用相对较多，故单独讲解。
+\end{frame}
+
+\begin{frame}
+若 $a\ge c$ 或 $b\ge c$，可以转化为 $a<c,b<c$ 的情况：
+
+$$
+\begin{aligned}
+&f(a,b,c,n)=\sum_{i=0}^n\lfloor\frac{ai+b}{c}\rfloor\\
+&=\sum_{i=0}^n\lfloor\frac{(\lfloor\frac{a}{c}\rfloor c+(a\bmod c))i+\lfloor\frac{b}{c}\rfloor c+(b\bmod c)}{c}\rfloor\\
+&=\frac{n(n+1)}{2}\lfloor\frac{a}{c}\rfloor+(n+1)\lfloor\frac{b}{c}\rfloor+\sum_{i=0}^n\lfloor\frac{(a\bmod c)i+(b\bmod c)}{c}\rfloor\\
+&=\frac{n(n+1)}{2}\lfloor\frac{a}{c}\rfloor+(n+1)\lfloor\frac{b}{c}\rfloor+f(a\bmod c,b\bmod c,c,n)
+\end{aligned}
+$$
+\end{frame}
+
+\begin{frame}
+接下来考虑一般情况 $a<c$ 且 $b<c$：
+
+$$
+\begin{aligned}
+f(a,b,c,n)&=\sum_{i=0}^n\lfloor\frac{ai+b}{c}\rfloor\\
+&=\sum_{i=0}^n\sum_{j=0}^{\lfloor\frac{ai+b}{c}\rfloor-1}1\\
+&=\sum_{j=0}^{\lfloor\frac{an+b}{c}\rfloor-1}\sum_{i=0}^n[j<\lfloor\frac{ai+b}{c}\rfloor]\\
+\end{aligned}
+$$\pause
+
+$$
+j<\lfloor\frac{ai+b}{c}\rfloor\iff\frac{jc+c-b-1}{a}<i
+$$
+\end{frame}
+
+\begin{frame}
+令 $m=\lfloor\frac{an+b}{c}\rfloor$，有
+
+$$
+\begin{aligned}
+f(a,b,c,n)&=\sum_{j=0}^{m-1}n-\lfloor\frac{jc+c-b-1}{a}\rfloor\\
+&=nm-f(c,c-b-1,a,m-1)
+\end{aligned}
+$$\pause
+
+于是可以递归计算。复杂度 $O(\log n)$。
+\end{frame}
+
+\subsubsection{}
+
+\begin{frame}{CF1912J Joy of Pok´emon Observation}
+给定 $l_1,l_2,l_3,t$，求满足 $l_1x+l_2y+l_3z=t$ 的非负整数对 $(x,y,z)$ 的数量。
+
+$l_1,l_2,l_3\le 16,t\le 10^9$。
+\end{frame}
+
+\begin{frame}
+将 $x,y$ 在 $\bmod l_3$ 意义下考虑，设 $x=pl_3+x',y=ql_3+y'$，则 $l_3(l_1p+l_2q+z)=t-l_1x'-l_2y'$。\pause
+
+枚举 $x',y'$，若 $l_3\nmid  t-l_1x'-l_2y'$ 则无解，否则记 $K=\dfrac{t-l_1x'-l_2y'}{l_3}$，变为求有多少 $(p,q,z)$ 满足 $l_1p+l_2q+z=K$。\pause
+
+一旦确定了 $p,q$，则唯一确定了 $z$。故答案为求有多少 $(p,q)$ 满足 $l_1p+l_2q\le K$。即为
+
+$$
+\sum_{p=0}^t(\left\lfloor\frac{K-l_1p}{l_2} \right\rfloor+1)
+$$\pause
+
+复杂度 $O(l_3^2\cdot\log t)$。
+\end{frame}
+
+\subsubsection{万能欧几里得算法}
+
+\begin{frame}{万能欧几里得算法}
+很多类欧几里得问题都可以归结为以下模型：
+\bigskip
+
+在平面直角坐标系内，有一条直线 $y=\dfrac{ax+b}{c}$，作出所有网格线 $x=k(k\in\N^*),y=k(k\in\N^*)$。
+
+在 $(0,n]$ 中从左往右扫描该直线，与一条横的网格线有交点时进行一次 $U$ 操作，与一条竖的网格线有交点时进行一次 $R$ 操作。特别地，若同时与横线竖线有交点（即经过整点），规定先 $U$ 后 $R$。
+
+其中 $U$ 和 $R$ 都是半群元素，即满足结合律。
+\end{frame}
+
+\begin{frame}
+用 $f(n,a,b,c,U,R)$ 表示当前问题的答案。直线上下平移整数不影响答案，这意味着 $b$ 可对 $c$ 取模。以下默认 $b<c$。\pause
+
+若 $a\ge c$，则每跨过一条竖线，会至少跨过 $\lfloor\dfrac{a}{c}\rfloor$ 条横线。\pause
+
+$y=\dfrac{ax+b}{c}=\dfrac{(a\bmod c)x+b}{c}+\lfloor\dfrac{a}{c}\rfloor x$，故
+
+$$
+f(n,a,b,c,U,R)=f(n,a\bmod c,b,c,U,U^{\lfloor\frac{a}{c}\rfloor}R)
+$$
+\end{frame}
+
+\begin{frame}
+若 $a<c$，考虑将直线沿 $y=x$ 对称。记 $m=\lfloor\dfrac{an+b}{c}\rfloor$，一共会产生 $m$ 个 $U$。第 $j$ 个 $U$ 发生在跨过 $y=j$ 时，此时对应的 $x$ 坐标为 $\dfrac{jc-b}{a}$，故第 $j$ 个 $U$ 之前 $R$ 的数量为 $k_j=\lfloor\dfrac{jc-b-1}{a} \rfloor$。\pause
+
+现在整个操作序列被 $m$ 个 $U$ 分割，第一个 $U$ 前有 $k_1$ 个 $R$，最后一个 $U$ 后有 $n-k_m$ 个 $R$，中间可以通过翻转坐标系变成 $a\ge c$ 的版本。故
+
+$$
+f(n,a,b,c,U,R)=R^{k_1}\cdot U\cdot f(m-1,c,c-b-1,a,R,U)\cdot R^{n-k_m}
+$$
+\end{frame}
+
+\subsubsection{}
+
+\begin{frame}{P5170【模板】类欧几里得算法}
+给定 $n,a,b,c$，分别求 $\sum\limits_{i=0}^n\lfloor\dfrac{ai+b}{c}\rfloor,\sum\limits_{i=0}^n\lfloor\dfrac{ai+b}{c}\rfloor^2,\sum\limits_{i=0}^n i\lfloor\dfrac{ai+b}{c}\rfloor$。$t$ 组数据。
+
+$t\le 10^5$，$0\le n,a,b,c\le 10^9$，$c\neq 0$。
+\end{frame}
+
+\begin{frame}
+以 $\sum\limits_{i=0}^n\lfloor\dfrac{ai+b}{c}\rfloor$ 为例。
+
+设计二元组 $(y,ans)$，$U$ 操作会让 $y\leftarrow y+1$，$R$ 操作会让 $ans\leftarrow ans+y$。用矩阵描述 $U$ 和 $R$，显然是满足结合律的。故可直接套用万欧。
+\end{frame}
+
+\begin{frame}{QOJ8706 解方程}
+求方程 $(a+bx)\bmod p\in[0,c_2),x\in[0,c_1)$ 的所有解。
+
+$a,b$ 随机生成，$p\in[9\times10^{17},10^{18}]$ 且是质数，$c_1,c_2\le 100\sqrt{p}$。
+\end{frame}
+
+\begin{frame}
+可以发现解的数量不多。对 $x$ 的区间进行分治判定，假设有 $k$ 个解，则将问题转化为 $O(k\log c_1)$ 次判定一个 $x$ 的区间中是否存在解。\pause
+
+将 $(a+bx)\bmod p<c$ 改写为 $bx-p\left\lfloor\dfrac{a+bx}{p} \right\rfloor<c-a$。只需记录在一个 $x$ 的区间中 $S=bx-p\left\lfloor\dfrac{a+bx}{p}\right\rfloor$ 的最小值。\pause
+
+使用万欧的模型，维护二元组 $(S,M)$，直线 $y=\dfrac{a+bx}{p}$ 遇到竖线则 $S\leftarrow S+b,M=\min\{M,S\}$，遇到横线则 $S\leftarrow S-p$。$R$ 与 $U$ 操作可以用 $\min,+$ 矩阵表示。
+\end{frame}
 
 \subsection{连分数}
 
@@ -85,7 +226,7 @@ $$\pause
 \item 对于 $\dfrac{1}{2}<x<2$，$x\not\in S$
 \item 对于所有 $x\in S$，$\dfrac{1}{x}\in S$
 \item 对于所有 $x\in S$，$x+2\in S$
-\item 对于所有 $x\in S$ 且 $x>2$，$x-3\in S$
+\item 对于所有 $x\in S$ 且 $x>2$，$x-2\in S$
 \end{itemize}
 
 求 $1\le i\le n,1\le j\le m$ 的完美正分数 $\dfrac{i}{j}$ 数量。$2\le n,m\le 3\times10^7$。
